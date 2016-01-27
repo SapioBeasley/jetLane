@@ -42,15 +42,6 @@
 		</div>
 	</div>
 
-
-
-
-
-
-
-
-
-
 	<div class="form-group">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#phone1" data-toggle="tab">Phone</a></li>

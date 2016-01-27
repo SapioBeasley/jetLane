@@ -14,17 +14,8 @@
     <!-- Styles -->
     {{-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> --}}
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/paper/bootstrap.min.css" rel="stylesheet" integrity="sha256-ZSKfhECi0yCEmGVAuQLWTHtJEn2vBNPexEWsJCIC/Nc= sha512-b+mSnD4QXw1uYwkgJ3d0XxoMXo+ZKHJNTNNFIddJ0IazcwKvKYtIlWADZ1JEREJzxUG428sfCw7qDuswAFcrOQ==" crossorigin="anonymous">
+    <link href="{{asset('css/style.css')}}" rel='stylesheet' type='text/css'>
 
-    <style>
-        body {
-            font-family: 'Lato';
-            background-color: #eee;
-        }
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default">
@@ -86,13 +77,6 @@
             </div>
         </div>
     </div>
-
-    <style type="text/css">
-        .glyphicon { margin-right:10px; }
-        /*.panel-body { padding:0px; }*/
-        .panel-body table tr td { padding-left: 15px }
-        .panel-body .table {margin-bottom: 0px; }
-    </style>
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

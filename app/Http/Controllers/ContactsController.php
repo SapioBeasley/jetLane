@@ -60,8 +60,6 @@ class ContactsController extends Controller
 		]);
 	}
 
-	//  People Pages
-
 	public function indexPeople()
 	{
 		$peoples = CrudHelper::index(new \App\People);
@@ -78,7 +76,13 @@ class ContactsController extends Controller
 
 	public function storePeople(Request $request)
 	{
-		$contact = CrudHelper::store(new \App\People, $request->all());
+		$createData = $request->all();
+
+		$avatarUpload = $this->avatarUpload($request->file('avatar'));
+
+		$createData['avatar'] = $avatarUpload;
+
+		$contact = CrudHelper::store(new \App\People, $createData);
 
 		return redirect()->route('contact.people.show', $contact->id)->with([
 			'success_message' => 'Conact Successfully created...'
@@ -151,11 +155,15 @@ class ContactsController extends Controller
 
     	public function updatePeople(Request $request, $id)
     	{
+    		$avatarUpload = $this->avatarUpload($request->file('avatar'));
+
     		$contact = CrudHelper::show(new \App\People, 'id', $id);
 
     		foreach ($request->all() as $updateField => $updateValue) {
     			$updateContact[$updateField] = $updateValue;
     		}
+
+    		$updateContact['avatar'] = $avatarUpload;
 
     		$contact->update($updateContact);
 
@@ -164,4 +172,16 @@ class ContactsController extends Controller
     		]);
     	}
 
+    	public function avatarUpload($upload)
+    	{
+    		$destinationPath = 'images/avatars/';
+
+    		$fileName = 'avatar_' . crc32($upload->getClientOriginalName()) . '.' . $upload->getClientOriginalExtension();
+
+    		$upload->move($destinationPath, $fileName);
+
+    		$avatar = url('/') . '/' . $destinationPath . $fileName;
+
+    		return $avatar;
+    	}
 }

@@ -47,57 +47,6 @@
 
             </div>
 
-            <style type="text/css">
-
-			.card.hovercard {
-			    overflow: hidden;
-			    text-align: center;
-			}
-
-			.bottom {
-				float: right;
-				margin: 11.5px 0px 11.5px 0px;
-			}
-
-			.card.hovercard .avatar {
-			    position: relative;
-			    top: -50px;
-			    margin-bottom: -50px;
-			}
-
-			.card.hovercard .avatar img {
-			    width: 100px;
-			    height: 100px;
-			    max-width: 100px;
-			    max-height: 100px;
-			    -webkit-border-radius: 50%;
-			    -moz-border-radius: 50%;
-			    border-radius: 50%;
-			    border: 5px solid rgba(255,255,255,0.5);
-			}
-
-			.card.hovercard .info {
-			    padding: 4px 8px 10px;
-			}
-
-			.card.hovercard .info .title {
-			    margin-bottom: 4px;
-			    font-size: 24px;
-			    line-height: 1;
-			    color: #262626;
-			    vertical-align: middle;
-			}
-
-			.card.hovercard .info .desc {
-			    overflow: hidden;
-			    font-size: 12px;
-			    line-height: 20px;
-			    color: #737373;
-			    text-overflow: ellipsis;
-			}
-
-            </style>
-
             	<div class="col-md-12">
             		<h5>General Info</h5>
             	</div>

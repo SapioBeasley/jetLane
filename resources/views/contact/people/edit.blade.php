@@ -6,7 +6,7 @@
 <div class="panel panel-default">
 	<div class="panel-body">
 
-		{!! Form::model($contact, ['route' => ['contact.people.update', $contact['id']], 'method' => 'PUT']) !!}
+		{!! Form::model($contact, ['route' => ['contact.people.update', $contact['id']], 'method' => 'PUT', 'files' => true]) !!}
 
 			@include('contact.people.includes.informationForm')
 

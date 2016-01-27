@@ -6,7 +6,7 @@
 <div class="panel panel-default">
 	<div class="panel-body">
 
-		{!! Form::open(['route' => 'contact.people.store']) !!}
+		{!! Form::open(['route' => 'contact.people.store', 'files' => true]) !!}
 
 			@include('contact.people.includes.informationForm')
 
