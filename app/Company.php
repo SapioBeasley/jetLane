@@ -1,0 +1,27 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Company extends Model
+{
+	protected $fillable = [
+		'name',
+		'dba',
+		'organization',
+		'address_street',
+		'address_city',
+		'address_state',
+		'address_zip',
+		'country',
+		'phone',
+		'mobile_phone',
+		'other_phone',
+		'fax',
+		'email_1',
+		'email_2',
+		'email_3',
+		'website',
+	];
+}
