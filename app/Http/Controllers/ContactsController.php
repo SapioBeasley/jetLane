@@ -9,6 +9,8 @@ use Sapioweb\CrudHelper\CrudyController as CrudHelper;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\PeopleContact;
+
 class ContactsController extends Controller
 {
 	/**
@@ -26,7 +28,7 @@ class ContactsController extends Controller
 
 	public function indexCompany()
 	{
-		$companies = CrudHelper::index(new \App\Company);
+		$companies = CrudHelper::index(new \App\CompanyContact);
 
 		return view('contact.companies.index')->with([
 			'companies' => $companies
@@ -35,7 +37,7 @@ class ContactsController extends Controller
 
 	public function showCompany($id)
 	{
-		$contact = CrudHelper::show(new \App\Company, 'id', $id);
+		$contact = CrudHelper::show(new \App\CompanyContact, 'id', $id);
 
 		if ($contact == null) {
 			abort(404);
@@ -53,7 +55,7 @@ class ContactsController extends Controller
 
 	public function storeCompany(Request $request)
 	{
-		$contact = CrudHelper::store(new \App\Company, $request->all());
+		$contact = CrudHelper::store(new \App\CompanyContact, $request->all());
 
 		return redirect()->route('contact.company.show', $contact->id)->with([
 			'success_message' => 'Conact Successfully created...'
@@ -62,7 +64,7 @@ class ContactsController extends Controller
 
 	public function indexPeople()
 	{
-		$peoples = CrudHelper::index(new \App\People);
+		$peoples = CrudHelper::index(new \App\PeopleContact);
 
 		return view('contact.people.index')->with([
 			'peoples' => $peoples
@@ -71,18 +73,33 @@ class ContactsController extends Controller
 
 	public function createPeople()
 	{
-		return view('contact.people.create');
+		$companiesSelect = $this->companiesSelect();
+
+		return view('contact.people.create')->with([
+			'companiesSelect' => $companiesSelect
+		]);
 	}
 
 	public function storePeople(Request $request)
 	{
 		$createData = $request->all();
 
-		$avatarUpload = $this->avatarUpload($request->file('avatar'));
+		if ($request->hasFile('avatar')) {
+			$avatarUpload = $this->avatarUpload($request->file('avatar'));
 
-		$createData['avatar'] = $avatarUpload;
+			$createData['avatar'] = $avatarUpload;
+		}
 
-		$contact = CrudHelper::store(new \App\People, $createData);
+		$contact = CrudHelper::store(new \App\PeopleContact, $createData);
+
+		if ($createData['company'] !== '0') {
+
+			$contact = PeopleContact::find($contact['id']);
+
+			$contact->companies()->attach($createData['company']);
+
+			$contact->save();
+		}
 
 		return redirect()->route('contact.people.show', $contact->id)->with([
 			'success_message' => 'Conact Successfully created...'
@@ -91,7 +108,7 @@ class ContactsController extends Controller
 
 	public function showPeople($id)
 	{
-		$contact = CrudHelper::show(new \App\People, 'id', $id);
+		$contact = CrudHelper::show(new \App\PeopleContact, 'id', $id, ['companies']);
 
 		if ($contact == null) {
 			abort(404);
@@ -104,7 +121,7 @@ class ContactsController extends Controller
 
 	public function editCompany($id)
 	{
-		$contact = CrudHelper::show(new \App\Company, 'id', $id);
+		$contact = CrudHelper::show(new \App\CompanyContact, 'id', $id);
 
 		return view('contact.companies.edit')->with([
 			'contact' => $contact
@@ -113,16 +130,24 @@ class ContactsController extends Controller
 
 	public function editPeople($id)
 	{
-		$contact = CrudHelper::show(new \App\People, 'id', $id);
+		$contact = CrudHelper::show(new \App\PeopleContact, 'id', $id, ['companies']);
+
+		if (isset($contact['companies']) && ! empty($contact['companies'])) {
+			$contactCompanies = $contact['companies'][0]['id'];
+		}
+
+		$companiesSelect = $this->companiesSelect();
 
 		return view('contact.people.edit')->with([
-			'contact' => $contact
+			'contact' => $contact,
+			'companiesSelect' => $companiesSelect,
+			'contactCompanies' => $contactCompanies
 		]);
 	}
 
 	public function deleteCompany(Request $request, $id)
 	{
-		$contact = CrudHelper::destroy(new \App\Company, 'id', $id);
+		$contact = CrudHelper::destroy(new \App\CompanyContact, 'id', $id);
 
 		return redirect()->route('contact.company.index')->with([
 			'success_message' => 'Contact has been deleted...'
@@ -131,7 +156,7 @@ class ContactsController extends Controller
 
 	public function deletePeople(Request $request, $id)
 	{
-		$contact = CrudHelper::destroy(new \App\People, 'id', $id);
+		$contact = CrudHelper::destroy(new \App\PeopleContact, 'id', $id);
 
 		return redirect()->route('contact.people.index')->with([
 			'success_message' => 'Contact has been deleted...'
@@ -140,7 +165,7 @@ class ContactsController extends Controller
 
 	public function updateCompany(Request $request, $id)
 	{
-		$contact = CrudHelper::show(new \App\Company, 'id', $id);
+		$contact = CrudHelper::show(new \App\CompanyContact, 'id', $id);
 
 		foreach ($request->all() as $updateField => $updateValue) {
 			$updateContact[$updateField] = $updateValue;
@@ -155,15 +180,24 @@ class ContactsController extends Controller
 
     	public function updatePeople(Request $request, $id)
     	{
-    		$avatarUpload = $this->avatarUpload($request->file('avatar'));
+    		if ($request->hasFile('avatar')) {
+			$avatarUpload = $this->avatarUpload($request->file('avatar'));
 
-    		$contact = CrudHelper::show(new \App\People, 'id', $id);
+			$updateContact['avatar'] = $avatarUpload;
+		}
+
+    		$contact = CrudHelper::show(new \App\PeopleContact, 'id', $id);
 
     		foreach ($request->all() as $updateField => $updateValue) {
     			$updateContact[$updateField] = $updateValue;
     		}
 
-    		$updateContact['avatar'] = $avatarUpload;
+    		if ($updateContact['company'] !== '0') {
+
+			$contactComapany = PeopleContact::find($contact['id']);
+
+			$contactComapany->companies()->sync([$updateContact['company']]);
+		}
 
     		$contact->update($updateContact);
 
@@ -183,5 +217,18 @@ class ContactsController extends Controller
     		$avatar = url('/') . '/' . $destinationPath . $fileName;
 
     		return $avatar;
+    	}
+
+    	public function companiesSelect()
+    	{
+    		$companies = CrudHelper::index(new \App\CompanyContact)->toArray();
+
+    		foreach ($companies as $companyKey => $companyValue) {
+    			$companiesSelect[$companyValue['id']] = $companyValue['name'];
+    		}
+
+    		$companiesSelect[0] = 'Select Company';
+
+    		return $companiesSelect;
     	}
 }
