@@ -21,7 +21,7 @@ class CompaniesTableSeeder extends Seeder
 		];
 
 		foreach ($companyMake as $go) {
-			$company = CrudHelper::store(new \App\Company, [
+			$company = CrudHelper::store(new \App\CompanyContact, [
 				'name' => 'IamCompany ' . str_random('10'),
 				'dba' => 'Company ' . str_random('10'),
 				'organization' => 'Organization ' . str_random('10'),
