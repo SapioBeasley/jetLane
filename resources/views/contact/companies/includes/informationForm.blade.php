@@ -65,10 +65,6 @@
 		</div>
 	</div>
 
-</div>
-
-<div class="col-md-6">
-
 	<div class="page-header">
 		<h6><strong>Address</strong></h6>
 	</div>
@@ -99,6 +95,10 @@
 		{!! Form::text('country', null, ['class' => 'form-control', 'placeholder' => 'Country']) !!}
 	</div>
 
+</div>
+
+<div class="col-md-6">
+
 	<div class="page-header">
 		<h6><strong>Website</strong></h6>
 	</div>
@@ -106,6 +106,11 @@
 	<div class="form-group">
 		{!! Form::label('website', 'Website') !!}
 		{!! Form::text('website', null, ['class' => 'form-control', 'placeholder' => 'Website']) !!}
+	</div>
+
+	<div class="form-group">
+		{!! Form::label('notes', 'Notes') !!}
+		{!! Form::textarea('notes', null, ['class' => 'form-control', 'placeholder' => 'Notes']) !!}
 	</div>
 
 </div>
