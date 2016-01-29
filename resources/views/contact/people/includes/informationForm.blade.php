@@ -17,6 +17,50 @@
 		{!! Form::text('first_name', null, ['class' => 'form-control', 'placeholder' => 'First Name']) !!}
 	</div>
 
+	<div id="form-group">
+		{!! Form::label('company', 'Company') !!}
+		{!! Form::select('company', $companiesSelect, ! is_null($contactCompanies) ? $contactCompanies : '0', ['class' => 'form-control']) !!}
+	</div>
+
+	<div class="page-header">
+		<h6>Person Type</h6>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+	      		<label class="col-md-4">
+	      			{!! Form::checkbox('type["lender"]', '1') !!} Lender
+	      		</label>
+
+	      		<label class="col-md-4">
+	      			{!! Form::checkbox('type["lender"]', '1') !!} Agent
+	      		</label>
+
+	      		<label class="col-md-4">
+	      			{!! Form::checkbox('type["lender"]', '1') !!} Broker
+	      		</label>
+	      		</div>
+		</div>
+		<div class="col-md-12">
+			<div class="row">
+	          		<label class="col-md-4">
+	          			{!! Form::checkbox('type["lender"]', '1') !!} Lister
+	          		</label>
+
+	          		<label class="col-md-4">
+	          			{!! Form::checkbox('type["lender"]', '1') !!} Client
+	          		</label>
+
+	          		<label class="col-md-4">
+	          			{!! Form::checkbox('type["lender"]', '1') !!} Lead
+	          		</label>
+			</div>
+		 </div>
+	 </div>
+
+
+
 	<div class="page-header">
 		<h6>Contact</h6>
 	</div>
@@ -147,6 +191,11 @@
 	<div class="form-group">
 		{!! Form::label('tax_id', 'Tax ID') !!}
 		{!! Form::text('tax_id', null, ['class' => 'form-control', 'placeholder' => 'Tax Id']) !!}
+	</div>
+
+	<div class="form-group">
+		{!! Form::label('notes', 'Notes') !!}
+		{!! Form::textarea('notes', null, ['class' => 'form-control', 'placeholder' => 'Notes']) !!}
 	</div>
 
 </div>
