@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTransactionsTable extends Migration
+class AddNotesToCompanyContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,8 @@ class CreateTransactionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
-            $table->increments('id');
-            $table->double('sale_price');
-            $table->timestamps();
+        Schema::table('company_contacts', function (Blueprint $table) {
+            $table->string('notes');
         });
     }
 
@@ -26,6 +24,8 @@ class CreateTransactionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('transactions');
+        Schema::table('company_contacts', function (Blueprint $table) {
+            $table->dropColumn('notes');
+        });
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePeopleCategoriesTable extends Migration
+class AddNotesToPeopleContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,8 @@ class CreatePeopleCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('people_categories', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('category');
-            $table->string('description');
-            $table->timestamps();
+        Schema::table('people_contacts', function (Blueprint $table) {
+            $table->string('notes');
         });
     }
 
@@ -27,6 +24,8 @@ class CreatePeopleCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('people_categories');
+        Schema::table('people_contacts', function (Blueprint $table) {
+            $table->dropColumn('notes');
+        });
     }
 }
