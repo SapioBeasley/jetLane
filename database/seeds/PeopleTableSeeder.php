@@ -21,7 +21,7 @@ class PeopleTableSeeder extends Seeder
 		];
 
 		foreach ($peopleMake as $go) {
-			$people = CrudHelper::store(new \App\People, [
+			$people = CrudHelper::store(new \App\PeopleContact, [
 				'first_name' => 'IamPerson ' . str_random('10'),
 				'middle_name' => 'MyMiddle ' . str_random('10'),
 				'last_name' => 'MyLast ' . str_random('10'),
