@@ -10,4 +10,9 @@ class PeopleCategory extends Model
 		'category',
        	'description',
 	];
+
+	public function peopleContacts()
+	{
+		return $this->belongsToMany('App\PeopleContact');
+	}
 }

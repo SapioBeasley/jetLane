@@ -30,4 +30,9 @@ class CompanyContact extends Model
 	{
 		return $this->belongsToMany('App\PeopleContact');
 	}
+
+	public function category()
+	{
+		return $this->belongsToMany('App\CompanyCategory');
+	}
 }

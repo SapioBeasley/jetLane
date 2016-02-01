@@ -15,7 +15,7 @@
 				</thead>
 				<tbody>
 
-					@foreach($peoples as $people)
+					@foreach($contacts as $people)
 						<tr>
 							<td>{{$people['first_name']}}</td>
 							<td>{{$people['last_name']}}</td>

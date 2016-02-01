@@ -20,6 +20,14 @@
 	</div>
 
 	<div class="page-header">
+		<h6>Company Type</h6>
+	</div>
+
+	<div class="row">
+		@include('contact.companies.includes.categories')
+	 </div>
+
+	<div class="page-header">
 		<h6><strong>Contact Information</strong></h6>
 	</div>
 

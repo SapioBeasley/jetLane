@@ -27,39 +27,8 @@
 	</div>
 
 	<div class="row">
-		<div class="col-md-12">
-			<div class="row">
-	      		<label class="col-md-4">
-	      			{!! Form::checkbox('type["lender"]', '1') !!} Lender
-	      		</label>
-
-	      		<label class="col-md-4">
-	      			{!! Form::checkbox('type["lender"]', '1') !!} Agent
-	      		</label>
-
-	      		<label class="col-md-4">
-	      			{!! Form::checkbox('type["lender"]', '1') !!} Broker
-	      		</label>
-	      		</div>
-		</div>
-		<div class="col-md-12">
-			<div class="row">
-	          		<label class="col-md-4">
-	          			{!! Form::checkbox('type["lender"]', '1') !!} Lister
-	          		</label>
-
-	          		<label class="col-md-4">
-	          			{!! Form::checkbox('type["lender"]', '1') !!} Client
-	          		</label>
-
-	          		<label class="col-md-4">
-	          			{!! Form::checkbox('type["lender"]', '1') !!} Lead
-	          		</label>
-			</div>
-		 </div>
+		@include('contact.people.includes.categories')
 	 </div>
-
-
 
 	<div class="page-header">
 		<h6>Contact</h6>

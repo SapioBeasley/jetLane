@@ -36,4 +36,9 @@ class PeopleContact extends Model
 	{
 		return $this->belongsToMany('App\CompanyContact');
 	}
+
+	public function category()
+	{
+		return $this->belongsToMany('App\PeopleCategory');
+	}
 }

@@ -15,7 +15,7 @@
 			</thead>
 			<tbody>
 
-				@foreach($companies as $company)
+				@foreach($contacts as $company)
 					<tr>
 						<td>{{$company['name']}}</td>
 						<td>{{$company['organization']}}</td>
