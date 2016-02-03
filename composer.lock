@@ -308,16 +308,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.12",
+            "version": "v5.2.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "6b6255ad7bfbdb721b8d00b09d52b146c5d363d7"
+                "reference": "0683b59b4b37e4a15614d62dfa7e526e35525df1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/6b6255ad7bfbdb721b8d00b09d52b146c5d363d7",
-                "reference": "6b6255ad7bfbdb721b8d00b09d52b146c5d363d7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/0683b59b4b37e4a15614d62dfa7e526e35525df1",
+                "reference": "0683b59b4b37e4a15614d62dfa7e526e35525df1",
                 "shasum": ""
             },
             "require": {
@@ -432,7 +432,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-01-26 04:15:37"
+            "time": "2016-02-02 14:57:14"
         },
         {
             "name": "laravelcollective/html",
@@ -1000,16 +1000,16 @@
         },
         {
             "name": "sapioweb/crudhelper",
-            "version": "1.2.5",
+            "version": "1.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SapioBeasley/crudHelper.git",
-                "reference": "b00beee501cbb28fd83b05e7c74fd303fef0388c"
+                "reference": "cf9f759abc401b9f7c3cb82816584ff0be51e318"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SapioBeasley/crudHelper/zipball/b00beee501cbb28fd83b05e7c74fd303fef0388c",
-                "reference": "b00beee501cbb28fd83b05e7c74fd303fef0388c",
+                "url": "https://api.github.com/repos/SapioBeasley/crudHelper/zipball/cf9f759abc401b9f7c3cb82816584ff0be51e318",
+                "reference": "cf9f759abc401b9f7c3cb82816584ff0be51e318",
                 "shasum": ""
             },
             "type": "library",
@@ -1046,7 +1046,7 @@
                 "show",
                 "update"
             ],
-            "time": "2016-02-01 23:55:16"
+            "time": "2016-02-03 01:01:24"
         },
         {
             "name": "spatie/laravel-tail",
@@ -2589,16 +2589,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.21",
+            "version": "4.8.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "ea76b17bced0500a28098626b84eda12dbcf119c"
+                "reference": "dfb11aa5236376b4fc63853cf746af39fe780e72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ea76b17bced0500a28098626b84eda12dbcf119c",
-                "reference": "ea76b17bced0500a28098626b84eda12dbcf119c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/dfb11aa5236376b4fc63853cf746af39fe780e72",
+                "reference": "dfb11aa5236376b4fc63853cf746af39fe780e72",
                 "shasum": ""
             },
             "require": {
@@ -2657,7 +2657,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-12-12 07:45:58"
+            "time": "2016-02-02 09:01:21"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

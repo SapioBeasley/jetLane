@@ -45,7 +45,7 @@ class ContactsController extends Controller
 
 	public function getAll($model)
 	{
-		$contacts = CrudHelper::index($model);
+		$contacts = CrudHelper::index($model)->get();
 
 		return $contacts;
 	}
@@ -101,7 +101,7 @@ class ContactsController extends Controller
 
 	public function companiesSelect()
     	{
-    		$companies = CrudHelper::index(new \App\CompanyContact)->toArray();
+    		$companies = CrudHelper::index(new \App\CompanyContact)->get();
 
     		foreach ($companies as $companyKey => $companyValue) {
     			$companiesSelect[$companyValue['id']] = $companyValue['name'];
@@ -114,7 +114,7 @@ class ContactsController extends Controller
 
     	public function getCategories($model)
     	{
-    		$categories = CrudHelper::index($model);
+    		$categories = CrudHelper::index($model)->get();
 
     		return $categories;
     	}
@@ -253,7 +253,7 @@ class ContactsController extends Controller
 
 	public function destroyContact($model, $id)
 	{
-		$contact = CrudHelper::destroy($model, 'id', $id);
+		$contact = CrudHelper::destroy($model, $id);
 
 		return $contact;
 	}
