@@ -20,12 +20,14 @@ class ContactsController extends Controller
 	*/
 	public function __construct()
 	{
+		$this->middleware('auth');
+
 		// installs global error and exception handlers
 		\Rollbar::init(array('access_token' => env('ROLLBAR_ACCESS_TOKEN')));
 
-		$this->middleware('auth');
-
-		$this->role = $this->getUsersRole(\Auth::user()->id);
+		if (\Auth::check()) {
+			$this->role = $this->getUsersRole(\Auth::user()->id);
+		}
 	}
 
 	public function getUsersRole($userId)
