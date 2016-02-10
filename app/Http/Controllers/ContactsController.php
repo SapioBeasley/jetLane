@@ -3,17 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Sapioweb\CrudHelper\CrudyController as CrudHelper;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\PeopleContact;
 use App\CompanyContact;
 
 class ContactsController extends Controller
 {
+	protected $role;
+
 	/**
 	* Create a new controller instance.
 	*
@@ -25,11 +24,28 @@ class ContactsController extends Controller
 		\Rollbar::init(array('access_token' => env('ROLLBAR_ACCESS_TOKEN')));
 
 		$this->middleware('auth');
+
+		$this->role = $this->getUsersRole(\Auth::user()->id);
+	}
+
+	public function getUsersRole($userId)
+	{
+		$user = CrudHelper::show(new \App\User, 'id', $userId, ['roles']);
+
+		$role= $user['roles']->first();
+
+		$role = [
+			'id' => $role->id,
+			'role' => $role->role,
+			'userId' => $user->id
+		];
+
+		return $role;
 	}
 
 	public function indexCompany()
 	{
-		$contacts = $this->getAll(new \App\CompanyContact);
+		$contacts = $this->getContactsByRole(new \App\CompanyContact);
 
 		return view('contact.companies.index')->with([
 			'contacts' => $contacts
@@ -38,11 +54,28 @@ class ContactsController extends Controller
 
 	public function indexPeople()
 	{
-		$contacts = $this->getAll(new \App\PeopleContact);
+		$contacts = $this->getContactsByRole(new \App\PeopleContact);
 
 		return view('contact.people.index')->with([
 			'contacts' => $contacts
 		]);
+	}
+
+	public function getContactsByRole($model)
+	{
+		switch (true) {
+			case $this->role['role'] === 'admin':
+				$contacts = $this->getAll($model);
+				break;
+
+			default:
+				$contacts = $model->whereHas('createdBy', function ($query) {
+   					$query->where('user_id', '=', $this->role['userId']);
+				})->get();
+				break;
+		}
+
+		return $contacts;
 	}
 
 	public function getAll($model)
@@ -133,6 +166,8 @@ class ContactsController extends Controller
 			$contact->category()->sync($categoryIds);
 		}
 
+		$this->createdBy($contact);
+
 		return redirect()->route('contact.company.show', $contact->id)->with([
 			'success_message' => 'Conact Successfully created...'
 		]);
@@ -158,9 +193,18 @@ class ContactsController extends Controller
 			$contact->save();
 		}
 
+		$this->createdBy($contact);
+
 		return redirect()->route('contact.people.show', $contact->id)->with([
 			'success_message' => 'Conact Successfully created...'
 		]);
+	}
+
+	public function createdBy($createdContact)
+	{
+		$createdContact->createdBy()->sync([(string) $this->role['userId']]);
+
+		return null;
 	}
 
 	public function createContact($model, $data)

@@ -35,4 +35,14 @@ class CompanyContact extends Model
 	{
 		return $this->belongsToMany('App\CompanyCategory');
 	}
+
+	public function createdBy()
+	{
+		return $this->belongsToMany('App\User');
+	}
+
+	public function canView()
+	{
+		return $this->belongsToMany('App\User');
+	}
 }

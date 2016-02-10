@@ -45,6 +45,12 @@ class PeopleTableSeeder extends Seeder
 				'avatar' => 'https://source.unsplash.com/category/buildings/?nature=' . rand('1', '90'),
 				'tax_id' => rand('1111111111', '9999999999')
 			]);
+
+			$people = CrudHelper::show(new \App\PeopleContact, 'id', $people['id']);
+
+			$userId = (string) rand(1,3);
+
+			$people->createdBy()->sync([$userId]);
 		}
 	}
 }

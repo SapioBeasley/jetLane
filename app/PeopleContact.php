@@ -41,4 +41,14 @@ class PeopleContact extends Model
 	{
 		return $this->belongsToMany('App\PeopleCategory');
 	}
+
+	public function createdBy()
+	{
+		return $this->belongsToMany('App\User');
+	}
+
+	public function canView()
+	{
+		return $this->belongsToMany('App\User');
+	}
 }
