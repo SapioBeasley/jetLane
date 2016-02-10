@@ -23,6 +23,8 @@ class ContactsController extends Controller
 	{
 		// installs global error and exception handlers
 		\Rollbar::init(array('access_token' => env('ROLLBAR_ACCESS_TOKEN')));
+
+		$this->middleware('auth');
 	}
 
 	public function indexCompany()
