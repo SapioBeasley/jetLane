@@ -15,45 +15,64 @@ class ContactsController extends Controller
 
 	/**
 	* Create a new controller instance.
-	*
 	* @return void
 	*/
 	public function __construct()
 	{
+		// Instanciate the middleware auth
 		$this->middleware('auth');
 
 		// installs global error and exception handlers
 		\Rollbar::init(array('access_token' => env('ROLLBAR_ACCESS_TOKEN')));
 
+		// Check if user is logged in
 		if (\Auth::check()) {
+
+			// if user is logged in, run the 'getUsersRole' method
 			$this->role = $this->getUsersRole(\Auth::user()->id);
 		}
 	}
 
+	/**
+	 * Grab a logged in users role and who they are
+	 * @param  int          $userId     the id of the logged in user
+	 * @return   array                        return the role id, the actual ame of the role, and the users id
+	 */
 	public function getUsersRole($userId)
 	{
+		// Find a user by their ID
 		$user = CrudHelper::show(new \App\User, 'id', $userId, ['roles']);
 
+		// Define the role from the users information
 		$role= $user['roles']->first();
 
+		// Build role array
 		$role = [
 			'id' => $role->id,
 			'role' => $role->role,
 			'userId' => $user->id
 		];
 
+		// Return the role data
 		return $role;
 	}
 
+	/**
+	 * Show all company contact
+	 * @return collection      A collection of all contacts that are companies
+	 */
 	public function indexCompany()
 	{
+		// Using the getContactByRole we pull specific contacts for the user if not admin
 		$contacts = $this->getContactsByRole(new \App\CompanyContact);
 
+		// Return the contacts
 		return view('contact.companies.index')->with([
 			'contacts' => $contacts
 		]);
 	}
 
+	// Show all people contacts
 	public function indexPeople()
 	{
 		$contacts = $this->getContactsByRole(new \App\PeopleContact);
@@ -80,8 +99,15 @@ class ContactsController extends Controller
 		return $contacts;
 	}
 
+	/**
+	 * Grab all contacts for the supplied model
+	 * @uses  	 CrudHelper::index Grabs all items for a given model
+	 * @param  Eloquent     $model     The eloquent model to search contacts
+	 * @return   Collection                      The collection of all contacts
+	 */
 	public function getAll($model)
 	{
+		// Grab all contacts using the Sapioweb CrudHelper
 		$contacts = CrudHelper::index($model)->get();
 
 		return $contacts;
