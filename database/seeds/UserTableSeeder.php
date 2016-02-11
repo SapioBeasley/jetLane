@@ -20,13 +20,13 @@ class UserTableSeeder extends Seeder
 				'role' => '1'
 			],
 			[
-				'name' => 'Andreas Agent' . rand(1, 100),
+				'name' => 'Andreas Agent',
 				'email' => 'andreas2@sapioweb.com',
 				'password' => bcrypt('2wsxzaq1'),
 				'role' => '2'
 			],
 			[
-				'name' => 'Andreas Lender' . rand(1, 100),
+				'name' => 'Andreas Lender',
 				'email' => 'andreas3@sapioweb.com',
 				'password' => bcrypt('2wsxzaq1'),
 				'role' => '3'
