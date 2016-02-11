@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;div id=&quot;sidebar&quot; class=&quot;sidebar&quot;&gt;
+	&lt;h5&gt;
+		&lt;small&gt;&lt;b&gt;Accounting&lt;/b&gt; (Coming Soon)&lt;/small&gt;
+	&lt;/h5&gt;
+	&lt;h5&gt;
+		&lt;small&gt;&lt;b&gt;Admin&lt;/b&gt; (Coming Soon)&lt;/small&gt;
+	&lt;/h5&gt;
+	&lt;h5&gt;
+		&lt;small&gt;&lt;b&gt;Calendar&lt;/b&gt; (Coming Soon)&lt;/small&gt;
+	&lt;/h5&gt;
+	&lt;h5&gt;
+		&lt;small&gt;&lt;b&gt;Contacts&lt;/b&gt;&lt;/small&gt;
+	&lt;/h5&gt;
+	&lt;ul class=&quot;nav nav-sidebar&quot;&gt;
+		&lt;li&gt;&lt;a href=&quot;{{route('contact.people.index')}}&quot;&gt;View People&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;{{route('contact.company.index')}}&quot;&gt;View Companies&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;{{route('contact.people.create')}}&quot;&gt;Add People&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;{{route('contact.company.create')}}&quot;&gt;Add Companies&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;h5&gt;
+		&lt;small&gt;&lt;b&gt;Documents&lt;/b&gt; (Coming Soon)&lt;/small&gt;
+	&lt;/h5&gt;
+	&lt;h5&gt;
+		&lt;small&gt;&lt;b&gt;Marketing&lt;/b&gt; (Coming Soon)&lt;/small&gt;
+	&lt;/h5&gt;
+	&lt;h5&gt;
+		&lt;small&gt;&lt;b&gt;Properties&lt;/b&gt; (Coming Soon)&lt;/small&gt;
+	&lt;/h5&gt;
+	&lt;h5&gt;
+		&lt;small&gt;&lt;b&gt;Transactions&lt;/b&gt; (Coming Soon)&lt;/small&gt;
+	&lt;/h5&gt;
+&lt;/div&gt;
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

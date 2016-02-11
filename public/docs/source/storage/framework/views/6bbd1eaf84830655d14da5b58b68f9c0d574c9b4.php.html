@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php $__env-&gt;startSection('content'); ?&gt;
+&lt;h4&gt;View All Companies&lt;/h4&gt;
+
+&lt;div class=&quot;panel panel-default&quot;&gt;
+	&lt;div class=&quot;panel-body&quot;&gt;
+
+		&lt;?php if(empty($contacts[0])): ?&gt;
+			No contacts found. &lt;a href=&quot;&lt;?php echo e(route('contact.company.create')); ?&gt;&quot;&gt;Add a contact&lt;/a&gt;
+		&lt;?php else: ?&gt;
+			&lt;table class=&quot;table table-striped table-hover&quot;&gt;
+				&lt;thead&gt;
+					&lt;tr&gt;
+						&lt;th&gt;Company Name&lt;/th&gt;
+						&lt;th&gt;Organization&lt;/th&gt;
+						&lt;th&gt;Created By&lt;/th&gt;
+						&lt;th&gt;Primary Phone&lt;/th&gt;
+					&lt;/tr&gt;
+				&lt;/thead&gt;
+				&lt;tbody&gt;
+
+					&lt;?php foreach($contacts as $company): ?&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;?php echo e($company['name']); ?&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;?php echo e($company['organization']); ?&gt;&lt;/td&gt;
+
+							&lt;?php if(\Auth::user()-&gt;email === $company['createdBy'][0]['email']): ?&gt;
+								&lt;td&gt;Created by You&lt;/td&gt;
+							&lt;?php else: ?&gt;
+								&lt;td&gt;&lt;?php echo e($company['createdBy'][0]['email']); ?&gt;&lt;/td&gt;
+							&lt;?php endif; ?&gt;
+
+							&lt;td&gt;&lt;?php echo e($company['phone']); ?&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href=&quot;&lt;?php echo e(route('contact.company.show', $company['id'])); ?&gt;&quot; class=&quot;btn btn-xs&quot;&gt;View Company&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;?php endforeach; ?&gt;
+
+				&lt;/tbody&gt;
+			&lt;/table&gt;
+		&lt;?php endif; ?&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;?php $__env-&gt;stopSection(); ?&gt;
+
+&lt;?php echo $__env-&gt;make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))-&gt;render(); ?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

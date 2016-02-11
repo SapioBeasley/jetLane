@@ -1,0 +1,24 @@
+@extends('layouts.app')
+
+@section('content')
+<h4>Add New Company</h4>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+
+		{!! Form::open(['route' => 'contact.company.store']) !!}
+
+			@include('contact.companies.includes.informationForm')
+
+			<div class="col-md-12">
+				<div class="form-group">
+					{!! Form::submit('Create', ['class' => 'btn btn-primary']) !!}
+				</div>
+			</div>
+
+		{!! Form::close() !!}
+
+	</div>
+</div>
+@endsection
+

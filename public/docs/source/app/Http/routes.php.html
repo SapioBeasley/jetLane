@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+
+/*
+|--------------------------------------------------------------------------
+| Routes File
+|--------------------------------------------------------------------------
+|
+| Here is where you will register all of the routes in an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| This route group applies the &quot;web&quot; middleware group to every route
+| it contains. The &quot;web&quot; middleware group is defined in your HTTP
+| kernel and includes session state, CSRF protection, and more.
+|
+*/
+
+Route::group(['middleware' =&gt; 'web'], function () {
+    Route::auth();
+    Route::get('/', 'HomeController@index');
+    Route::get('/admin', 'AdminController@dashboard');
+
+    Route::get('/contact/people', [
+    	'as' =&gt; 'contact.people.index',
+    	'uses' =&gt; 'ContactsController@indexPeople'
+    ]);
+
+    Route::get('/contact/company', [
+    	'as' =&gt; 'contact.company.index',
+    	'uses' =&gt; 'ContactsController@indexCompany'
+    ]);
+
+    Route::get('/contact/people/create', [
+    	'as' =&gt; 'contact.people.create',
+    	'uses' =&gt; 'ContactsController@createPeople'
+    ]);
+
+    Route::get('/contact/company/create', [
+        'as' =&gt; 'contact.company.create',
+        'uses' =&gt; 'ContactsController@createCompany'
+    ]);
+
+    Route::post('/contact/people/store', [
+        'as' =&gt; 'contact.people.store',
+        'uses' =&gt; 'ContactsController@storePeople'
+    ]);
+
+    Route::post('/contact/company/store', [
+        'as' =&gt; 'contact.company.store',
+        'uses' =&gt; 'ContactsController@storeCompany'
+    ]);
+
+    Route::get('/contact/company/{id}', [
+        'as' =&gt; 'contact.company.show',
+        'uses' =&gt; 'ContactsController@showCompany'
+    ]);
+
+    Route::get('/contact/people/{id}', [
+        'as' =&gt; 'contact.people.show',
+        'uses' =&gt; 'ContactsController@showPeople'
+    ]);
+
+    Route::get('/contact/company/{id}/edit', [
+        'as' =&gt; 'contact.company.edit',
+        'uses' =&gt; 'ContactsController@editCompany'
+    ]);
+
+    Route::get('/contact/people/{id}/edit', [
+        'as' =&gt; 'contact.people.edit',
+        'uses' =&gt; 'ContactsController@editPeople'
+    ]);
+
+    Route::put('/contact/company/{id}/update', [
+        'as' =&gt; 'contact.company.update',
+        'uses' =&gt; 'ContactsController@updateCompany'
+    ]);
+
+    Route::put('/contact/people/{id}/update', [
+        'as' =&gt; 'contact.people.update',
+        'uses' =&gt; 'ContactsController@updatePeople'
+    ]);
+
+    Route::delete('/contact/company/{id}/delete', [
+        'as' =&gt; 'contact.company.delete',
+        'uses' =&gt; 'ContactsController@deleteCompany'
+    ]);
+
+    Route::delete('/contact/people/{id}/delete', [
+        'as' =&gt; 'contact.people.delete',
+        'uses' =&gt; 'ContactsController@deletePeople'
+    ]);
+});
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

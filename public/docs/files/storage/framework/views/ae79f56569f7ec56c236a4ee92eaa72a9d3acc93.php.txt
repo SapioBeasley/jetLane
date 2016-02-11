@@ -1,0 +1,20 @@
+<div class="col-md-12">
+	<div class="row">
+
+		<?php foreach($selectedCategories as $selectedCategory): ?>
+			<label class="col-md-6">
+				<?php echo Form::checkbox('category[' . $selectedCategory['category'] . ']', '1', '1'); ?> <?php echo e($selectedCategory['category']); ?>
+
+			</label>
+		<?php endforeach; ?>
+
+		<?php foreach($peopleCategories as $peopleCategory): ?>
+			<label class="col-md-6">
+				<?php echo Form::checkbox('category[' . $peopleCategory['category'] . ']', '1'); ?> <?php echo e($peopleCategory['category']); ?>
+
+			</label>
+		<?php endforeach; ?>
+
+	</div>
+</div>
+

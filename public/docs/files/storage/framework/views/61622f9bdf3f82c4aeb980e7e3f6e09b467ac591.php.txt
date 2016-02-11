@@ -1,0 +1,23 @@
+<?php if(Session::has('success_message')): ?>
+
+	<div class="alert alert-success">
+		<h4>Success!</h4>
+		<p><?php echo e(Session::get('success_message')); ?></p>
+	</div>
+
+<?php elseif(Session::has('warning_message')): ?>
+
+	<div class="alert alert-warning">
+		<h4>Warning!</h4>
+		<p><?php echo e(Session::get('warning_message')); ?></p>
+	</div>
+
+<?php elseif(Session::has('fail_message')): ?>
+
+	<div class="alert alert-danger">
+		<h4>Error!</h4>
+		<p><?php echo e(Session::get('fail_message')); ?></p>
+	</div>
+
+<?php endif; ?>
+

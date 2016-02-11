@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class PeopleContact extends Model
+{
+	protected $fillable = [
+		'first_name',
+		'middle_name',
+		'last_name',
+		'birthday_day',
+		'birthday_month',
+		'birthday_year',
+		'gender',
+		'address_street',
+		'address_city',
+		'address_state',
+		'address_zip',
+		'country',
+		'home_phone',
+		'business_phone',
+		'mobile_phone',
+		'other_phone',
+		'fax',
+		'email_1',
+		'email_2',
+		'email_3',
+		'avatar',
+		'tax_id',
+		'notes',
+	];
+
+	public function companies()
+	{
+		return $this-&gt;belongsToMany('App\CompanyContact');
+	}
+
+	public function category()
+	{
+		return $this-&gt;belongsToMany('App\PeopleCategory');
+	}
+
+	public function createdBy()
+	{
+		return $this-&gt;belongsToMany('App\User');
+	}
+
+	public function canView()
+	{
+		return $this-&gt;belongsToMany('App\User');
+	}
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

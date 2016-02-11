@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Filesystem Disk
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the default filesystem disk that should be used
+    | by the framework. A &quot;local&quot; driver, as well as a variety of cloud
+    | based drivers are available for your choosing. Just store away!
+    |
+    | Supported: &quot;local&quot;, &quot;ftp&quot;, &quot;s3&quot;, &quot;rackspace&quot;
+    |
+    */
+
+    'default' =&gt; 'local',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Cloud Filesystem Disk
+    |--------------------------------------------------------------------------
+    |
+    | Many applications store files both locally and in the cloud. For this
+    | reason, you may specify a default &quot;cloud&quot; driver here. This driver
+    | will be bound as the Cloud disk implementation in the container.
+    |
+    */
+
+    'cloud' =&gt; 's3',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Filesystem Disks
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure as many filesystem &quot;disks&quot; as you wish, and you
+    | may even configure multiple disks of the same driver. Defaults have
+    | been setup for each driver as an example of the required options.
+    |
+    */
+
+    'disks' =&gt; [
+
+        'local' =&gt; [
+            'driver' =&gt; 'local',
+            'root'   =&gt; storage_path('app'),
+        ],
+
+        'ftp' =&gt; [
+            'driver'   =&gt; 'ftp',
+            'host'     =&gt; 'ftp.example.com',
+            'username' =&gt; 'your-username',
+            'password' =&gt; 'your-password',
+
+            // Optional FTP Settings...
+            // 'port'     =&gt; 21,
+            // 'root'     =&gt; '',
+            // 'passive'  =&gt; true,
+            // 'ssl'      =&gt; true,
+            // 'timeout'  =&gt; 30,
+        ],
+
+        's3' =&gt; [
+            'driver' =&gt; 's3',
+            'key'    =&gt; 'your-key',
+            'secret' =&gt; 'your-secret',
+            'region' =&gt; 'your-region',
+            'bucket' =&gt; 'your-bucket',
+        ],
+
+        'rackspace' =&gt; [
+            'driver'    =&gt; 'rackspace',
+            'username'  =&gt; 'your-username',
+            'key'       =&gt; 'your-key',
+            'container' =&gt; 'your-container',
+            'endpoint'  =&gt; 'https://identity.api.rackspacecloud.com/v2.0/',
+            'region'    =&gt; 'IAD',
+            'url_type'  =&gt; 'publicURL',
+        ],
+
+    ],
+
+];
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,3652 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>API Documentation</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="css/template.css" rel="stylesheet" media="all">
+<script src="js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="js/bootstrap.js" type="text/javascript"></script><script src="js/template.js" type="text/javascript"></script><script src="js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="img/favicon.ico">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="index.html">API Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="namespaces/App.html"><i class="icon-th"></i> App</a></li>
+<li><a href="namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">306</span></a></li>
+<li><a href="markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4"><ul class="side-nav nav nav-list">
+<li class="nav-header">Filter type</li>
+<li><div class="btn-group type-filter" data-toggle="buttons-checkbox">
+<button class="btn critical">Critical</button><button class="btn error">Error</button><button class="btn notice">Notice</button>
+</div></li>
+<li class="nav-header">Navigation</li>
+<li><a href="#database/seeds/CompanyCategoriesSeeder.php"><i class="icon-file"></i>database/seeds/CompanyCategoriesSeeder.php</a></li>
+<li><a href="#database/migrations/2016_01_29_062622_add_notes_to_people_contacts_table.php"><i class="icon-file"></i>database/migrations/2016_01_29_062622_add_notes_to_people_contacts_table.php</a></li>
+<li><a href="#bootstrap/autoload.php"><i class="icon-file"></i>bootstrap/autoload.php</a></li>
+<li><a href="#config/cache.php"><i class="icon-file"></i>config/cache.php</a></li>
+<li><a href="#storage/framework/views/19000e860bfda4917dfec98ce8ed55eb21d30d04.php"><i class="icon-file"></i>storage/framework/views/19000e860bfda4917dfec98ce8ed55eb21d30d04.php</a></li>
+<li><a href="#database/migrations/2016_01_29_182426_create_people_category_people_contact_pivot_table.php"><i class="icon-file"></i>database/migrations/2016_01_29_182426_create_people_category_people_contact_pivot_table.php</a></li>
+<li><a href="#resources/views/contact/companies/edit.blade.php"><i class="icon-file"></i>resources/views/contact/companies/edit.blade.php</a></li>
+<li><a href="#database/factories/ModelFactory.php"><i class="icon-file"></i>database/factories/ModelFactory.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_211341_create_property_transaction_pivot_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_211341_create_property_transaction_pivot_table.php</a></li>
+<li><a href="#database/migrations/2016_01_29_052437_create_company_contact_people_contact_pivot_table.php"><i class="icon-file"></i>database/migrations/2016_01_29_052437_create_company_contact_people_contact_pivot_table.php</a></li>
+<li><a href="#app/Http/Middleware/RedirectIfAuthenticated.php"><i class="icon-file"></i>app/Http/Middleware/RedirectIfAuthenticated.php</a></li>
+<li><a href="#app/Role.php"><i class="icon-file"></i>app/Role.php</a></li>
+<li><a href="#config/mail.php"><i class="icon-file"></i>config/mail.php</a></li>
+<li><a href="#storage/framework/views/ae79f56569f7ec56c236a4ee92eaa72a9d3acc93.php"><i class="icon-file"></i>storage/framework/views/ae79f56569f7ec56c236a4ee92eaa72a9d3acc93.php</a></li>
+<li><a href="#app/TransactionType.php"><i class="icon-file"></i>app/TransactionType.php</a></li>
+<li><a href="#app/Http/Middleware/EncryptCookies.php"><i class="icon-file"></i>app/Http/Middleware/EncryptCookies.php</a></li>
+<li><a href="#tests/ExampleTest.php"><i class="icon-file"></i>tests/ExampleTest.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_195621_create_user_categories_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_195621_create_user_categories_table.php</a></li>
+<li><a href="#storage/framework/views/f2dffb8f9cb592ebdd5e0bc30a47fa44cd83e442.php"><i class="icon-file"></i>storage/framework/views/f2dffb8f9cb592ebdd5e0bc30a47fa44cd83e442.php</a></li>
+<li><a href="#storage/framework/views/8085de3da6e074799193f0957d73e8233dd7bdf3.php"><i class="icon-file"></i>storage/framework/views/8085de3da6e074799193f0957d73e8233dd7bdf3.php</a></li>
+<li><a href="#database/migrations/2016_02_10_214806_create_people_contact_user_pivot_table.php"><i class="icon-file"></i>database/migrations/2016_02_10_214806_create_people_contact_user_pivot_table.php</a></li>
+<li><a href="#database/seeds/UserTableSeeder.php"><i class="icon-file"></i>database/seeds/UserTableSeeder.php</a></li>
+<li><a href="#database/migrations/2016_01_29_161911_create_company_categories_table.php"><i class="icon-file"></i>database/migrations/2016_01_29_161911_create_company_categories_table.php</a></li>
+<li><a href="#config/compile.php"><i class="icon-file"></i>config/compile.php</a></li>
+<li><a href="#resources/views/home.blade.php"><i class="icon-file"></i>resources/views/home.blade.php</a></li>
+<li><a href="#database/migrations/2016_01_29_062626_add_notes_to_company_contacts_table.php"><i class="icon-file"></i>database/migrations/2016_01_29_062626_add_notes_to_company_contacts_table.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_200453_create_people_category_people_pivot_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_200453_create_people_category_people_pivot_table.php</a></li>
+<li><a href="#resources/views/auth/passwords/email.blade.php"><i class="icon-file"></i>resources/views/auth/passwords/email.blade.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_211343_create_transaction_status_transaction_pivot_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_211343_create_transaction_status_transaction_pivot_table.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_211343_create_timing_template_transaction_pivot_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_211343_create_timing_template_transaction_pivot_table.php</a></li>
+<li><a href="#storage/framework/views/61622f9bdf3f82c4aeb980e7e3f6e09b467ac591.php"><i class="icon-file"></i>storage/framework/views/61622f9bdf3f82c4aeb980e7e3f6e09b467ac591.php</a></li>
+<li><a href="#database/migrations/2016_01_29_012248_create_company_contacts_table.php"><i class="icon-file"></i>database/migrations/2016_01_29_012248_create_company_contacts_table.php</a></li>
+<li><a href="#app/TimingTemplate.php"><i class="icon-file"></i>app/TimingTemplate.php</a></li>
+<li><a href="#database/migrations/2014_10_12_100000_create_password_resets_table.php"><i class="icon-file"></i>database/migrations/2014_10_12_100000_create_password_resets_table.php</a></li>
+<li><a href="#resources/views/contact/people/create.blade.php"><i class="icon-file"></i>resources/views/contact/people/create.blade.php</a></li>
+<li><a href="#resources/views/contact/companies/includes/informationForm.blade.php"><i class="icon-file"></i>resources/views/contact/companies/includes/informationForm.blade.php</a></li>
+<li><a href="#app/Http/Controllers/HomeController.php"><i class="icon-file"></i>app/Http/Controllers/HomeController.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_210456_create_property_categories_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_210456_create_property_categories_table.php</a></li>
+<li><a href="#database/seeds/PeopleTableSeeder.php"><i class="icon-file"></i>database/seeds/PeopleTableSeeder.php</a></li>
+<li><a href="#resources/views/auth/emails/password.blade.php"><i class="icon-file"></i>resources/views/auth/emails/password.blade.php</a></li>
+<li><a href="#app/Http/Controllers/Auth/PasswordController.php"><i class="icon-file"></i>app/Http/Controllers/Auth/PasswordController.php</a></li>
+<li><a href="#app/Http/routes.php"><i class="icon-file"></i>app/Http/routes.php</a></li>
+<li><a href="#app/User.php"><i class="icon-file"></i>app/User.php</a></li>
+<li><a href="#storage/framework/views/5c3dc923b533d73c2a4dd4e8d509cf65b573557c.php"><i class="icon-file"></i>storage/framework/views/5c3dc923b533d73c2a4dd4e8d509cf65b573557c.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_195626_create_company_categories_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_195626_create_company_categories_table.php</a></li>
+<li><a href="#resources/views/includes/statusMessages.blade.php"><i class="icon-file"></i>resources/views/includes/statusMessages.blade.php</a></li>
+<li><a href="#resources/views/contact/people/show.blade.php"><i class="icon-file"></i>resources/views/contact/people/show.blade.php</a></li>
+<li><a href="#app/Events/Event.php"><i class="icon-file"></i>app/Events/Event.php</a></li>
+<li><a href="#config/app.php"><i class="icon-file"></i>config/app.php</a></li>
+<li><a href="#resources/lang/en/passwords.php"><i class="icon-file"></i>resources/lang/en/passwords.php</a></li>
+<li><a href="#database/migrations/2016_01_29_012011_create_people_contacts_table.php"><i class="icon-file"></i>database/migrations/2016_01_29_012011_create_people_contacts_table.php</a></li>
+<li><a href="#storage/framework/views/15f809afeffa52cdce93059aae452eec166e6504.php"><i class="icon-file"></i>storage/framework/views/15f809afeffa52cdce93059aae452eec166e6504.php</a></li>
+<li><a href="#storage/framework/views/4bec847578f1936e92554ace573678215d700ac4.php"><i class="icon-file"></i>storage/framework/views/4bec847578f1936e92554ace573678215d700ac4.php</a></li>
+<li><a href="#database/seeds/RolesTableSeeder.php"><i class="icon-file"></i>database/seeds/RolesTableSeeder.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_210458_create_timing_status_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_210458_create_timing_status_table.php</a></li>
+<li><a href="#resources/views/auth/passwords/reset.blade.php"><i class="icon-file"></i>resources/views/auth/passwords/reset.blade.php</a></li>
+<li><a href="#resources/views/contact/companies/show.blade.php"><i class="icon-file"></i>resources/views/contact/companies/show.blade.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_210503_create_timing_template_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_210503_create_timing_template_table.php</a></li>
+<li><a href="#config/database.php"><i class="icon-file"></i>config/database.php</a></li>
+<li><a href="#resources/views/contact/people/includes/informationForm.blade.php"><i class="icon-file"></i>resources/views/contact/people/includes/informationForm.blade.php</a></li>
+<li><a href="#app/PeopleContact.php"><i class="icon-file"></i>app/PeopleContact.php</a></li>
+<li><a href="#database/migrations/2016_02_10_192636_create_role_user_pivot_table.php"><i class="icon-file"></i>database/migrations/2016_02_10_192636_create_role_user_pivot_table.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_211342_create_timing_status_transaction_pivot_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_211342_create_timing_status_transaction_pivot_table.php</a></li>
+<li><a href="#app/UserCategory.php"><i class="icon-file"></i>app/UserCategory.php</a></li>
+<li><a href="#app/Http/Requests/Request.php"><i class="icon-file"></i>app/Http/Requests/Request.php</a></li>
+<li><a href="#app/CompanyContact.php"><i class="icon-file"></i>app/CompanyContact.php</a></li>
+<li><a href="#storage/framework/views/59e00e9e96b533b9db2b24e8d882316740c1b096.php"><i class="icon-file"></i>storage/framework/views/59e00e9e96b533b9db2b24e8d882316740c1b096.php</a></li>
+<li><a href="#storage/framework/views/1bfd6877e42c29d0511e32439a75bf915f54bee1.php"><i class="icon-file"></i>storage/framework/views/1bfd6877e42c29d0511e32439a75bf915f54bee1.php</a></li>
+<li><a href="#storage/framework/views/6bbd1eaf84830655d14da5b58b68f9c0d574c9b4.php"><i class="icon-file"></i>storage/framework/views/6bbd1eaf84830655d14da5b58b68f9c0d574c9b4.php</a></li>
+<li><a href="#resources/views/layouts/app.blade.php"><i class="icon-file"></i>resources/views/layouts/app.blade.php</a></li>
+<li><a href="#app/Providers/EventServiceProvider.php"><i class="icon-file"></i>app/Providers/EventServiceProvider.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_195622_create_people_categories_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_195622_create_people_categories_table.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_195638_create_user_category_user_pivot_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_195638_create_user_category_user_pivot_table.php</a></li>
+<li><a href="#app/Http/Controllers/Controller.php"><i class="icon-file"></i>app/Http/Controllers/Controller.php</a></li>
+<li><a href="#database/migrations/2016_01_29_182442_create_company_category_company_contact_pivot_table.php"><i class="icon-file"></i>database/migrations/2016_01_29_182442_create_company_category_company_contact_pivot_table.php</a></li>
+<li><a href="#storage/framework/views/910f77f221682cb6da021248442313b94f414e2c.php"><i class="icon-file"></i>storage/framework/views/910f77f221682cb6da021248442313b94f414e2c.php</a></li>
+<li><a href="#storage/framework/views/f0eb771709f10a03a015b5974f7ac15c82ef4772.php"><i class="icon-file"></i>storage/framework/views/f0eb771709f10a03a015b5974f7ac15c82ef4772.php</a></li>
+<li><a href="#resources/lang/en/auth.php"><i class="icon-file"></i>resources/lang/en/auth.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_210457_create_property_property_category_pivot_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_210457_create_property_property_category_pivot_table.php</a></li>
+<li><a href="#resources/views/errors/404.blade.php"><i class="icon-file"></i>resources/views/errors/404.blade.php</a></li>
+<li><a href="#app/CompanyCategory.php"><i class="icon-file"></i>app/CompanyCategory.php</a></li>
+<li><a href="#resources/views/admin/dashboard.blade.php"><i class="icon-file"></i>resources/views/admin/dashboard.blade.php</a></li>
+<li><a href="#app/Transaction.php"><i class="icon-file"></i>app/Transaction.php</a></li>
+<li><a href="#app/Http/Middleware/VerifyCsrfToken.php"><i class="icon-file"></i>app/Http/Middleware/VerifyCsrfToken.php</a></li>
+<li><a href="#app/Http/Kernel.php"><i class="icon-file"></i>app/Http/Kernel.php</a></li>
+<li><a href="#config/queue.php"><i class="icon-file"></i>config/queue.php</a></li>
+<li><a href="#storage/framework/views/d0dfc3422edefa839a84b694faf7b8311bdd71d1.php"><i class="icon-file"></i>storage/framework/views/d0dfc3422edefa839a84b694faf7b8311bdd71d1.php</a></li>
+<li><a href="#app/Providers/AppServiceProvider.php"><i class="icon-file"></i>app/Providers/AppServiceProvider.php</a></li>
+<li><a href="#app/Providers/AuthServiceProvider.php"><i class="icon-file"></i>app/Providers/AuthServiceProvider.php</a></li>
+<li><a href="#app/PropertyCategory.php"><i class="icon-file"></i>app/PropertyCategory.php</a></li>
+<li><a href="#app/TimingStatus.php"><i class="icon-file"></i>app/TimingStatus.php</a></li>
+<li><a href="#resources/views/contact/companies/includes/categories.blade.php"><i class="icon-file"></i>resources/views/contact/companies/includes/categories.blade.php</a></li>
+<li><a href="#config/filesystems.php"><i class="icon-file"></i>config/filesystems.php</a></li>
+<li><a href="#config/session.php"><i class="icon-file"></i>config/session.php</a></li>
+<li><a href="#resources/views/errors/503.blade.php"><i class="icon-file"></i>resources/views/errors/503.blade.php</a></li>
+<li><a href="#storage/framework/views/a29940245b48c43dbfeadec3ad194062f9dd5bfd.php"><i class="icon-file"></i>storage/framework/views/a29940245b48c43dbfeadec3ad194062f9dd5bfd.php</a></li>
+<li><a href="#database/migrations/2016_01_29_161853_create_people_categories_table.php"><i class="icon-file"></i>database/migrations/2016_01_29_161853_create_people_categories_table.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_195638_create_people_user_pivot_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_195638_create_people_user_pivot_table.php</a></li>
+<li><a href="#config/view.php"><i class="icon-file"></i>config/view.php</a></li>
+<li><a href="#database/migrations/2014_10_12_000000_create_users_table.php"><i class="icon-file"></i>database/migrations/2014_10_12_000000_create_users_table.php</a></li>
+<li><a href="#resources/views/contact/people/index.blade.php"><i class="icon-file"></i>resources/views/contact/people/index.blade.php</a></li>
+<li><a href="#app/Property.php"><i class="icon-file"></i>app/Property.php</a></li>
+<li><a href="#storage/framework/views/6c5f0b848ec4a98a6daac93fa0ed6b0a8be74b1d.php"><i class="icon-file"></i>storage/framework/views/6c5f0b848ec4a98a6daac93fa0ed6b0a8be74b1d.php</a></li>
+<li><a href="#app/PeopleCategory.php"><i class="icon-file"></i>app/PeopleCategory.php</a></li>
+<li><a href="#database/migrations/2016_02_10_192458_create_roles_table.php"><i class="icon-file"></i>database/migrations/2016_02_10_192458_create_roles_table.php</a></li>
+<li><a href="#resources/views/contact/people/includes/categories.blade.php"><i class="icon-file"></i>resources/views/contact/people/includes/categories.blade.php</a></li>
+<li><a href="#storage/framework/views/5e933ecff107f1101a646d5baf7ecaefeed65a4c.php"><i class="icon-file"></i>storage/framework/views/5e933ecff107f1101a646d5baf7ecaefeed65a4c.php</a></li>
+<li><a href="#tests/TestCase.php"><i class="icon-file"></i>tests/TestCase.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_210454_create_properties_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_210454_create_properties_table.php</a></li>
+<li><a href="#resources/views/contact/people/edit.blade.php"><i class="icon-file"></i>resources/views/contact/people/edit.blade.php</a></li>
+<li><a href="#resources/lang/en/pagination.php"><i class="icon-file"></i>resources/lang/en/pagination.php</a></li>
+<li><a href="#storage/framework/views/bdb6c7306818d155d7a75c9141b5884cf1dbaeca.php"><i class="icon-file"></i>storage/framework/views/bdb6c7306818d155d7a75c9141b5884cf1dbaeca.php</a></li>
+<li><a href="#app/Exceptions/Handler.php"><i class="icon-file"></i>app/Exceptions/Handler.php</a></li>
+<li><a href="#app/Http/Controllers/ContactsController.php"><i class="icon-file"></i>app/Http/Controllers/ContactsController.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_195639_create_company_company_category_pivot_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_195639_create_company_company_category_pivot_table.php</a></li>
+<li><a href="#bootstrap/app.php"><i class="icon-file"></i>bootstrap/app.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_210501_create_transaction_status_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_210501_create_transaction_status_table.php</a></li>
+<li><a href="#resources/views/contact/companies/create.blade.php"><i class="icon-file"></i>resources/views/contact/companies/create.blade.php</a></li>
+<li><a href="#app/Http/Controllers/Auth/AuthController.php"><i class="icon-file"></i>app/Http/Controllers/Auth/AuthController.php</a></li>
+<li><a href="#resources/views/includes/leftMenu.blade.php"><i class="icon-file"></i>resources/views/includes/leftMenu.blade.php</a></li>
+<li><a href="#app/Http/Middleware/Authenticate.php"><i class="icon-file"></i>app/Http/Middleware/Authenticate.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_211342_create_transaction_type_transaction_pivot_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_211342_create_transaction_type_transaction_pivot_table.php</a></li>
+<li><a href="#config/services.php"><i class="icon-file"></i>config/services.php</a></li>
+<li><a href="#database/migrations/2016_02_10_213444_create_company_contact_user_pivot_table.php"><i class="icon-file"></i>database/migrations/2016_02_10_213444_create_company_contact_user_pivot_table.php</a></li>
+<li><a href="#config/broadcasting.php"><i class="icon-file"></i>config/broadcasting.php</a></li>
+<li><a href="#resources/views/auth/register.blade.php"><i class="icon-file"></i>resources/views/auth/register.blade.php</a></li>
+<li><a href="#resources/views/contact/companies/index.blade.php"><i class="icon-file"></i>resources/views/contact/companies/index.blade.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_210500_create_transaction_types_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_210500_create_transaction_types_table.php</a></li>
+<li><a href="#app/Jobs/Job.php"><i class="icon-file"></i>app/Jobs/Job.php</a></li>
+<li><a href="#database/seeds/PeopleCategoriesSeeder.php"><i class="icon-file"></i>database/seeds/PeopleCategoriesSeeder.php</a></li>
+<li><a href="#app/Console/Commands/Inspire.php"><i class="icon-file"></i>app/Console/Commands/Inspire.php</a></li>
+<li><a href="#config/auth.php"><i class="icon-file"></i>config/auth.php</a></li>
+<li><a href="#app/Providers/RouteServiceProvider.php"><i class="icon-file"></i>app/Providers/RouteServiceProvider.php</a></li>
+<li><a href="#database/seeds/DatabaseSeeder.php"><i class="icon-file"></i>database/seeds/DatabaseSeeder.php</a></li>
+<li><a href="#app/Console/Kernel.php"><i class="icon-file"></i>app/Console/Kernel.php</a></li>
+<li><a href="#app/TransactionStatus.php"><i class="icon-file"></i>app/TransactionStatus.php</a></li>
+<li><a href="#resources/views/auth/login.blade.php"><i class="icon-file"></i>resources/views/auth/login.blade.php</a></li>
+<li><a href="#storage/framework/views/ec005c2297f644ef131ab9aaea4c5e778c1910e2.php"><i class="icon-file"></i>storage/framework/views/ec005c2297f644ef131ab9aaea4c5e778c1910e2.php</a></li>
+<li><a href="#database/seeds/CompaniesTableSeeder.php"><i class="icon-file"></i>database/seeds/CompaniesTableSeeder.php</a></li>
+<li><a href="#bootstrap/cache/services.php"><i class="icon-file"></i>bootstrap/cache/services.php</a></li>
+<li><a href="#storage/migration-backs/2016_01_20_211340_create_transactions_table.php"><i class="icon-file"></i>storage/migration-backs/2016_01_20_211340_create_transactions_table.php</a></li>
+<li><a href="#storage/framework/views/7c0ff1b8077f9ce27d77a0f6c9c187eaa07ecc74.php"><i class="icon-file"></i>storage/framework/views/7c0ff1b8077f9ce27d77a0f6c9c187eaa07ecc74.php</a></li>
+<li><a href="#storage/framework/views/fd76edc9dfb2d899c55afc94e2889d7754908e34.php"><i class="icon-file"></i>storage/framework/views/fd76edc9dfb2d899c55afc94e2889d7754908e34.php</a></li>
+<li><a href="#resources/lang/en/validation.php"><i class="icon-file"></i>resources/lang/en/validation.php</a></li>
+<li><a href="#app/Http/Controllers/AdminController.php"><i class="icon-file"></i>app/Http/Controllers/AdminController.php</a></li>
+</ul></div>
+<div class="span8">
+<ul class="breadcrumb">
+<li>
+<a href=""><i class="icon-remove-sign"></i></a><span class="divider">\</span>
+</li>
+<li>Compilation Errors</li>
+</ul>
+<div class="package-contents">
+<a name="database/seeds/CompanyCategoriesSeeder.php" id="database/seeds/CompanyCategoriesSeeder.php"></a><h3>
+<i class="icon-file"></i>database/seeds/CompanyCategoriesSeeder.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CompanyCategoriesSeeder</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/migrations/2016_01_29_062622_add_notes_to_people_contacts_table.php" id="database/migrations/2016_01_29_062622_add_notes_to_people_contacts_table.php"></a><h3>
+<i class="icon-file"></i>database/migrations/2016_01_29_062622_add_notes_to_people_contacts_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \AddNotesToPeopleContactsTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="bootstrap/autoload.php" id="bootstrap/autoload.php"></a><h3>
+<i class="icon-file"></i>bootstrap/autoload.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="config/cache.php" id="config/cache.php"></a><h3>
+<i class="icon-file"></i>config/cache.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/19000e860bfda4917dfec98ce8ed55eb21d30d04.php" id="storage/framework/views/19000e860bfda4917dfec98ce8ed55eb21d30d04.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/19000e860bfda4917dfec98ce8ed55eb21d30d04.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/migrations/2016_01_29_182426_create_people_category_people_contact_pivot_table.php" id="database/migrations/2016_01_29_182426_create_people_category_people_contact_pivot_table.php"></a><h3>
+<i class="icon-file"></i>database/migrations/2016_01_29_182426_create_people_category_people_contact_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreatePeopleCategoryPeopleContactPivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/contact/companies/edit.blade.php" id="resources/views/contact/companies/edit.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/contact/companies/edit.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/factories/ModelFactory.php" id="database/factories/ModelFactory.php"></a><h3>
+<i class="icon-file"></i>database/factories/ModelFactory.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_211341_create_property_transaction_pivot_table.php" id="storage/migration-backs/2016_01_20_211341_create_property_transaction_pivot_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_211341_create_property_transaction_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreatePropertyTransactionPivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/migrations/2016_01_29_052437_create_company_contact_people_contact_pivot_table.php" id="database/migrations/2016_01_29_052437_create_company_contact_people_contact_pivot_table.php"></a><h3>
+<i class="icon-file"></i>database/migrations/2016_01_29_052437_create_company_contact_people_contact_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateCompanyContactPeopleContactPivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Http/Middleware/RedirectIfAuthenticated.php" id="app/Http/Middleware/RedirectIfAuthenticated.php"></a><h3>
+<i class="icon-file"></i>app/Http/Middleware/RedirectIfAuthenticated.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No summary for class \App\Http\Middleware\RedirectIfAuthenticated</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Role.php" id="app/Role.php"></a><h3>
+<i class="icon-file"></i>app/Role.php<small style="float: right;padding-right: 10px;">4</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\Role</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No summary for property $fillable</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>13</td>
+<td>No summary for method users()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="config/mail.php" id="config/mail.php"></a><h3>
+<i class="icon-file"></i>config/mail.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/ae79f56569f7ec56c236a4ee92eaa72a9d3acc93.php" id="storage/framework/views/ae79f56569f7ec56c236a4ee92eaa72a9d3acc93.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/ae79f56569f7ec56c236a4ee92eaa72a9d3acc93.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/TransactionType.php" id="app/TransactionType.php"></a><h3>
+<i class="icon-file"></i>app/TransactionType.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\TransactionType</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No summary for property $fillable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Http/Middleware/EncryptCookies.php" id="app/Http/Middleware/EncryptCookies.php"></a><h3>
+<i class="icon-file"></i>app/Http/Middleware/EncryptCookies.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\Http\Middleware\EncryptCookies</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="tests/ExampleTest.php" id="tests/ExampleTest.php"></a><h3>
+<i class="icon-file"></i>tests/ExampleTest.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \ExampleTest</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_195621_create_user_categories_table.php" id="storage/migration-backs/2016_01_20_195621_create_user_categories_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_195621_create_user_categories_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateUserCategoriesTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/f2dffb8f9cb592ebdd5e0bc30a47fa44cd83e442.php" id="storage/framework/views/f2dffb8f9cb592ebdd5e0bc30a47fa44cd83e442.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/f2dffb8f9cb592ebdd5e0bc30a47fa44cd83e442.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/8085de3da6e074799193f0957d73e8233dd7bdf3.php" id="storage/framework/views/8085de3da6e074799193f0957d73e8233dd7bdf3.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/8085de3da6e074799193f0957d73e8233dd7bdf3.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/migrations/2016_02_10_214806_create_people_contact_user_pivot_table.php" id="database/migrations/2016_02_10_214806_create_people_contact_user_pivot_table.php"></a><h3>
+<i class="icon-file"></i>database/migrations/2016_02_10_214806_create_people_contact_user_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreatePeopleContactUserPivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/seeds/UserTableSeeder.php" id="database/seeds/UserTableSeeder.php"></a><h3>
+<i class="icon-file"></i>database/seeds/UserTableSeeder.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \UserTableSeeder</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/migrations/2016_01_29_161911_create_company_categories_table.php" id="database/migrations/2016_01_29_161911_create_company_categories_table.php"></a><h3>
+<i class="icon-file"></i>database/migrations/2016_01_29_161911_create_company_categories_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateCompanyCategoriesTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="config/compile.php" id="config/compile.php"></a><h3>
+<i class="icon-file"></i>config/compile.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/home.blade.php" id="resources/views/home.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/home.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/migrations/2016_01_29_062626_add_notes_to_company_contacts_table.php" id="database/migrations/2016_01_29_062626_add_notes_to_company_contacts_table.php"></a><h3>
+<i class="icon-file"></i>database/migrations/2016_01_29_062626_add_notes_to_company_contacts_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \AddNotesToCompanyContactsTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_200453_create_people_category_people_pivot_table.php" id="storage/migration-backs/2016_01_20_200453_create_people_category_people_pivot_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_200453_create_people_category_people_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreatePeopleCategoryPeoplePivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/auth/passwords/email.blade.php" id="resources/views/auth/passwords/email.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/auth/passwords/email.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_211343_create_transaction_status_transaction_pivot_table.php" id="storage/migration-backs/2016_01_20_211343_create_transaction_status_transaction_pivot_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_211343_create_transaction_status_transaction_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateTransactionStatusTransactionPivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_211343_create_timing_template_transaction_pivot_table.php" id="storage/migration-backs/2016_01_20_211343_create_timing_template_transaction_pivot_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_211343_create_timing_template_transaction_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateTimingTemplateTransactionPivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/61622f9bdf3f82c4aeb980e7e3f6e09b467ac591.php" id="storage/framework/views/61622f9bdf3f82c4aeb980e7e3f6e09b467ac591.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/61622f9bdf3f82c4aeb980e7e3f6e09b467ac591.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/migrations/2016_01_29_012248_create_company_contacts_table.php" id="database/migrations/2016_01_29_012248_create_company_contacts_table.php"></a><h3>
+<i class="icon-file"></i>database/migrations/2016_01_29_012248_create_company_contacts_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateCompanyContactsTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/TimingTemplate.php" id="app/TimingTemplate.php"></a><h3>
+<i class="icon-file"></i>app/TimingTemplate.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\TimingTemplate</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No summary for property $fillable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/migrations/2014_10_12_100000_create_password_resets_table.php" id="database/migrations/2014_10_12_100000_create_password_resets_table.php"></a><h3>
+<i class="icon-file"></i>database/migrations/2014_10_12_100000_create_password_resets_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreatePasswordResetsTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/contact/people/create.blade.php" id="resources/views/contact/people/create.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/contact/people/create.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/contact/companies/includes/informationForm.blade.php" id="resources/views/contact/companies/includes/informationForm.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/contact/companies/includes/informationForm.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Http/Controllers/HomeController.php" id="app/Http/Controllers/HomeController.php"></a><h3>
+<i class="icon-file"></i>app/Http/Controllers/HomeController.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No summary for class \App\Http\Controllers\HomeController</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_210456_create_property_categories_table.php" id="storage/migration-backs/2016_01_20_210456_create_property_categories_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_210456_create_property_categories_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreatePropertyCategoriesTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/seeds/PeopleTableSeeder.php" id="database/seeds/PeopleTableSeeder.php"></a><h3>
+<i class="icon-file"></i>database/seeds/PeopleTableSeeder.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \PeopleTableSeeder</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/auth/emails/password.blade.php" id="resources/views/auth/emails/password.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/auth/emails/password.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Http/Controllers/Auth/PasswordController.php" id="app/Http/Controllers/Auth/PasswordController.php"></a><h3>
+<i class="icon-file"></i>app/Http/Controllers/Auth/PasswordController.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No summary for class \App\Http\Controllers\Auth\PasswordController</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Http/routes.php" id="app/Http/routes.php"></a><h3>
+<i class="icon-file"></i>app/Http/routes.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/User.php" id="app/User.php"></a><h3>
+<i class="icon-file"></i>app/User.php<small style="float: right;padding-right: 10px;">5</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\User</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>30</td>
+<td>No summary for method roles()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>35</td>
+<td>No summary for method companiesCreated()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>40</td>
+<td>No summary for method peopleCreated()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/5c3dc923b533d73c2a4dd4e8d509cf65b573557c.php" id="storage/framework/views/5c3dc923b533d73c2a4dd4e8d509cf65b573557c.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/5c3dc923b533d73c2a4dd4e8d509cf65b573557c.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_195626_create_company_categories_table.php" id="storage/migration-backs/2016_01_20_195626_create_company_categories_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_195626_create_company_categories_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateCompanyCategoriesTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/includes/statusMessages.blade.php" id="resources/views/includes/statusMessages.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/includes/statusMessages.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/contact/people/show.blade.php" id="resources/views/contact/people/show.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/contact/people/show.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Events/Event.php" id="app/Events/Event.php"></a><h3>
+<i class="icon-file"></i>app/Events/Event.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No summary for class \App\Events\Event</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="config/app.php" id="config/app.php"></a><h3>
+<i class="icon-file"></i>config/app.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/lang/en/passwords.php" id="resources/lang/en/passwords.php"></a><h3>
+<i class="icon-file"></i>resources/lang/en/passwords.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/migrations/2016_01_29_012011_create_people_contacts_table.php" id="database/migrations/2016_01_29_012011_create_people_contacts_table.php"></a><h3>
+<i class="icon-file"></i>database/migrations/2016_01_29_012011_create_people_contacts_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreatePeopleContactsTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/15f809afeffa52cdce93059aae452eec166e6504.php" id="storage/framework/views/15f809afeffa52cdce93059aae452eec166e6504.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/15f809afeffa52cdce93059aae452eec166e6504.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/4bec847578f1936e92554ace573678215d700ac4.php" id="storage/framework/views/4bec847578f1936e92554ace573678215d700ac4.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/4bec847578f1936e92554ace573678215d700ac4.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/seeds/RolesTableSeeder.php" id="database/seeds/RolesTableSeeder.php"></a><h3>
+<i class="icon-file"></i>database/seeds/RolesTableSeeder.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \RolesTableSeeder</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_210458_create_timing_status_table.php" id="storage/migration-backs/2016_01_20_210458_create_timing_status_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_210458_create_timing_status_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateTimingStatusTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/auth/passwords/reset.blade.php" id="resources/views/auth/passwords/reset.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/auth/passwords/reset.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/contact/companies/show.blade.php" id="resources/views/contact/companies/show.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/contact/companies/show.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_210503_create_timing_template_table.php" id="storage/migration-backs/2016_01_20_210503_create_timing_template_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_210503_create_timing_template_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateTimingTemplateTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="config/database.php" id="config/database.php"></a><h3>
+<i class="icon-file"></i>config/database.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/contact/people/includes/informationForm.blade.php" id="resources/views/contact/people/includes/informationForm.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/contact/people/includes/informationForm.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/PeopleContact.php" id="app/PeopleContact.php"></a><h3>
+<i class="icon-file"></i>app/PeopleContact.php<small style="float: right;padding-right: 10px;">7</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\PeopleContact</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No summary for property $fillable</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>35</td>
+<td>No summary for method companies()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>40</td>
+<td>No summary for method category()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>45</td>
+<td>No summary for method createdBy()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>50</td>
+<td>No summary for method canView()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/migrations/2016_02_10_192636_create_role_user_pivot_table.php" id="database/migrations/2016_02_10_192636_create_role_user_pivot_table.php"></a><h3>
+<i class="icon-file"></i>database/migrations/2016_02_10_192636_create_role_user_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateRoleUserPivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_211342_create_timing_status_transaction_pivot_table.php" id="storage/migration-backs/2016_01_20_211342_create_timing_status_transaction_pivot_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_211342_create_timing_status_transaction_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateTimingStatusTransactionPivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/UserCategory.php" id="app/UserCategory.php"></a><h3>
+<i class="icon-file"></i>app/UserCategory.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\UserCategory</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No summary for property $fillable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Http/Requests/Request.php" id="app/Http/Requests/Request.php"></a><h3>
+<i class="icon-file"></i>app/Http/Requests/Request.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\Http\Requests\Request</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/CompanyContact.php" id="app/CompanyContact.php"></a><h3>
+<i class="icon-file"></i>app/CompanyContact.php<small style="float: right;padding-right: 10px;">7</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\CompanyContact</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No summary for property $fillable</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>29</td>
+<td>No summary for method people()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>34</td>
+<td>No summary for method category()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>39</td>
+<td>No summary for method createdBy()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>44</td>
+<td>No summary for method canView()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/59e00e9e96b533b9db2b24e8d882316740c1b096.php" id="storage/framework/views/59e00e9e96b533b9db2b24e8d882316740c1b096.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/59e00e9e96b533b9db2b24e8d882316740c1b096.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/1bfd6877e42c29d0511e32439a75bf915f54bee1.php" id="storage/framework/views/1bfd6877e42c29d0511e32439a75bf915f54bee1.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/1bfd6877e42c29d0511e32439a75bf915f54bee1.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/6bbd1eaf84830655d14da5b58b68f9c0d574c9b4.php" id="storage/framework/views/6bbd1eaf84830655d14da5b58b68f9c0d574c9b4.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/6bbd1eaf84830655d14da5b58b68f9c0d574c9b4.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/layouts/app.blade.php" id="resources/views/layouts/app.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/layouts/app.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Providers/EventServiceProvider.php" id="app/Providers/EventServiceProvider.php"></a><h3>
+<i class="icon-file"></i>app/Providers/EventServiceProvider.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No summary for class \App\Providers\EventServiceProvider</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_195622_create_people_categories_table.php" id="storage/migration-backs/2016_01_20_195622_create_people_categories_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_195622_create_people_categories_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreatePeopleCategoriesTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_195638_create_user_category_user_pivot_table.php" id="storage/migration-backs/2016_01_20_195638_create_user_category_user_pivot_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_195638_create_user_category_user_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateUserCategoryUserPivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Http/Controllers/Controller.php" id="app/Http/Controllers/Controller.php"></a><h3>
+<i class="icon-file"></i>app/Http/Controllers/Controller.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>10</td>
+<td>No summary for class \App\Http\Controllers\Controller</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/migrations/2016_01_29_182442_create_company_category_company_contact_pivot_table.php" id="database/migrations/2016_01_29_182442_create_company_category_company_contact_pivot_table.php"></a><h3>
+<i class="icon-file"></i>database/migrations/2016_01_29_182442_create_company_category_company_contact_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateCompanyCategoryCompanyContactPivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/910f77f221682cb6da021248442313b94f414e2c.php" id="storage/framework/views/910f77f221682cb6da021248442313b94f414e2c.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/910f77f221682cb6da021248442313b94f414e2c.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/f0eb771709f10a03a015b5974f7ac15c82ef4772.php" id="storage/framework/views/f0eb771709f10a03a015b5974f7ac15c82ef4772.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/f0eb771709f10a03a015b5974f7ac15c82ef4772.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/lang/en/auth.php" id="resources/lang/en/auth.php"></a><h3>
+<i class="icon-file"></i>resources/lang/en/auth.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_210457_create_property_property_category_pivot_table.php" id="storage/migration-backs/2016_01_20_210457_create_property_property_category_pivot_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_210457_create_property_property_category_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreatePropertyPropertyCategoryPivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/errors/404.blade.php" id="resources/views/errors/404.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/errors/404.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/CompanyCategory.php" id="app/CompanyCategory.php"></a><h3>
+<i class="icon-file"></i>app/CompanyCategory.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\CompanyCategory</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No summary for property $fillable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/admin/dashboard.blade.php" id="resources/views/admin/dashboard.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/admin/dashboard.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Transaction.php" id="app/Transaction.php"></a><h3>
+<i class="icon-file"></i>app/Transaction.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\Transaction</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No summary for property $fillable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Http/Middleware/VerifyCsrfToken.php" id="app/Http/Middleware/VerifyCsrfToken.php"></a><h3>
+<i class="icon-file"></i>app/Http/Middleware/VerifyCsrfToken.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\Http\Middleware\VerifyCsrfToken</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Http/Kernel.php" id="app/Http/Kernel.php"></a><h3>
+<i class="icon-file"></i>app/Http/Kernel.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\Http\Kernel</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="config/queue.php" id="config/queue.php"></a><h3>
+<i class="icon-file"></i>config/queue.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/d0dfc3422edefa839a84b694faf7b8311bdd71d1.php" id="storage/framework/views/d0dfc3422edefa839a84b694faf7b8311bdd71d1.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/d0dfc3422edefa839a84b694faf7b8311bdd71d1.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Providers/AppServiceProvider.php" id="app/Providers/AppServiceProvider.php"></a><h3>
+<i class="icon-file"></i>app/Providers/AppServiceProvider.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\Providers\AppServiceProvider</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Providers/AuthServiceProvider.php" id="app/Providers/AuthServiceProvider.php"></a><h3>
+<i class="icon-file"></i>app/Providers/AuthServiceProvider.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No summary for class \App\Providers\AuthServiceProvider</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/PropertyCategory.php" id="app/PropertyCategory.php"></a><h3>
+<i class="icon-file"></i>app/PropertyCategory.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\PropertyCategory</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No summary for property $fillable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/TimingStatus.php" id="app/TimingStatus.php"></a><h3>
+<i class="icon-file"></i>app/TimingStatus.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\TimingStatus</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No summary for property $fillable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/contact/companies/includes/categories.blade.php" id="resources/views/contact/companies/includes/categories.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/contact/companies/includes/categories.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="config/filesystems.php" id="config/filesystems.php"></a><h3>
+<i class="icon-file"></i>config/filesystems.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="config/session.php" id="config/session.php"></a><h3>
+<i class="icon-file"></i>config/session.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/errors/503.blade.php" id="resources/views/errors/503.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/errors/503.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/a29940245b48c43dbfeadec3ad194062f9dd5bfd.php" id="storage/framework/views/a29940245b48c43dbfeadec3ad194062f9dd5bfd.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/a29940245b48c43dbfeadec3ad194062f9dd5bfd.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/migrations/2016_01_29_161853_create_people_categories_table.php" id="database/migrations/2016_01_29_161853_create_people_categories_table.php"></a><h3>
+<i class="icon-file"></i>database/migrations/2016_01_29_161853_create_people_categories_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreatePeopleCategoriesTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_195638_create_people_user_pivot_table.php" id="storage/migration-backs/2016_01_20_195638_create_people_user_pivot_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_195638_create_people_user_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreatePeopleUserPivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="config/view.php" id="config/view.php"></a><h3>
+<i class="icon-file"></i>config/view.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/migrations/2014_10_12_000000_create_users_table.php" id="database/migrations/2014_10_12_000000_create_users_table.php"></a><h3>
+<i class="icon-file"></i>database/migrations/2014_10_12_000000_create_users_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateUsersTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/contact/people/index.blade.php" id="resources/views/contact/people/index.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/contact/people/index.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Property.php" id="app/Property.php"></a><h3>
+<i class="icon-file"></i>app/Property.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\Property</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No summary for property $fillable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/6c5f0b848ec4a98a6daac93fa0ed6b0a8be74b1d.php" id="storage/framework/views/6c5f0b848ec4a98a6daac93fa0ed6b0a8be74b1d.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/6c5f0b848ec4a98a6daac93fa0ed6b0a8be74b1d.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/PeopleCategory.php" id="app/PeopleCategory.php"></a><h3>
+<i class="icon-file"></i>app/PeopleCategory.php<small style="float: right;padding-right: 10px;">4</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\PeopleCategory</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No summary for property $fillable</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>14</td>
+<td>No summary for method peopleContacts()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents"></div>
+<div class="package-contents">
+<a name="database/migrations/2016_02_10_192458_create_roles_table.php" id="database/migrations/2016_02_10_192458_create_roles_table.php"></a><h3>
+<i class="icon-file"></i>database/migrations/2016_02_10_192458_create_roles_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateRolesTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/contact/people/includes/categories.blade.php" id="resources/views/contact/people/includes/categories.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/contact/people/includes/categories.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/5e933ecff107f1101a646d5baf7ecaefeed65a4c.php" id="storage/framework/views/5e933ecff107f1101a646d5baf7ecaefeed65a4c.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/5e933ecff107f1101a646d5baf7ecaefeed65a4c.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="tests/TestCase.php" id="tests/TestCase.php"></a><h3>
+<i class="icon-file"></i>tests/TestCase.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>3</td>
+<td>No summary for class \TestCase</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_210454_create_properties_table.php" id="storage/migration-backs/2016_01_20_210454_create_properties_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_210454_create_properties_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreatePropertiesTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents"></div>
+<div class="package-contents">
+<a name="resources/views/contact/people/edit.blade.php" id="resources/views/contact/people/edit.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/contact/people/edit.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/lang/en/pagination.php" id="resources/lang/en/pagination.php"></a><h3>
+<i class="icon-file"></i>resources/lang/en/pagination.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/bdb6c7306818d155d7a75c9141b5884cf1dbaeca.php" id="storage/framework/views/bdb6c7306818d155d7a75c9141b5884cf1dbaeca.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/bdb6c7306818d155d7a75c9141b5884cf1dbaeca.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Exceptions/Handler.php" id="app/Exceptions/Handler.php"></a><h3>
+<i class="icon-file"></i>app/Exceptions/Handler.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>13</td>
+<td>No summary for class \App\Exceptions\Handler</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Http/Controllers/ContactsController.php" id="app/Http/Controllers/ContactsController.php"></a><h3>
+<i class="icon-file"></i>app/Http/Controllers/ContactsController.php<small style="float: right;padding-right: 10px;">57</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>12</td>
+<td>No summary for class \App\Http\Controllers\ContactsController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>14</td>
+<td>No summary for property $role</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>79</td>
+<td>No summary for method indexPeople()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>88</td>
+<td>Argument $model is missing from the Docblock of getContactsByRole</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>88</td>
+<td>No summary for method getContactsByRole()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>105</td>
+<td>Argument $model is missing from the Docblock of getAll</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>105</td>
+<td>No summary for method getAll()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>112</td>
+<td>Argument $id is missing from the Docblock of showCompany</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>112</td>
+<td>No summary for method showCompany()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>121</td>
+<td>Argument $id is missing from the Docblock of showPeople</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>121</td>
+<td>No summary for method showPeople()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>130</td>
+<td>Argument $model is missing from the Docblock of showContact</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>130</td>
+<td>Argument $contactId is missing from the Docblock of showContact</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>130</td>
+<td>Argument $relationships is missing from the Docblock of showContact</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>130</td>
+<td>No summary for method showContact()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>141</td>
+<td>No summary for method createCompany()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>150</td>
+<td>No summary for method createPeople()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>161</td>
+<td>No summary for method companiesSelect()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>174</td>
+<td>Argument $model is missing from the Docblock of getCategories</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>174</td>
+<td>No summary for method getCategories()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>181</td>
+<td>Argument $request is missing from the Docblock of storeCompany</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>181</td>
+<td>No summary for method storeCompany()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>200</td>
+<td>Argument $request is missing from the Docblock of storePeople</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>200</td>
+<td>No summary for method storePeople()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>227</td>
+<td>Argument $createdContact is missing from the Docblock of createdBy</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>227</td>
+<td>No summary for method createdBy()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>234</td>
+<td>Argument $model is missing from the Docblock of createContact</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>234</td>
+<td>Argument $data is missing from the Docblock of createContact</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>234</td>
+<td>No summary for method createContact()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>247</td>
+<td>Argument $id is missing from the Docblock of editCompany</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>247</td>
+<td>No summary for method editCompany()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>264</td>
+<td>Argument $id is missing from the Docblock of editPeople</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>264</td>
+<td>No summary for method editPeople()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>289</td>
+<td>Argument $model is missing from the Docblock of unsetSelectedCategory</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>289</td>
+<td>Argument $selectedCategories is missing from the Docblock of unsetSelectedCategory</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>289</td>
+<td>No summary for method unsetSelectedCategory()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>306</td>
+<td>Argument $request is missing from the Docblock of deleteCompany</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>306</td>
+<td>Argument $id is missing from the Docblock of deleteCompany</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>306</td>
+<td>No summary for method deleteCompany()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>315</td>
+<td>Argument $request is missing from the Docblock of deletePeople</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>315</td>
+<td>Argument $id is missing from the Docblock of deletePeople</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>315</td>
+<td>No summary for method deletePeople()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>324</td>
+<td>Argument $model is missing from the Docblock of destroyContact</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>324</td>
+<td>Argument $id is missing from the Docblock of destroyContact</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>324</td>
+<td>No summary for method destroyContact()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>331</td>
+<td>Argument $request is missing from the Docblock of updateCompany</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>331</td>
+<td>Argument $id is missing from the Docblock of updateCompany</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>331</td>
+<td>No summary for method updateCompany()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>352</td>
+<td>Argument $request is missing from the Docblock of updatePeople</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>352</td>
+<td>Argument $id is missing from the Docblock of updatePeople</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>352</td>
+<td>No summary for method updatePeople()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>387</td>
+<td>Argument $catModel is missing from the Docblock of updateCategories</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>387</td>
+<td>Argument $data is missing from the Docblock of updateCategories</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>387</td>
+<td>No summary for method updateCategories()</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>402</td>
+<td>Argument $upload is missing from the Docblock of avatarUpload</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>402</td>
+<td>No summary for method avatarUpload()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_195639_create_company_company_category_pivot_table.php" id="storage/migration-backs/2016_01_20_195639_create_company_company_category_pivot_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_195639_create_company_company_category_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateCompanyCompanyCategoryPivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="bootstrap/app.php" id="bootstrap/app.php"></a><h3>
+<i class="icon-file"></i>bootstrap/app.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_210501_create_transaction_status_table.php" id="storage/migration-backs/2016_01_20_210501_create_transaction_status_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_210501_create_transaction_status_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateTransactionStatusTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/contact/companies/create.blade.php" id="resources/views/contact/companies/create.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/contact/companies/create.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Http/Controllers/Auth/AuthController.php" id="app/Http/Controllers/Auth/AuthController.php"></a><h3>
+<i class="icon-file"></i>app/Http/Controllers/Auth/AuthController.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>11</td>
+<td>No summary for class \App\Http\Controllers\Auth\AuthController</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/includes/leftMenu.blade.php" id="resources/views/includes/leftMenu.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/includes/leftMenu.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Http/Middleware/Authenticate.php" id="app/Http/Middleware/Authenticate.php"></a><h3>
+<i class="icon-file"></i>app/Http/Middleware/Authenticate.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No summary for class \App\Http\Middleware\Authenticate</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_211342_create_transaction_type_transaction_pivot_table.php" id="storage/migration-backs/2016_01_20_211342_create_transaction_type_transaction_pivot_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_211342_create_transaction_type_transaction_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateTransactionTypeTransactionPivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="config/services.php" id="config/services.php"></a><h3>
+<i class="icon-file"></i>config/services.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/migrations/2016_02_10_213444_create_company_contact_user_pivot_table.php" id="database/migrations/2016_02_10_213444_create_company_contact_user_pivot_table.php"></a><h3>
+<i class="icon-file"></i>database/migrations/2016_02_10_213444_create_company_contact_user_pivot_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateCompanyContactUserPivotTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="config/broadcasting.php" id="config/broadcasting.php"></a><h3>
+<i class="icon-file"></i>config/broadcasting.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/auth/register.blade.php" id="resources/views/auth/register.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/auth/register.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/contact/companies/index.blade.php" id="resources/views/contact/companies/index.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/contact/companies/index.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_210500_create_transaction_types_table.php" id="storage/migration-backs/2016_01_20_210500_create_transaction_types_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_210500_create_transaction_types_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateTransactionTypesTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Jobs/Job.php" id="app/Jobs/Job.php"></a><h3>
+<i class="icon-file"></i>app/Jobs/Job.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\Jobs\Job</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/seeds/PeopleCategoriesSeeder.php" id="database/seeds/PeopleCategoriesSeeder.php"></a><h3>
+<i class="icon-file"></i>database/seeds/PeopleCategoriesSeeder.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \PeopleCategoriesSeeder</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Console/Commands/Inspire.php" id="app/Console/Commands/Inspire.php"></a><h3>
+<i class="icon-file"></i>app/Console/Commands/Inspire.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No summary for class \App\Console\Commands\Inspire</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="config/auth.php" id="config/auth.php"></a><h3>
+<i class="icon-file"></i>config/auth.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Providers/RouteServiceProvider.php" id="app/Providers/RouteServiceProvider.php"></a><h3>
+<i class="icon-file"></i>app/Providers/RouteServiceProvider.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No summary for class \App\Providers\RouteServiceProvider</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/seeds/DatabaseSeeder.php" id="database/seeds/DatabaseSeeder.php"></a><h3>
+<i class="icon-file"></i>database/seeds/DatabaseSeeder.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>5</td>
+<td>No summary for class \DatabaseSeeder</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Console/Kernel.php" id="app/Console/Kernel.php"></a><h3>
+<i class="icon-file"></i>app/Console/Kernel.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>8</td>
+<td>No summary for class \App\Console\Kernel</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/TransactionStatus.php" id="app/TransactionStatus.php"></a><h3>
+<i class="icon-file"></i>app/TransactionStatus.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>7</td>
+<td>No summary for class \App\TransactionStatus</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>9</td>
+<td>No summary for property $fillable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="resources/views/auth/login.blade.php" id="resources/views/auth/login.blade.php"></a><h3>
+<i class="icon-file"></i>resources/views/auth/login.blade.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/ec005c2297f644ef131ab9aaea4c5e778c1910e2.php" id="storage/framework/views/ec005c2297f644ef131ab9aaea4c5e778c1910e2.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/ec005c2297f644ef131ab9aaea4c5e778c1910e2.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="database/seeds/CompaniesTableSeeder.php" id="database/seeds/CompaniesTableSeeder.php"></a><h3>
+<i class="icon-file"></i>database/seeds/CompaniesTableSeeder.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CompaniesTableSeeder</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="bootstrap/cache/services.php" id="bootstrap/cache/services.php"></a><h3>
+<i class="icon-file"></i>bootstrap/cache/services.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/migration-backs/2016_01_20_211340_create_transactions_table.php" id="storage/migration-backs/2016_01_20_211340_create_transactions_table.php"></a><h3>
+<i class="icon-file"></i>storage/migration-backs/2016_01_20_211340_create_transactions_table.php<small style="float: right;padding-right: 10px;">2</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>6</td>
+<td>No summary for class \CreateTransactionsTable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/7c0ff1b8077f9ce27d77a0f6c9c187eaa07ecc74.php" id="storage/framework/views/7c0ff1b8077f9ce27d77a0f6c9c187eaa07ecc74.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/7c0ff1b8077f9ce27d77a0f6c9c187eaa07ecc74.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="storage/framework/views/fd76edc9dfb2d899c55afc94e2889d7754908e34.php" id="storage/framework/views/fd76edc9dfb2d899c55afc94e2889d7754908e34.php"></a><h3>
+<i class="icon-file"></i>storage/framework/views/fd76edc9dfb2d899c55afc94e2889d7754908e34.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents"></div>
+<div class="package-contents">
+<a name="resources/lang/en/validation.php" id="resources/lang/en/validation.php"></a><h3>
+<i class="icon-file"></i>resources/lang/en/validation.php<small style="float: right;padding-right: 10px;">1</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="package-contents">
+<a name="app/Http/Controllers/AdminController.php" id="app/Http/Controllers/AdminController.php"></a><h3>
+<i class="icon-file"></i>app/Http/Controllers/AdminController.php<small style="float: right;padding-right: 10px;">3</small>
+</h3>
+<div><table class="table markers table-bordered">
+<thead><tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="error">
+<td>error</td>
+<td>0</td>
+<td>No summary was found for this file</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>10</td>
+<td>No summary for class \App\Http\Controllers\AdminController</td>
+</tr>
+<tr class="error">
+<td>error</td>
+<td>23</td>
+<td>No summary for method dashboard()</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2016-02-11T11:37:16-08:00.<br></footer></div>
+</div>
+</body>
+</html>

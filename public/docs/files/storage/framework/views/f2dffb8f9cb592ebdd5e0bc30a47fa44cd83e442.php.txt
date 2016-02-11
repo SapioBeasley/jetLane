@@ -1,0 +1,45 @@
+<?php $__env->startSection('content'); ?>
+<h4>View All People</h4>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+
+		<?php if(empty($contacts[0])): ?>
+			No contacts found. <a href="<?php echo e(route('contact.people.create')); ?>">Add a contact</a>
+		<?php else: ?>
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Created By</th>
+						<th>Primary Phone</th>
+					</tr>
+					</thead>
+					<tbody>
+
+						<?php foreach($contacts as $people): ?>
+							<tr>
+								<td><?php echo e($people['first_name']); ?></td>
+								<td><?php echo e($people['last_name']); ?></td>
+
+								<?php if(\Auth::user()->email === $people['createdBy'][0]['email']): ?>
+									<td>Created by You</td>
+								<?php else: ?>
+									<td><?php echo e($people['createdBy'][0]['email']); ?></td>
+								<?php endif; ?>
+
+								<td><?php echo e($people['home_phone']); ?></td>
+								<td><a href="<?php echo e(route('contact.people.show', $people['id'])); ?>" class="btn btn-xs">View Person</a></td>
+							</tr>
+						<?php endforeach; ?>
+
+				</tbody>
+			</table>
+		<?php endif; ?>
+
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

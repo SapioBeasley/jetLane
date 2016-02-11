@@ -1,0 +1,493 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>API Documentation » \App\Http\Controllers\ContactsController</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">API Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/App.html"><i class="icon-th"></i> App</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">306</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct() :: Create a new controller instance."><span class="description">Create a new controller instance.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_avatarUpload" title="avatarUpload() :: "><span class="description">avatarUpload()
+        </span><pre>avatarUpload()</pre></a></li>
+<li class="method public "><a href="#method_companiesSelect" title="companiesSelect() :: "><span class="description">companiesSelect()
+        </span><pre>companiesSelect()</pre></a></li>
+<li class="method public "><a href="#method_createCompany" title="createCompany() :: "><span class="description">createCompany()
+        </span><pre>createCompany()</pre></a></li>
+<li class="method public "><a href="#method_createContact" title="createContact() :: "><span class="description">createContact()
+        </span><pre>createContact()</pre></a></li>
+<li class="method public "><a href="#method_createPeople" title="createPeople() :: "><span class="description">createPeople()
+        </span><pre>createPeople()</pre></a></li>
+<li class="method public "><a href="#method_createdBy" title="createdBy() :: "><span class="description">createdBy()
+        </span><pre>createdBy()</pre></a></li>
+<li class="method public "><a href="#method_deleteCompany" title="deleteCompany() :: "><span class="description">deleteCompany()
+        </span><pre>deleteCompany()</pre></a></li>
+<li class="method public "><a href="#method_deletePeople" title="deletePeople() :: "><span class="description">deletePeople()
+        </span><pre>deletePeople()</pre></a></li>
+<li class="method public "><a href="#method_destroyContact" title="destroyContact() :: "><span class="description">destroyContact()
+        </span><pre>destroyContact()</pre></a></li>
+<li class="method public "><a href="#method_editCompany" title="editCompany() :: "><span class="description">editCompany()
+        </span><pre>editCompany()</pre></a></li>
+<li class="method public "><a href="#method_editPeople" title="editPeople() :: "><span class="description">editPeople()
+        </span><pre>editPeople()</pre></a></li>
+<li class="method public "><a href="#method_getAll" title="getAll() :: "><span class="description">getAll()
+        </span><pre>getAll()</pre></a></li>
+<li class="method public "><a href="#method_getCategories" title="getCategories() :: "><span class="description">getCategories()
+        </span><pre>getCategories()</pre></a></li>
+<li class="method public "><a href="#method_getContactsByRole" title="getContactsByRole() :: "><span class="description">getContactsByRole()
+        </span><pre>getContactsByRole()</pre></a></li>
+<li class="method public "><a href="#method_getUsersRole" title="getUsersRole() :: Grab a logged in users role and who they are"><span class="description">Grab a logged in users role and who they are</span><pre>getUsersRole()</pre></a></li>
+<li class="method public "><a href="#method_indexCompany" title="indexCompany() :: Show all company contact"><span class="description">Show all company contact</span><pre>indexCompany()</pre></a></li>
+<li class="method public "><a href="#method_indexPeople" title="indexPeople() :: "><span class="description">indexPeople()
+        </span><pre>indexPeople()</pre></a></li>
+<li class="method public "><a href="#method_showCompany" title="showCompany() :: "><span class="description">showCompany()
+        </span><pre>showCompany()</pre></a></li>
+<li class="method public "><a href="#method_showContact" title="showContact() :: "><span class="description">showContact()
+        </span><pre>showContact()</pre></a></li>
+<li class="method public "><a href="#method_showPeople" title="showPeople() :: "><span class="description">showPeople()
+        </span><pre>showPeople()</pre></a></li>
+<li class="method public "><a href="#method_storeCompany" title="storeCompany() :: "><span class="description">storeCompany()
+        </span><pre>storeCompany()</pre></a></li>
+<li class="method public "><a href="#method_storePeople" title="storePeople() :: "><span class="description">storePeople()
+        </span><pre>storePeople()</pre></a></li>
+<li class="method public "><a href="#method_unsetSelectedCategory" title="unsetSelectedCategory() :: "><span class="description">unsetSelectedCategory()
+        </span><pre>unsetSelectedCategory()</pre></a></li>
+<li class="method public "><a href="#method_updateCategories" title="updateCategories() :: "><span class="description">updateCategories()
+        </span><pre>updateCategories()</pre></a></li>
+<li class="method public "><a href="#method_updateCompany" title="updateCompany() :: "><span class="description">updateCompany()
+        </span><pre>updateCompany()</pre></a></li>
+<li class="method public "><a href="#method_updatePeople" title="updatePeople() :: "><span class="description">updatePeople()
+        </span><pre>updatePeople()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="property protected "><a href="#property_role" title="$role() :: "><span class="description"></span><pre>$role</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\App\Http\Controllers\ContactsController"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/App.html">App</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/App.Http.html">Http</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/App.Http.Controllers.html">Controllers</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/App.Http.Controllers.ContactsController.html">ContactsController</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description"></p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/Default.html">Default</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\App\Http\Controllers\Controller</td>
+</tr>
+</table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>Create a new controller instance.</h2>
+<pre>__construct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>uses</th>
+<td><a href="Middleware::auth">initializes the auth middleware</a></td>
+</tr>
+<tr>
+<th>uses</th>
+<td><a href="Rollbar::init">initializes rollbar error tracting</a></td>
+</tr>
+<tr>
+<th>uses</th>
+<td><a href="%5CAuth::check">if user is logged in</a></td>
+</tr>
+<tr>
+<th>uses</th>
+<td><a href="getUsersRole::show">the logged in users role</a></td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_avatarUpload"></a><div class="element clickable method public method_avatarUpload " data-toggle="collapse" data-target=".method_avatarUpload .collapse" title="public">
+<h2>avatarUpload()
+        </h2>
+<pre>avatarUpload($upload) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$upload</h4></div>
+</div></div>
+</div>
+<a id="method_companiesSelect"></a><div class="element clickable method public method_companiesSelect " data-toggle="collapse" data-target=".method_companiesSelect .collapse" title="public">
+<h2>companiesSelect()
+        </h2>
+<pre>companiesSelect() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_createCompany"></a><div class="element clickable method public method_createCompany " data-toggle="collapse" data-target=".method_createCompany .collapse" title="public">
+<h2>createCompany()
+        </h2>
+<pre>createCompany() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_createContact"></a><div class="element clickable method public method_createContact " data-toggle="collapse" data-target=".method_createContact .collapse" title="public">
+<h2>createContact()
+        </h2>
+<pre>createContact($model, $data) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$model</h4></div>
+<div class="subelement argument"><h4>$data</h4></div>
+</div></div>
+</div>
+<a id="method_createPeople"></a><div class="element clickable method public method_createPeople " data-toggle="collapse" data-target=".method_createPeople .collapse" title="public">
+<h2>createPeople()
+        </h2>
+<pre>createPeople() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_createdBy"></a><div class="element clickable method public method_createdBy " data-toggle="collapse" data-target=".method_createdBy .collapse" title="public">
+<h2>createdBy()
+        </h2>
+<pre>createdBy($createdContact) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$createdContact</h4></div>
+</div></div>
+</div>
+<a id="method_deleteCompany"></a><div class="element clickable method public method_deleteCompany " data-toggle="collapse" data-target=".method_deleteCompany .collapse" title="public">
+<h2>deleteCompany()
+        </h2>
+<pre>deleteCompany(\Illuminate\Http\Request $request, $id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$request</h4></div>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
+</div>
+<a id="method_deletePeople"></a><div class="element clickable method public method_deletePeople " data-toggle="collapse" data-target=".method_deletePeople .collapse" title="public">
+<h2>deletePeople()
+        </h2>
+<pre>deletePeople(\Illuminate\Http\Request $request, $id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$request</h4></div>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
+</div>
+<a id="method_destroyContact"></a><div class="element clickable method public method_destroyContact " data-toggle="collapse" data-target=".method_destroyContact .collapse" title="public">
+<h2>destroyContact()
+        </h2>
+<pre>destroyContact($model, $id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$model</h4></div>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
+</div>
+<a id="method_editCompany"></a><div class="element clickable method public method_editCompany " data-toggle="collapse" data-target=".method_editCompany .collapse" title="public">
+<h2>editCompany()
+        </h2>
+<pre>editCompany($id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
+</div>
+<a id="method_editPeople"></a><div class="element clickable method public method_editPeople " data-toggle="collapse" data-target=".method_editPeople .collapse" title="public">
+<h2>editPeople()
+        </h2>
+<pre>editPeople($id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
+</div>
+<a id="method_getAll"></a><div class="element clickable method public method_getAll " data-toggle="collapse" data-target=".method_getAll .collapse" title="public">
+<h2>getAll()
+        </h2>
+<pre>getAll($model) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$model</h4></div>
+</div></div>
+</div>
+<a id="method_getCategories"></a><div class="element clickable method public method_getCategories " data-toggle="collapse" data-target=".method_getCategories .collapse" title="public">
+<h2>getCategories()
+        </h2>
+<pre>getCategories($model) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$model</h4></div>
+</div></div>
+</div>
+<a id="method_getContactsByRole"></a><div class="element clickable method public method_getContactsByRole " data-toggle="collapse" data-target=".method_getContactsByRole .collapse" title="public">
+<h2>getContactsByRole()
+        </h2>
+<pre>getContactsByRole($model) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$model</h4></div>
+</div></div>
+</div>
+<a id="method_getUsersRole"></a><div class="element clickable method public method_getUsersRole " data-toggle="collapse" data-target=".method_getUsersRole .collapse" title="public">
+<h2>Grab a logged in users role and who they are</h2>
+<pre>getUsersRole(integer $userId) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$userId</h4>
+<code>integer</code><p>the id of the logged in user</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>return the role id, the actual ame of the role, and the users id</div>
+</div></div>
+</div>
+<a id="method_indexCompany"></a><div class="element clickable method public method_indexCompany " data-toggle="collapse" data-target=".method_indexCompany .collapse" title="public">
+<h2>Show all company contact</h2>
+<pre>indexCompany() : \App\Http\Controllers\collection</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\App\Http\Controllers\collection</code>A collection of all contacts that are companies</div>
+</div></div>
+</div>
+<a id="method_indexPeople"></a><div class="element clickable method public method_indexPeople " data-toggle="collapse" data-target=".method_indexPeople .collapse" title="public">
+<h2>indexPeople()
+        </h2>
+<pre>indexPeople() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_showCompany"></a><div class="element clickable method public method_showCompany " data-toggle="collapse" data-target=".method_showCompany .collapse" title="public">
+<h2>showCompany()
+        </h2>
+<pre>showCompany($id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
+</div>
+<a id="method_showContact"></a><div class="element clickable method public method_showContact " data-toggle="collapse" data-target=".method_showContact .collapse" title="public">
+<h2>showContact()
+        </h2>
+<pre>showContact($model, $contactId, $relationships<code> = array()</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$model</h4></div>
+<div class="subelement argument"><h4>$contactId</h4></div>
+<div class="subelement argument"><h4>$relationships</h4></div>
+</div></div>
+</div>
+<a id="method_showPeople"></a><div class="element clickable method public method_showPeople " data-toggle="collapse" data-target=".method_showPeople .collapse" title="public">
+<h2>showPeople()
+        </h2>
+<pre>showPeople($id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
+</div>
+<a id="method_storeCompany"></a><div class="element clickable method public method_storeCompany " data-toggle="collapse" data-target=".method_storeCompany .collapse" title="public">
+<h2>storeCompany()
+        </h2>
+<pre>storeCompany(\Illuminate\Http\Request $request) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$request</h4></div>
+</div></div>
+</div>
+<a id="method_storePeople"></a><div class="element clickable method public method_storePeople " data-toggle="collapse" data-target=".method_storePeople .collapse" title="public">
+<h2>storePeople()
+        </h2>
+<pre>storePeople(\Illuminate\Http\Request $request) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$request</h4></div>
+</div></div>
+</div>
+<a id="method_unsetSelectedCategory"></a><div class="element clickable method public method_unsetSelectedCategory " data-toggle="collapse" data-target=".method_unsetSelectedCategory .collapse" title="public">
+<h2>unsetSelectedCategory()
+        </h2>
+<pre>unsetSelectedCategory($model, $selectedCategories) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$model</h4></div>
+<div class="subelement argument"><h4>$selectedCategories</h4></div>
+</div></div>
+</div>
+<a id="method_updateCategories"></a><div class="element clickable method public method_updateCategories " data-toggle="collapse" data-target=".method_updateCategories .collapse" title="public">
+<h2>updateCategories()
+        </h2>
+<pre>updateCategories($catModel, $data) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$catModel</h4></div>
+<div class="subelement argument"><h4>$data</h4></div>
+</div></div>
+</div>
+<a id="method_updateCompany"></a><div class="element clickable method public method_updateCompany " data-toggle="collapse" data-target=".method_updateCompany .collapse" title="public">
+<h2>updateCompany()
+        </h2>
+<pre>updateCompany(\Illuminate\Http\Request $request, $id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$request</h4></div>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
+</div>
+<a id="method_updatePeople"></a><div class="element clickable method public method_updatePeople " data-toggle="collapse" data-target=".method_updatePeople .collapse" title="public">
+<h2>updatePeople()
+        </h2>
+<pre>updatePeople(\Illuminate\Http\Request $request, $id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$request</h4></div>
+<div class="subelement argument"><h4>$id</h4></div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_role"> </a><div class="element clickable property protected property_role" data-toggle="collapse" data-target=".property_role .collapse" title="protected">
+<h2>$role</h2>
+<pre>$role </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2016-02-11T11:37:15-08:00.<br></footer></div>
+</div>
+</body>
+</html>

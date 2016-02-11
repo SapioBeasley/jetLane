@@ -1,0 +1,172 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | PDO Fetch Style
+    |--------------------------------------------------------------------------
+    |
+    | By default, database results will be returned as instances of the PHP
+    | stdClass object; however, you may desire to retrieve records in an
+    | array format for simplicity. Here you can tweak the fetch style.
+    |
+    */
+
+    'fetch' =&gt; PDO::FETCH_CLASS,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Database Connection Name
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify which of the database connections below you wish
+    | to use as your default connection for all database work. Of course
+    | you may use many connections at once using the Database library.
+    |
+    */
+
+    'default' =&gt; env('DB_CONNECTION', 'mysql'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Database Connections
+    |--------------------------------------------------------------------------
+    |
+    | Here are each of the database connections setup for your application.
+    | Of course, examples of configuring each database platform that is
+    | supported by Laravel is shown below to make development simple.
+    |
+    |
+    | All database work in Laravel is done through the PHP PDO facilities
+    | so make sure you have the driver for your particular database of
+    | choice installed on your machine before you begin development.
+    |
+    */
+
+    'connections' =&gt; [
+
+        'sqlite' =&gt; [
+            'driver'   =&gt; 'sqlite',
+            'database' =&gt; database_path('database.sqlite'),
+            'prefix'   =&gt; '',
+        ],
+
+        'mysql' =&gt; [
+            'driver'    =&gt; 'mysql',
+            'host'      =&gt; env('DB_HOST', 'localhost'),
+            'database'  =&gt; env('DB_DATABASE', 'forge'),
+            'username'  =&gt; env('DB_USERNAME', 'forge'),
+            'password'  =&gt; env('DB_PASSWORD', ''),
+            'charset'   =&gt; 'utf8',
+            'collation' =&gt; 'utf8_unicode_ci',
+            'prefix'    =&gt; '',
+            'strict'    =&gt; false,
+        ],
+
+        'pgsql' =&gt; [
+            'driver'   =&gt; 'pgsql',
+            'host'     =&gt; env('DB_HOST', 'localhost'),
+            'database' =&gt; env('DB_DATABASE', 'forge'),
+            'username' =&gt; env('DB_USERNAME', 'forge'),
+            'password' =&gt; env('DB_PASSWORD', ''),
+            'charset'  =&gt; 'utf8',
+            'prefix'   =&gt; '',
+            'schema'   =&gt; 'public',
+        ],
+
+        'sqlsrv' =&gt; [
+            'driver'   =&gt; 'sqlsrv',
+            'host'     =&gt; env('DB_HOST', 'localhost'),
+            'database' =&gt; env('DB_DATABASE', 'forge'),
+            'username' =&gt; env('DB_USERNAME', 'forge'),
+            'password' =&gt; env('DB_PASSWORD', ''),
+            'charset'  =&gt; 'utf8',
+            'prefix'   =&gt; '',
+        ],
+
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Migration Repository Table
+    |--------------------------------------------------------------------------
+    |
+    | This table keeps track of all the migrations that have already run for
+    | your application. Using this information, we can determine which of
+    | the migrations on disk haven't actually been run in the database.
+    |
+    */
+
+    'migrations' =&gt; 'migrations',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Redis Databases
+    |--------------------------------------------------------------------------
+    |
+    | Redis is an open source, fast, and advanced key-value store that also
+    | provides a richer set of commands than a typical key-value systems
+    | such as APC or Memcached. Laravel makes it easy to dig right in.
+    |
+    */
+
+    'redis' =&gt; [
+
+        'cluster' =&gt; false,
+
+        'default' =&gt; [
+            'host'     =&gt; env('REDIS_HOST', 'localhost'),
+            'password' =&gt; env('REDIS_PASSWORD', null),
+            'port'     =&gt; env('REDIS_PORT', 6379),
+            'database' =&gt; 0,
+        ],
+
+    ],
+
+];
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

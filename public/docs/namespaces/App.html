@@ -1,0 +1,540 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>API Documentation » App</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">API Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/App.html"><i class="icon-th"></i> App</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">306</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Namespaces</li>
+<li>
+<a href="../namespaces/App.html" title="App"><i class="icon-th"></i>App</a><ul class="nav nav-list nav-namespaces">
+<li>
+<a href="../namespaces/App.Console.html" title="Console"><i class="icon-th"></i>Console</a><ul class="nav nav-list nav-namespaces"><li>
+<a href="../namespaces/App.Console.Commands.html" title="Commands"><i class="icon-th"></i>Commands</a><ul class="nav nav-list nav-namespaces"></ul>
+</li></ul>
+</li>
+<li>
+<a href="../namespaces/App.Events.html" title="Events"><i class="icon-th"></i>Events</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/App.Exceptions.html" title="Exceptions"><i class="icon-th"></i>Exceptions</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/App.Http.html" title="Http"><i class="icon-th"></i>Http</a><ul class="nav nav-list nav-namespaces">
+<li>
+<a href="../namespaces/App.Http.Controllers.html" title="Controllers"><i class="icon-th"></i>Controllers</a><ul class="nav nav-list nav-namespaces"><li>
+<a href="../namespaces/App.Http.Controllers.Auth.html" title="Auth"><i class="icon-th"></i>Auth</a><ul class="nav nav-list nav-namespaces"></ul>
+</li></ul>
+</li>
+<li>
+<a href="../namespaces/App.Http.Middleware.html" title="Middleware"><i class="icon-th"></i>Middleware</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/App.Http.Requests.html" title="Requests"><i class="icon-th"></i>Requests</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="../namespaces/App.Jobs.html" title="Jobs"><i class="icon-th"></i>Jobs</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/App.Providers.html" title="Providers"><i class="icon-th"></i>Providers</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Classes" class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#Role" title="">Role</a></li>
+<li><a href="#TransactionType" title="">TransactionType</a></li>
+<li><a href="#TimingTemplate" title="">TimingTemplate</a></li>
+<li><a href="#User" title="">User</a></li>
+<li><a href="#PeopleContact" title="">PeopleContact</a></li>
+<li><a href="#UserCategory" title="">UserCategory</a></li>
+<li><a href="#CompanyContact" title="">CompanyContact</a></li>
+<li><a href="#CompanyCategory" title="">CompanyCategory</a></li>
+<li><a href="#Transaction" title="">Transaction</a></li>
+<li><a href="#PropertyCategory" title="">PropertyCategory</a></li>
+<li><a href="#TimingStatus" title="">TimingStatus</a></li>
+<li><a href="#Property" title="">Property</a></li>
+<li><a href="#PeopleCategory" title="">PeopleCategory</a></li>
+<li><a href="#TransactionStatus" title="">TransactionStatus</a></li>
+</ul>
+</div>
+<div class="span8 namespace-contents">
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li class="active"><a href="../namespaces/App.html">App</a></li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="CompanyCategory" class="element ajax clickable class">
+<h1>CompanyCategory<a href="../classes/App.CompanyCategory.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.CompanyCategory.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="CompanyContact" class="element ajax clickable class">
+<h1>CompanyContact<a href="../classes/App.CompanyContact.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.CompanyContact.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="PeopleCategory" class="element ajax clickable class">
+<h1>PeopleCategory<a href="../classes/App.PeopleCategory.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.PeopleCategory.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="PeopleContact" class="element ajax clickable class">
+<h1>PeopleContact<a href="../classes/App.PeopleContact.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.PeopleContact.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="Property" class="element ajax clickable class">
+<h1>Property<a href="../classes/App.Property.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Property.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="PropertyCategory" class="element ajax clickable class">
+<h1>PropertyCategory<a href="../classes/App.PropertyCategory.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.PropertyCategory.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="Role" class="element ajax clickable class">
+<h1>Role<a href="../classes/App.Role.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Role.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="TimingStatus" class="element ajax clickable class">
+<h1>TimingStatus<a href="../classes/App.TimingStatus.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.TimingStatus.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="TimingTemplate" class="element ajax clickable class">
+<h1>TimingTemplate<a href="../classes/App.TimingTemplate.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.TimingTemplate.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="Transaction" class="element ajax clickable class">
+<h1>Transaction<a href="../classes/App.Transaction.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Transaction.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="TransactionStatus" class="element ajax clickable class">
+<h1>TransactionStatus<a href="../classes/App.TransactionStatus.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.TransactionStatus.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="TransactionType" class="element ajax clickable class">
+<h1>TransactionType<a href="../classes/App.TransactionType.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.TransactionType.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="User" class="element ajax clickable class">
+<h1>User<a href="../classes/App.User.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.User.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="UserCategory" class="element ajax clickable class">
+<h1>UserCategory<a href="../classes/App.UserCategory.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.UserCategory.html" class="more">« More »</a>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/App.html">App</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/App.Console.html">Console</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="Kernel" class="element ajax clickable class">
+<h1>Kernel<a href="../classes/App.Console.Kernel.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Console.Kernel.html" class="more">« More »</a>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/App.html">App</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/App.Console.html">Console</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/App.Console.Commands.html">Commands</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="Inspire" class="element ajax clickable class">
+<h1>Inspire<a href="../classes/App.Console.Commands.Inspire.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Console.Commands.Inspire.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/App.html">App</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/App.Events.html">Events</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="Event" class="element ajax clickable class">
+<h1>Event<a href="../classes/App.Events.Event.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Events.Event.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/App.html">App</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/App.Exceptions.html">Exceptions</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="Handler" class="element ajax clickable class">
+<h1>Handler<a href="../classes/App.Exceptions.Handler.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Exceptions.Handler.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/App.html">App</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/App.Http.html">Http</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="Kernel" class="element ajax clickable class">
+<h1>Kernel<a href="../classes/App.Http.Kernel.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Http.Kernel.html" class="more">« More »</a>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/App.html">App</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/App.Http.html">Http</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/App.Http.Controllers.html">Controllers</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="AdminController" class="element ajax clickable class">
+<h1>AdminController<a href="../classes/App.Http.Controllers.AdminController.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Http.Controllers.AdminController.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="ContactsController" class="element ajax clickable class">
+<h1>ContactsController<a href="../classes/App.Http.Controllers.ContactsController.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Http.Controllers.ContactsController.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="Controller" class="element ajax clickable class">
+<h1>Controller<a href="../classes/App.Http.Controllers.Controller.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Http.Controllers.Controller.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="HomeController" class="element ajax clickable class">
+<h1>HomeController<a href="../classes/App.Http.Controllers.HomeController.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Http.Controllers.HomeController.html" class="more">« More »</a>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/App.html">App</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/App.Http.html">Http</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/App.Http.Controllers.html">Controllers</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/App.Http.Controllers.Auth.html">Auth</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="AuthController" class="element ajax clickable class">
+<h1>AuthController<a href="../classes/App.Http.Controllers.Auth.AuthController.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Http.Controllers.Auth.AuthController.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="PasswordController" class="element ajax clickable class">
+<h1>PasswordController<a href="../classes/App.Http.Controllers.Auth.PasswordController.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Http.Controllers.Auth.PasswordController.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/App.html">App</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/App.Http.html">Http</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/App.Http.Middleware.html">Middleware</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="Authenticate" class="element ajax clickable class">
+<h1>Authenticate<a href="../classes/App.Http.Middleware.Authenticate.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Http.Middleware.Authenticate.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="EncryptCookies" class="element ajax clickable class">
+<h1>EncryptCookies<a href="../classes/App.Http.Middleware.EncryptCookies.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Http.Middleware.EncryptCookies.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="RedirectIfAuthenticated" class="element ajax clickable class">
+<h1>RedirectIfAuthenticated<a href="../classes/App.Http.Middleware.RedirectIfAuthenticated.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Http.Middleware.RedirectIfAuthenticated.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="VerifyCsrfToken" class="element ajax clickable class">
+<h1>VerifyCsrfToken<a href="../classes/App.Http.Middleware.VerifyCsrfToken.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Http.Middleware.VerifyCsrfToken.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/App.html">App</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/App.Http.html">Http</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/App.Http.Requests.html">Requests</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="Request" class="element ajax clickable class">
+<h1>Request<a href="../classes/App.Http.Requests.Request.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Http.Requests.Request.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/App.html">App</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/App.Jobs.html">Jobs</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="Job" class="element ajax clickable class">
+<h1>Job<a href="../classes/App.Jobs.Job.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Jobs.Job.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/App.html">App</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/App.Providers.html">Providers</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="AppServiceProvider" class="element ajax clickable class">
+<h1>AppServiceProvider<a href="../classes/App.Providers.AppServiceProvider.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Providers.AppServiceProvider.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="AuthServiceProvider" class="element ajax clickable class">
+<h1>AuthServiceProvider<a href="../classes/App.Providers.AuthServiceProvider.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Providers.AuthServiceProvider.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="EventServiceProvider" class="element ajax clickable class">
+<h1>EventServiceProvider<a href="../classes/App.Providers.EventServiceProvider.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Providers.EventServiceProvider.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="RouteServiceProvider" class="element ajax clickable class">
+<h1>RouteServiceProvider<a href="../classes/App.Providers.RouteServiceProvider.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/App.Providers.RouteServiceProvider.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2016-02-11T11:37:14-08:00.<br></footer></div>
+</div>
+</body>
+</html>

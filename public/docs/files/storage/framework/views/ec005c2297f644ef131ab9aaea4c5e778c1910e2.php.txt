@@ -1,0 +1,210 @@
+<div class="col-md-6">
+
+	<div class="row">
+		<div class="form-group col-md-6">
+			<?php echo Form::label('last_name', 'Last Name'); ?>
+
+			<?php echo Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => 'Last Name']); ?>
+
+		</div>
+
+		<div class="form-group col-md-6">
+			<?php echo Form::label('middle_name', 'Middle Name'); ?>
+
+			<?php echo Form::text('middle_name', null, ['class' => 'form-control', 'placeholder' => 'Middle Name']); ?>
+
+		</div>
+	</div>
+
+	<div class="form-group">
+		<?php echo Form::label('first_name', 'First Name'); ?>
+
+		<?php echo Form::text('first_name', null, ['class' => 'form-control', 'placeholder' => 'First Name']); ?>
+
+	</div>
+
+	<div id="form-group">
+		<?php echo Form::label('company', 'Company'); ?>
+
+		<?php echo Form::select('company', $companiesSelect, ! is_null($contactCompanies) ? $contactCompanies : '0', ['class' => 'form-control']); ?>
+
+	</div>
+
+	<div class="page-header">
+		<h6>Person Type</h6>
+	</div>
+
+	<div class="row">
+		<?php echo $__env->make('contact.people.includes.categories', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	 </div>
+
+	<div class="page-header">
+		<h6>Contact</h6>
+	</div>
+
+	<div class="form-group">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#email1" data-toggle="tab">Email 1</a></li>
+			<li><a href="#email2" data-toggle="tab">Email 2</a></li>
+			<li><a href="#email3" data-toggle="tab">Email 3</a></li>
+		</ul>
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane fade active in" id="email1">
+				<?php echo e(Form::email('email_1', null, ['class' => 'form-control', 'placeholder' => 'Primary Email'])); ?>
+
+			</div>
+			<div class="tab-pane fade" id="email2">
+				<?php echo e(Form::email('email_2', null, ['class' => 'form-control', 'placeholder' => 'Secondary Email (optional)'])); ?>
+
+			</div>
+			<div class="tab-pane fade" id="email3">
+				<?php echo e(Form::email('email_3', null, ['class' => 'form-control', 'placeholder' => 'Third Email (optional)'])); ?>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#phone1" data-toggle="tab">Phone</a></li>
+			<li><a href="#phone2" data-toggle="tab">Business</a></li>
+			<li><a href="#phone3" data-toggle="tab">Mobile</a></li>
+			<li><a href="#phone4" data-toggle="tab">Other</a></li>
+			<li><a href="#fax" data-toggle="tab">fax</a></li>
+		</ul>
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane fade active in" id="phone1">
+				<?php echo e(Form::text('home_phone', null, ['class' => 'form-control', 'placeholder' => 'Primary Phone'])); ?>
+
+			</div>
+			<div class="tab-pane fade" id="phone2">
+				<?php echo e(Form::text('business_phone', null, ['class' => 'form-control', 'placeholder' => 'Business Phone'])); ?>
+
+			</div>
+			<div class="tab-pane fade" id="phone3">
+				<?php echo e(Form::text('mobile_phone', null, ['class' => 'form-control', 'placeholder' => 'Mobile Phone'])); ?>
+
+			</div>
+			<div class="tab-pane fade" id="phone4">
+				<?php echo e(Form::text('other_phone', null, ['class' => 'form-control', 'placeholder' => 'Other Phone'])); ?>
+
+			</div>
+			<div class="tab-pane fade" id="fax">
+				<?php echo e(Form::text('fax', null, ['class' => 'form-control', 'placeholder' => 'Fax'])); ?>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="page-header">
+		<h6>Address</h6>
+	</div>
+
+	<div class="form-group">
+		<?php echo Form::label('address_street', 'Street'); ?>
+
+		<?php echo Form::text('address_street', null, ['class' => 'form-control', 'placeholder' => 'Address Street']); ?>
+
+	</div>
+
+	<div class="row">
+		<div class="form-group col-md-4">
+			<?php echo Form::label('address_city', 'City'); ?>
+
+			<?php echo Form::text('address_city', null, ['class' => 'form-control', 'placeholder' => 'Address City']); ?>
+
+		</div>
+		<div class="form-group col-md-4">
+			<?php echo Form::label('address_state', 'State'); ?>
+
+			<?php echo Form::text('address_state', null, ['class' => 'form-control', 'placeholder' => 'Address State']); ?>
+
+		</div>
+		<div class="form-group col-md-4">
+			<?php echo Form::label('address_zip', 'Zip'); ?>
+
+			<?php echo Form::text('address_zip', null, ['class' => 'form-control', 'placeholder' => 'Address Zip']); ?>
+
+		</div>
+	</div>
+
+	<div class="form-group">
+		<?php echo Form::label('country', 'Country'); ?>
+
+		<?php echo Form::text('country', null, ['class' => 'form-control', 'placeholder' => 'Country']); ?>
+
+	</div>
+
+</div>
+
+<div class="col-md-6">
+
+	<div class="row avatar-section">
+		<div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
+			<?php if(isset($contact['avatar']) && ! empty($contact['avatar'])): ?>
+				<img src="<?php echo e($contact['avatar']); ?>" class="user-avatar">
+			<?php else: ?>
+				<img src="http://ani-theme.strapui.com/images/flat-avatar.png" class="user-avatar">
+			<?php endif; ?>
+		</div>
+	</div>
+
+	<div class="page-header">
+		<h6>Upload Avatar</h6>
+	</div>
+
+	<div class="form-inline">
+		<div class="form-group">
+			<?php echo Form::file('avatar', null); ?>
+
+		</div>
+	</div>
+
+	<div class="page-header">
+		<h6>Misc. Information</h6>
+	</div>
+
+	<div class="row">
+		<div class="form-group col-md-4">
+			<?php echo Form::label('birthday_day', 'Birthday Day'); ?>
+
+			<?php echo Form::text('birthday_day', null, ['class' => 'form-control', 'placeholder' => 'Day']); ?>
+
+		</div>
+		<div class="form-group col-md-4">
+			<?php echo Form::label('birthday_month', 'Birthday Month'); ?>
+
+			<?php echo Form::text('birthday_month', null, ['class' => 'form-control', 'placeholder' => 'Month']); ?>
+
+		</div>
+		<div class="form-group col-md-4">
+			<?php echo Form::label('birthday_year', 'Birthday Year'); ?>
+
+			<?php echo Form::text('birthday_year', null, ['class' => 'form-control', 'placeholder' => 'Year']); ?>
+
+		</div>
+	</div>
+
+	<div class="form-group">
+		<?php echo Form::label('gender', 'Gender'); ?>
+
+		<?php echo Form::text('gender', null, ['class' => 'form-control', 'placeholder' => 'Gender']); ?>
+
+	</div>
+
+	<div class="form-group">
+		<?php echo Form::label('tax_id', 'Tax ID'); ?>
+
+		<?php echo Form::text('tax_id', null, ['class' => 'form-control', 'placeholder' => 'Tax Id']); ?>
+
+	</div>
+
+	<div class="form-group">
+		<?php echo Form::label('notes', 'Notes'); ?>
+
+		<?php echo Form::textarea('notes', null, ['class' => 'form-control', 'placeholder' => 'Notes']); ?>
+
+	</div>
+
+</div>
+

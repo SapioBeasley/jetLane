@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">@extends('layouts.app')
+
+@section('content')
+&lt;div class=&quot;panel panel-default&quot;&gt;
+    &lt;div class=&quot;panel-heading&quot;&gt;Login&lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt;
+        &lt;form class=&quot;form-horizontal&quot; role=&quot;form&quot; method=&quot;POST&quot; action=&quot;{{ url('/login') }}&quot;&gt;
+            {!! csrf_field() !!}
+
+            &lt;div class=&quot;form-group{{ $errors-&gt;has('email') ? ' has-error' : '' }}&quot;&gt;
+                &lt;label class=&quot;col-md-4 control-label&quot;&gt;E-Mail Address&lt;/label&gt;
+
+                &lt;div class=&quot;col-md-6&quot;&gt;
+                    &lt;input type=&quot;email&quot; class=&quot;form-control&quot; name=&quot;email&quot; value=&quot;{{ old('email') }}&quot;&gt;
+
+                    @if ($errors-&gt;has('email'))
+                        &lt;span class=&quot;help-block&quot;&gt;
+                            &lt;strong&gt;{{ $errors-&gt;first('email') }}&lt;/strong&gt;
+                        &lt;/span&gt;
+                    @endif
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;form-group{{ $errors-&gt;has('password') ? ' has-error' : '' }}&quot;&gt;
+                &lt;label class=&quot;col-md-4 control-label&quot;&gt;Password&lt;/label&gt;
+
+                &lt;div class=&quot;col-md-6&quot;&gt;
+                    &lt;input type=&quot;password&quot; class=&quot;form-control&quot; name=&quot;password&quot;&gt;
+
+                    @if ($errors-&gt;has('password'))
+                        &lt;span class=&quot;help-block&quot;&gt;
+                            &lt;strong&gt;{{ $errors-&gt;first('password') }}&lt;/strong&gt;
+                        &lt;/span&gt;
+                    @endif
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;div class=&quot;col-md-6 col-md-offset-4&quot;&gt;
+                    &lt;div class=&quot;checkbox&quot;&gt;
+                        &lt;label&gt;
+                            &lt;input type=&quot;checkbox&quot; name=&quot;remember&quot;&gt; Remember Me
+                        &lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;div class=&quot;col-md-6 col-md-offset-4&quot;&gt;
+                    &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;
+                        &lt;i class=&quot;fa fa-btn fa-sign-in&quot;&gt;&lt;/i&gt;Login
+                    &lt;/button&gt;
+
+                    &lt;a class=&quot;btn btn-link&quot; href=&quot;{{ url('/password/reset') }}&quot;&gt;Forgot Your Password?&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+@endsection
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

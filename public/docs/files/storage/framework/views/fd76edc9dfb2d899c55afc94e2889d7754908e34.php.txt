@@ -1,0 +1,26 @@
+<?php $__env->startSection('content'); ?>
+<h4>Edit Company</h4>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+
+		<?php echo Form::model($contact, ['route' => ['contact.company.update', $contact['id']], 'method' => 'PUT']); ?>
+
+
+			<?php echo $__env->make('contact.companies.includes.informationForm', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+			<div class="col-md-12">
+				<div class="form-group">
+					<?php echo Form::submit('Update', ['class' => 'btn btn-primary']); ?>
+
+				</div>
+			</div>
+
+		<?php echo Form::close(); ?>
+
+
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

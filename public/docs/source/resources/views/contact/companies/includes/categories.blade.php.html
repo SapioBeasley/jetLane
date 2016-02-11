@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;div class=&quot;col-md-12&quot;&gt;
+	&lt;div class=&quot;row&quot;&gt;
+
+		@foreach($selectedCategories as $selectedCategory)
+			&lt;label class=&quot;col-md-6&quot;&gt;
+				{!! Form::checkbox('category[' . $selectedCategory['category'] . ']', '1', '1') !!} {{$selectedCategory['category']}}
+			&lt;/label&gt;
+		@endforeach
+
+		@foreach($companyCategories as $companyCategory)
+			&lt;label class=&quot;col-md-6&quot;&gt;
+				{!! Form::checkbox('category[' . $companyCategory['category'] . ']', '1') !!} {{$companyCategory['category']}}
+			&lt;/label&gt;
+		@endforeach
+
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

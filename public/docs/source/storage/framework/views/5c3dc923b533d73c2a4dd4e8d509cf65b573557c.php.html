@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php $__env-&gt;startSection('content'); ?&gt;
+&lt;h4&gt;Edit Person&lt;/h4&gt;
+
+&lt;div class=&quot;panel panel-default&quot;&gt;
+	&lt;div class=&quot;panel-body&quot;&gt;
+
+		&lt;?php echo Form::model($contact, ['route' =&gt; ['contact.people.update', $contact['id']], 'method' =&gt; 'PUT', 'files' =&gt; true]); ?&gt;
+
+
+			&lt;?php echo $__env-&gt;make('contact.people.includes.informationForm', array_except(get_defined_vars(), array('__data', '__path')))-&gt;render(); ?&gt;
+
+			&lt;div class=&quot;col-md-12&quot;&gt;
+				&lt;div class=&quot;form-group&quot;&gt;
+					&lt;?php echo Form::submit('Update', ['class' =&gt; 'btn btn-primary']); ?&gt;
+
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+		&lt;?php echo Form::close(); ?&gt;
+
+
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;?php $__env-&gt;stopSection(); ?&gt;
+
+&lt;?php echo $__env-&gt;make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))-&gt;render(); ?&gt;</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>
