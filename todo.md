@@ -1,13 +1,16 @@
-Add Group permissions for each contact. Users need permission roles so they do not see others contacts
+## ToDo
+- [ ] Add Group permissions for each contact. Users need permission roles so they do not see others contacts
 - [ ] Filter contacts by types
-- [x] Add 'canView' array to each contact
-find api for national average interest rates
-Look into loan data api
-Add wheel menu
-Table needed for contacts extra detail based on type
-add user persmissions
+- [ ] find api for national average interest rates
+- [ ] Look into loan data api
+- [ ] Add wheel menu
+- [ ] Table needed for contacts extra detail based on type
+- [ ] add user persmissions
 
-**Later**
+**Done**
+- [x] Add 'canView' array to each contact
+
+## Later
 We will need the ability to add type specific data
 
 ## Whats needed 99% of time for realtors
@@ -22,5 +25,6 @@ We will need the ability to add type specific data
 **Need to ask**
 
 **Asked**
-
 - [x] Can everyone see all companies or will they only be viewable by users who are 'canView'?
+
+**Answered**
