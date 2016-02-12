@@ -8,6 +8,7 @@
 - [ ] Add column to both people and company contacts table name 'createdBy'
 - [ ] Change both models belongToMany into createdBy
 - [ ] For the create methods of people and contacts, instead of sync to created by, use as the can view
+- [ ] Edit both seeders from created by to canView
 
 **Done**
 - [x] Add 'canView' array to each contact

@@ -30,6 +30,7 @@ class PeopleContact extends Model
 		'avatar',
 		'tax_id',
 		'notes',
+		'created_by',
 	];
 
 	public function companies()
@@ -40,11 +41,6 @@ class PeopleContact extends Model
 	public function category()
 	{
 		return $this->belongsToMany('App\PeopleCategory');
-	}
-
-	public function createdBy()
-	{
-		return $this->belongsToMany('App\User');
 	}
 
 	public function canView()

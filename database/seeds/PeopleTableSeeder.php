@@ -43,14 +43,16 @@ class PeopleTableSeeder extends Seeder
 				'email_2' => 'andreas+' . str_random('10') . '@sapioweb.com',
 				'email_3' => 'andreas+' . str_random('10') . '@sapioweb.com',
 				'avatar' => 'https://source.unsplash.com/category/buildings/?nature=' . rand('1', '90'),
-				'tax_id' => rand('1111111111', '9999999999')
+				'tax_id' => rand('1111111111', '9999999999'),
+				'created_by' => rand(1, 3)
 			]);
 
-			$people = CrudHelper::show(new \App\PeopleContact, 'id', $people['id']);
+			$canView = [
+				rand(1,2),
+				rand(1,3)
+			];
 
-			$userId = (string) rand(1,3);
-
-			$people->createdBy()->sync([$userId]);
+			$people->canView()->sync($canView);
 		}
 	}
 }
