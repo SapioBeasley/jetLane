@@ -42,8 +42,13 @@ class ContactsController extends Controller
 		// Using the getContactByRole we pull specific contacts for the user if not admin
 		$contacts = $this->getContactsByRole(new \App\CompanyContact);
 
-		$contacts['private'] = $this->createdByIdToEmail($contacts['private']);
-		$contacts['shared'] = $this->createdByIdToEmail($contacts['shared']);
+		if (! is_null($contacts['shared'])) {
+			$contacts['shared'] = $this->createdByIdToEmail($contacts['shared']);
+		}
+
+		if (! is_null($contacts['private'])) {
+			$contacts['private'] = $this->createdByIdToEmail($contacts['private']);
+		}
 
 		// Return the contacts
 		return view('contact.companies.index')->with([
@@ -55,8 +60,13 @@ class ContactsController extends Controller
 	{
 		$contacts = $this->getContactsByRole(new \App\PeopleContact);
 
-		$contacts['private'] = $this->createdByIdToEmail($contacts['private']);
-		$contacts['shared'] = $this->createdByIdToEmail($contacts['shared']);
+		if (! is_null($contacts['shared'])) {
+			$contacts['shared'] = $this->createdByIdToEmail($contacts['shared']);
+		}
+
+		if (! is_null($contacts['private'])) {
+			$contacts['private'] = $this->createdByIdToEmail($contacts['private']);
+		}
 
 		return view('contact.people.index')->with([
 			'contacts' => $contacts
