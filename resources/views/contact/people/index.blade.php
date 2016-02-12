@@ -6,7 +6,7 @@
 <div class="panel panel-default">
 	<div class="panel-body">
 
-		@if(empty($contacts['private'][0]) || empty($contacts['shared'][0]))
+		@if($contacts['private'] == null)
 			No contacts found. <a href="{{route('contact.people.create')}}">Add a contact</a>
 		@else
 			<table class="table table-striped table-hover">
