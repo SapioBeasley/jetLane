@@ -511,6 +511,8 @@ class ContactsController extends Controller
 
 		unset($data['_token']);
 
+		$data['created_by'] = \Auth::user()->id;
+
 		$contact = CrudHelper::store($model, $data);
 
 		if (isset($data['can_view'])) {

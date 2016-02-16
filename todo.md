@@ -5,8 +5,6 @@
 - [ ] Add wheel menu
 - [ ] Table needed for contacts extra detail based on type
 - [ ] add user persmissions
-- [ ] Add column to both people and company contacts table name 'createdBy'
-- [ ] Change both models belongToMany into createdBy
 - [ ] For the create methods of people and contacts, instead of sync to created by, use as the can view
 - [ ] Edit both seeders from created by to canView
 
@@ -14,6 +12,8 @@
 - [x] Add 'canView' array to each contact
 - [x] move route '/'' into controller and add auth construct
 - [x] Add Group permissions for each contact. Users need permission roles so they do not see others contacts
+- [x] Change both models belongToMany into createdBy
+- [x] Add column to both people and company contacts table name 'createdBy'
 
 ## Later
 We will need the ability to add type specific data
