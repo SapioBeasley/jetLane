@@ -29,7 +29,7 @@ class PeopleContact extends Model
 		'email_3',
 		'avatar',
 		'tax_id',
-		'notes',
+		// 'notes',
 		'created_by',
 	];
 
@@ -46,5 +46,10 @@ class PeopleContact extends Model
 	public function canView()
 	{
 		return $this->belongsToMany('App\User');
+	}
+
+	public function notesHistory()
+	{
+		return $this->belongsToMany('App\NotesHistory');
 	}
 }
