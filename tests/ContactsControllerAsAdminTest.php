@@ -18,6 +18,8 @@ class ContactsControllerAsAdminTest extends TestCase
 
 		$this->user = User::find(1);
 		$this->actingAs($this->user);
+
+		$this->request = new Request;
 	}
 
 	public function testCompanyIndex()
@@ -83,6 +85,48 @@ class ContactsControllerAsAdminTest extends TestCase
 		$this->assertTrue(is_string($contactsNew[0]['created_by']));
 	}
 
+	public function testStoreCompany()
+	{
+		// $request = new Illuminate\Http\Request;
+
+		// $createData = [
+		// 	'name' => 'Test Company ' . str_random(10),
+		// 	'dba' => 'Some Test DBA' . str_random(10),
+		// 	'organization' => 'Some Test Org ' . str_random(10),
+		// 	// 'address_street',
+		// 	// 'address_city',
+		// 	// 'address_state',
+		// 	// 'address_zip',
+		// 	// 'country',
+		// 	// 'phone',
+		// 	// 'mobile_phone',
+		// 	// 'other_phone',
+		// 	// 'fax',
+		// 	// 'email_1',
+		// 	// 'email_2',
+		// 	// 'email_3',
+		// 	// 'website',
+		// 	// 'notes',
+		// 	'created_by' => $this->user['id'],
+		// ];
+
+		// foreach ($createData as $createKey => $createValue) {
+		// 	$request->$createKey = $createValue;
+		// }
+
+		// $contact = $this->contactsController->storeCompany($request);
+
+		// $crawler = $contact->followRedirect();
+
+		// dd($crawler);
+		// $this->assertRedirectedTo('/mymodule/mycontroller/myaction/');
+	}
+
+	public function testStorePeople()
+	{
+		// dd($contactsController->storePeople());
+	}
+
 	public function testShowCompany()
 	{
 		// Feed company $id
@@ -105,15 +149,7 @@ class ContactsControllerAsAdminTest extends TestCase
 		// dd($contactsController->createPeople());
 	}
 
-	public function testStoreCompany()
-	{
-		// dd($contactsController->storeCompany());
-	}
 
-	public function testStorePeople()
-	{
-		// dd($contactsController->storePeople());
-	}
 
 	public function testEditCompany()
 	{
