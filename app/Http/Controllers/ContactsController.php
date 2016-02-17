@@ -56,7 +56,7 @@ class ContactsController extends Controller
 		]);
 	}
 
-	public function indexPeople(Request $request)
+	public function indexPeople()
 	{
 		$contacts = $this->getContactsByRole(new \App\PeopleContact, $request->filter);
 
