@@ -1,6 +1,5 @@
 ## ToDo
 - [ ] Table needed for contacts extra detail based on type
-- [ ] Check image upload on user create
 - [ ] If person is client of prospect we need to be able to add more information to the user, same foro company
 - [ ] Need to create loans table with below columns
 - [ ] Create field in loans for loan_id
@@ -52,6 +51,7 @@
 - [x] Edit both seeders from created by to canView
 - [x] add user persmissions
 - [x] Avatar on create works, update needs to be fixed
+- [x] Check image upload on user create
 
 ## Later
 We will need the ability to add type specific data
