@@ -38,6 +38,9 @@
 - [ ] Loans are listed under company
 - [ ] When creating a transaction is when the loan is either created or duplicated
 - [ ] If company has multiple locations, how can we select the correct address to associate that address to person
+- [ ] Build properties required array Fields from rets
+- [ ] Print fliers for properties
+- [ ] generate comps for properties
 
 **Done**
 - [x] Add 'canView' array to each contact
@@ -48,6 +51,7 @@
 - [x] For the create methods of people and contacts, instead of sync to created by, use as the can view
 - [x] Edit both seeders from created by to canView
 - [x] add user persmissions
+- [x] Avatar on create works, update needs to be fixed
 
 ## Later
 We will need the ability to add type specific data
