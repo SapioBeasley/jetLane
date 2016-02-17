@@ -1,31 +1,13 @@
 ## ToDo
 - [ ] Table needed for contacts extra detail based on type
 - [ ] If person is client of prospect we need to be able to add more information to the user, same foro company
-- [ ] Need to create loans table with below columns
-- [ ] Create field in loans for loan_id
-- [ ] Create field in loans for lender (related to lender table)
-- [ ] Create field in loans for loan title
-- [ ] Create field in loans for loan subtitle
-- [ ] Create field in loans for conforming_load (y/n)
-- [ ] Create field in loans for fha (y/n)
-- [ ] Create field in loans for va (y/n)
-- [ ] Create field in loans for conventional (y/n)
-- [ ] Create field in loans for term
-- [ ] Create field in loans for rate
 - [ ] Create field in loans for front_end_limit
 - [ ] Create field in loans for back_end_limit
-- [ ] Create field in loans for min_down_payment
+- [ ] Create field in loans for conforming_load
 - [ ] Create field in loans for front end mortgate insurence
-- [ ] Bankrupcy burnoff (if user has bankrupcy how many years out do they ned to be)
 - [ ] Seasoned burnoff (if user has forclosure how many years out do they ned to be)
-- [ ] Create field in loans for lender fees
-- [ ] Minimun fico number
-- [ ] Create field in loans for origination fee
-- [ ] Create field in loans for owner occupant only (y/n)
-- [ ] Create field in loans for second home(y/n)
-- [ ] Create field in loans for two loans (y/n)
 - [ ] Create field in loans for loan limits
-- [ ] If user is client or prospect, add section to show to tell agent to gather additional information from client (prequal meeting time)
+- [ ] If user is client or prospect, add section on show to tell agent to gather additional information from client (prequal meeting time)
 - [ ] Filter contacts by types
 - [ ] find api for national average interest rates
 - [ ] Look into loan data api
@@ -34,6 +16,7 @@
 - [ ] Companies are the relationship in loans
 - [ ] when you search company list the people associated
 - [ ] Able to create duplicate loan from already created
+- [ ] Only companies and people that are type lenders can be added to the loans pivot
 - [ ] Loans are listed under company
 - [ ] When creating a transaction is when the loan is either created or duplicated
 - [ ] If company has multiple locations, how can we select the correct address to associate that address to person
@@ -52,6 +35,24 @@
 - [x] add user persmissions
 - [x] Avatar on create works, update needs to be fixed
 - [x] Check image upload on user create
+- [ ] Need to create loans table with below columns
+- [ ] Create field in loans for loan_id
+- [ ] Create field in loans for lender (related to lender table)
+- [ ] Create field in loans for loan title
+- [ ] Create field in loans for loan subtitle
+- [ ] Create field in loans for fha (y/n)
+- [ ] Create field in loans for va (y/n)
+- [ ] Create field in loans for conventional (y/n)
+- [ ] Create field in loans for term
+- [ ] Create field in loans for rate
+- [ ] Create field in loans for min_down_payment
+- [ ] Bankrupcy burnoff (if user has bankrupcy how many years out do they ned to be)
+- [ ] Create field in loans for lender fees
+- [ ] Minimun fico number
+- [ ] Create field in loans for origination fee
+- [ ] Create field in loans for owner occupant only (y/n)
+- [ ] Create field in loans for second home(y/n)
+- [ ] Create field in loans for two loans (y/n)
 
 ## Later
 We will need the ability to add type specific data
@@ -62,13 +63,17 @@ We will need the ability to add type specific data
 - [ ] Net Sheets for sellers
 
 ## Concerns to fix
-- [ ] If a user knows  contacts ID they will be able to append to the url and view. Need to keep that from happening
+- [ ] If a user knows a contacts ID they will be able to append to the url and view. Need to keep that from happening
 
 ## Questions
 **Need to ask**
-- [ ] If user is a client what extra fields are required for the prequal meeting
 
 **Asked**
 - [x] Can everyone see all companies or will they only be viewable by users who are 'canView'?
+- [x] If user is a client what extra fields are required for the prequal meeting
+- [x] What type of values are expected for these? front_end_limit, back_end_limit, front_end_mortgate_insurence, loan_limit
+- [x] What other "burnoff" items will their be?
+- [x] Is "Seasoned burnoff" an actual field to be added of was it a general name?
+- [x] conforming_load with a value of either y/n is a correct field? I may have caught it wrong.
 
 **Answered**
