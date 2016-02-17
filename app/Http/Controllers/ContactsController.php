@@ -141,6 +141,7 @@ class ContactsController extends Controller
 
 	public function storePeople(Request $request)
 	{
+		dd($request->note);
 		$contact = $this->storeContactComplete(new \App\PeopleContact, new \App\PeopleCategory, $request->all());
 
 		return redirect()->route('contact.people.show', $contact->id)->with([
@@ -163,7 +164,7 @@ class ContactsController extends Controller
 
 	public function editPeople($id)
 	{
-		$editContact = $this->editContactComplete(new \App\PeopleContact, new \App\PeopleCategory, $id, ['category', 'companies', 'canView']);
+		$editContact = $this->editContactComplete(new \App\PeopleContact, new \App\PeopleCategory, $id, ['category', 'companies', 'canView', 'notesHistory']);
 
 		$companiesSelect = $this->companiesSelect();
 
@@ -175,6 +176,7 @@ class ContactsController extends Controller
 			'selectedCategories' => $editContact['selectedCategories'],
 			'availableUsers' => $editContact['availableUsers'],
 			'canView' => $editContact['canView'],
+			'notesHistory' => $editContact['notesHistory'],
 		]);
 	}
 
@@ -192,6 +194,10 @@ class ContactsController extends Controller
 			$canView = $contact['canView'];
 		}
 
+		if (! empty($contact['notesHistory'])); {
+			$notesHistory = $contact['notesHistory'];
+		}
+
 		if (isset($contact['companies']) && ! empty($contact['companies'])) {
 			$contactCompanies = $contact['companies'][0]['id'];
 		}
@@ -206,6 +212,7 @@ class ContactsController extends Controller
 			'availableUsers' => isset($availableUsers) ? $availableUsers : null,
 			'canView' => isset($canView) ? $canView : null,
 			'categories' => isset($categories) ? $categories : null,
+			'notesHistory' => isset($notesHistory) ? $notesHistory : null,
 		];
 	}
 
@@ -300,6 +307,12 @@ class ContactsController extends Controller
     	{
     		$contact = CrudHelper::show(new \App\PeopleContact, 'id', $id);
 
+    		if (! is_null($request->notes)) {
+    			$contact->first()->notesHistory()->create([
+    				'note' => $request->notes
+    			]);
+    		}
+
     		foreach ($request->all() as $updateField => $updateValue) {
     			$updateContact[$updateField] = $updateValue;
     		}
@@ -310,10 +323,10 @@ class ContactsController extends Controller
 			$updateContact['avatar'] = $avatarUpload;
 		}
 
-    		$contact->canView()->detach();
+    		$contact->first()->canView()->detach();
 
 		if (! is_null($updateContact['can_view'])) {
-			$contact->canView()->sync($updateContact['can_view']);
+			$contact->first()->canView()->sync($updateContact['can_view']);
 		}
 
     		if (! is_null($updateContact['category'])) {
@@ -324,7 +337,7 @@ class ContactsController extends Controller
 
 			$categoryIds = $this->updateCategories(new \App\PeopleCategory, $updateContact['category']);
 
-			$contact->category()->sync($categoryIds);
+			$contact->first()->category()->sync($categoryIds);
 		}
 
     		if (isset($updateContact['company']) && $updateContact['company'] !== '0') {
@@ -333,6 +346,13 @@ class ContactsController extends Controller
 
 			$contactComapany->companies()->sync([$updateContact['company']]);
 		}
+
+		unset($updateContact['_method']);
+    		unset($updateContact['_token']);
+    		unset($updateContact['company']);
+    		unset($updateContact['can_view']);
+    		unset($updateContact['category']);
+    		unset($updateContact['notes']);
 
     		$contact->update($updateContact);
 
@@ -348,7 +368,7 @@ class ContactsController extends Controller
 		}
 
 		foreach ($categories as $category) {
-			$findCategory = CrudHelper::show($catModel, 'category', $category);
+			$findCategory = CrudHelper::show($catModel, 'category', $category)->first();
 
 			$categoryId[] = $findCategory['id'];
 		}
@@ -405,7 +425,7 @@ class ContactsController extends Controller
 	public function getUsersRole($userId)
 	{
 		// Find a user by their ID
-		$user = CrudHelper::show(new \App\User, 'id', $userId, ['roles']);
+		$user = CrudHelper::show(new \App\User, 'id', $userId, ['roles'])->first();
 
 		// Define the role from the users information
 		$role= $user['roles']->first();
@@ -480,7 +500,7 @@ class ContactsController extends Controller
 			abort(404);
 		}
 
-		return $contact;
+		return $contact->first();
 	}
 
 	public function canView($createdContact, $canView)
