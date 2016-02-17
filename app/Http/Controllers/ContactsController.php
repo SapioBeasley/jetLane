@@ -56,9 +56,9 @@ class ContactsController extends Controller
 		]);
 	}
 
-	public function indexPeople()
+	public function indexPeople(Request $request)
 	{
-		$contacts = $this->getContactsByRole(new \App\PeopleContact);
+		$contacts = $this->getContactsByRole(new \App\PeopleContact, $request->filter);
 
 		if (! is_null($contacts['shared'])) {
 			$contacts['shared'] = $this->createdByIdToEmail($contacts['shared']);
@@ -275,7 +275,7 @@ class ContactsController extends Controller
 			$updateContact[$updateField] = $updateValue;
 		}
 
-			$contact->canView($updateContact['canView']);
+		$contact->canView($updateContact['canView']);
 
 		if (! is_null($updateContact['category'])) {
 			$categoryIds = $this->updateCategories(new \App\CompanyCategory, $updateContact['category']);
@@ -298,17 +298,17 @@ class ContactsController extends Controller
 
     	public function updatePeople(Request $request, $id)
     	{
-    		if ($request->hasFile('avatar')) {
-			$avatarUpload = $this->avatarUpload($request->file('avatar'));
-
-			$updateContact['avatar'] = $avatarUpload;
-		}
-
     		$contact = CrudHelper::show(new \App\PeopleContact, 'id', $id);
 
     		foreach ($request->all() as $updateField => $updateValue) {
     			$updateContact[$updateField] = $updateValue;
     		}
+
+    		if ($request->hasFile('avatar')) {
+			$avatarUpload = $this->avatarUpload($request->file('avatar'));
+
+			$updateContact['avatar'] = $avatarUpload;
+		}
 
     		$contact->canView()->detach();
 
@@ -448,8 +448,10 @@ class ContactsController extends Controller
 		return $contacts;
 	}
 
-    	public function getContactsByRole($model)
+    	public function getContactsByRole($model, $filter = null)
 	{
+		// dd($filter);
+
 		switch (true) {
 			case $this->role['role'] === 'admin':
 				$contacts = $this->getAll($model);
@@ -457,6 +459,7 @@ class ContactsController extends Controller
 
 			default:
 				$contacts = $model->where('created_by', '=', $this->role['userId'])->with('canView')->get();
+
 				$sharedContacts = $model->whereHas('canView', function ($query) {
 					$query->where('user_id', '=', \Auth::user()->id);
 				})->get();
