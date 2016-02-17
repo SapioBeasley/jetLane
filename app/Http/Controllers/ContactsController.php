@@ -80,7 +80,7 @@ class ContactsController extends Controller
 		foreach ($contacts as $contactKey => $contactValue) {
 			unset($contacts[$contactKey]['created_by']);
 
-			$createdBy = CrudHelper::show(new \App\User, 'id', $contactValue['created_by']);
+			$createdBy = CrudHelper::show(new \App\User, 'id', $contactValue['created_by'])->first();
 
 			$contacts[$contactKey]['created_by'] = $createdBy->email;
 		}
