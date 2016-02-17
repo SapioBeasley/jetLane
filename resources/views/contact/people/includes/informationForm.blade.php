@@ -210,31 +210,6 @@
   clear: both;
   height: 0;
 }
-#timeline .timeline-badge {
-  color: #fff;
-  width: 50px;
-  height: 50px;
-  font-size: 1.2em;
-  text-align: center;
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  margin-left: -25px;
-  background-color: #4997cd;
-  z-index: 100;
-  border-top-right-radius: 50%;
-  border-top-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-}
-#timeline .timeline-badge span.timeline-balloon-date-day {
-  font-size: 1.4em;
-}
-#timeline .timeline-badge span.timeline-balloon-date-month {
-  font-size: .7em;
-  position: relative;
-  top: -10px;
-}
 #timeline .timeline-badge.timeline-filter-movement {
   background-color: #ffffff;
   font-size: 1.7em;
@@ -243,11 +218,6 @@
   width: 35px;
   top: 40px;
 }
-#timeline .timeline-badge.timeline-filter-movement a span {
-  color: #4997cd;
-  font-size: 1.3em;
-  top: -1px;
-}
 #timeline .timeline-badge.timeline-future-movement {
   background-color: #ffffff;
   height: 35px;
@@ -255,12 +225,6 @@
   font-size: 1.7em;
   top: -16px;
   margin-left: -18px;
-}
-#timeline .timeline-badge.timeline-future-movement a span {
-  color: #4997cd;
-  font-size: .9em;
-  top: 2px;
-  left: 1px;
 }
 #timeline .timeline-movement {
   position: relative;
