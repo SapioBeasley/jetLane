@@ -1,0 +1,14 @@
+<?php foreach($canView as $viewer): ?>
+	<label class="col-md-6">
+		<?php echo Form::checkbox('can_view[]', $viewer['id'], $viewer['id']); ?> <?php echo e($viewer['name']); ?>
+
+	</label>
+<?php endforeach; ?>
+
+<?php foreach($availableUsers as $user): ?>
+	<label class="col-md-6">
+		<?php echo Form::checkbox('can_view[]', $user['id']); ?> <?php echo e($user['name']); ?>
+
+	</label>
+<?php endforeach; ?>
+
