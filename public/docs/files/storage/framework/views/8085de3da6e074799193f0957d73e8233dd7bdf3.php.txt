@@ -148,5 +148,15 @@
 
 	</div>
 
+	<div class="page-header">
+		<h6><strong>Who Can view this Contact?</strong></h6>
+	</div>
+
+	<div class="form-group">
+		<div class="row">
+			<?php echo $__env->make('contact.companies.includes.canView', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+	</div>
+
 </div>
 

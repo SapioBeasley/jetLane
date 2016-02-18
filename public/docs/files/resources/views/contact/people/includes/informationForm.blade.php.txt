@@ -162,10 +162,152 @@
 		{!! Form::text('tax_id', null, ['class' => 'form-control', 'placeholder' => 'Tax Id']) !!}
 	</div>
 
+	<div class="page-header">
+		<h6><strong>Who Can view this Contact?</strong></h6>
+	</div>
+
+	<div class="form-group">
+		<div class="row">
+			@include('contact.people.includes.canView')
+		</div>
+	</div>
+
+</div>
+
+<div class="col-md-12">
+
 	<div class="form-group">
 		{!! Form::label('notes', 'Notes') !!}
 		{!! Form::textarea('notes', null, ['class' => 'form-control', 'placeholder' => 'Notes']) !!}
 	</div>
 
+
+
+
+
+
+
+
+
+
+	<style type="text/css">
+
+#timeline {
+  list-style: none;
+  position: relative;
+}
+#timeline:before {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 2px;
+  background-color: #4997cd;
+  left: 50%;
+  margin-left: -1.5px;
+}
+#timeline .clearFix {
+  clear: both;
+  height: 0;
+}
+#timeline .timeline-badge.timeline-filter-movement {
+  background-color: #ffffff;
+  font-size: 1.7em;
+  height: 35px;
+  margin-left: -18px;
+  width: 35px;
+  top: 40px;
+}
+#timeline .timeline-badge.timeline-future-movement {
+  background-color: #ffffff;
+  height: 35px;
+  width: 35px;
+  font-size: 1.7em;
+  top: -16px;
+  margin-left: -18px;
+}
+#timeline .timeline-movement {
+  position: relative;
+}
+#timeline .timeline-movement.timeline-movement-top {
+  height: 60px;
+}
+#timeline .timeline-movement .timeline-item {
+  padding: 20px 0;
+}
+#timeline .timeline-movement .timeline-item .timeline-panel {
+  border: 1px solid #d4d4d4;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  color: #666;
+  padding: 10px;
+  position: relative;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+#timeline .timeline-movement .timeline-item .timeline-panel .timeline-panel-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#timeline .timeline-movement .timeline-item .timeline-panel.credits .timeline-panel-ul {
+  text-align: left;
+}
+#timeline .timeline-movement .timeline-item .timeline-panel.credits .timeline-panel-ul li {
+  color: #666;
+}
+#timeline .timeline-movement .timeline-item .timeline-panel.credits .timeline-panel-ul li span.importo {
+  color: #468c1f;
+  font-size: 1.3em;
+}
+#timeline .timeline-movement .timeline-item .timeline-panel.debits .timeline-panel-ul {
+  text-align: left;
+}
+#timeline .timeline-movement .timeline-item .timeline-panel.debits .timeline-panel-ul span.importo {
+  color: #e2001a;
+  font-size: 1.3em;
+}
+	</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div id="timeline">
+		<div class="row timeline-movement">
+
+			@foreach ($notesHistory as $note)
+
+				<div class="col-sm-12  timeline-item">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="timeline-panel credits">
+								<ul class="timeline-panel-ul">
+									<!-- <li><span class="importo">Mussum ipsum cacilds</span></li>
+									<li> -->
+										<span class="causale">
+											{{$note['note']}}
+										</span>
+									</li>
+									<li><p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{date('F d, Y', strtotime($note['created_at']))}}</small></p> </li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			@endforeach
+
+		</div>
+	</div>
 </div>
 

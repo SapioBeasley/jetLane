@@ -38,13 +38,15 @@ class CompaniesTableSeeder extends Seeder
 				'email_2' => 'andreas+' . str_random('10') . '@sapioweb.com',
 				'email_3' => 'andreas+' . str_random('10') . '@sapioweb.com',
 				'website' => str_random('10') . '.com',
+				'created_by' => rand(1, 3)
 			]);
 
-			$company = CrudHelper::show(new \App\CompanyContact, 'id', $company['id']);
+			$canView = [
+				rand(1,2),
+				rand(1,3)
+			];
 
-			$userId = (string) rand(1,3);
-
-			$company->createdBy()->sync([$userId]);
+			$company->canView()->sync($canView);
 		}
 	}
 }

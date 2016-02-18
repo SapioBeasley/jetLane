@@ -24,6 +24,7 @@ class CompanyContact extends Model
 		'email_3',
 		'website',
 		'notes',
+		'created_by',
 	];
 
 	public function people()
@@ -34,11 +35,6 @@ class CompanyContact extends Model
 	public function category()
 	{
 		return $this->belongsToMany('App\CompanyCategory');
-	}
-
-	public function createdBy()
-	{
-		return $this->belongsToMany('App\User');
 	}
 
 	public function canView()

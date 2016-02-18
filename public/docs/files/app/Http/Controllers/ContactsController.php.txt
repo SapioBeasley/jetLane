@@ -15,7 +15,6 @@ class ContactsController extends Controller
 
 	/**
 	* Create a new controller instance.
-	*
 	* @return void
 	*/
 	public function __construct()
@@ -35,29 +34,23 @@ class ContactsController extends Controller
 	}
 
 	/**
-	 * Grab a logged in users role and who they are
-	 * @param  int          $userId     the id of the logged in user
-	 * @return   array                        return the role id, the actual ame of the role, and the users id
+	 * Show all company contact
+	 * @return collection      A collection of all contacts that are companies
 	 */
-	public function getUsersRole($userId)
-	{
-		$user = CrudHelper::show(new \App\User, 'id', $userId, ['roles']);
-
-		$role= $user['roles']->first();
-
-		$role = [
-			'id' => $role->id,
-			'role' => $role->role,
-			'userId' => $user->id
-		];
-
-		return $role;
-	}
-
 	public function indexCompany()
 	{
+		// Using the getContactByRole we pull specific contacts for the user if not admin
 		$contacts = $this->getContactsByRole(new \App\CompanyContact);
 
+		if (! is_null($contacts['shared'])) {
+			$contacts['shared'] = $this->createdByIdToEmail($contacts['shared']);
+		}
+
+		if (! is_null($contacts['private'])) {
+			$contacts['private'] = $this->createdByIdToEmail($contacts['private']);
+		}
+
+		// Return the contacts
 		return view('contact.companies.index')->with([
 			'contacts' => $contacts
 		]);
@@ -67,31 +60,30 @@ class ContactsController extends Controller
 	{
 		$contacts = $this->getContactsByRole(new \App\PeopleContact);
 
+		if (! is_null($contacts['shared'])) {
+			$contacts['shared'] = $this->createdByIdToEmail($contacts['shared']);
+		}
+
+		if (! is_null($contacts['private'])) {
+			$contacts['private'] = $this->createdByIdToEmail($contacts['private']);
+		}
+
 		return view('contact.people.index')->with([
 			'contacts' => $contacts
 		]);
 	}
 
-	public function getContactsByRole($model)
+	public function createdByIdToEmail($contacts)
 	{
-		switch (true) {
-			case $this->role['role'] === 'admin':
-				$contacts = $this->getAll($model);
-				break;
+		$contacts = $contacts->toArray();
 
-			default:
-				$contacts = $model->whereHas('createdBy', function ($query) {
-   					$query->where('user_id', '=', $this->role['userId']);
-				})->get();
-				break;
+		foreach ($contacts as $contactKey => $contactValue) {
+			unset($contacts[$contactKey]['created_by']);
+
+			$createdBy = CrudHelper::show(new \App\User, 'id', $contactValue['created_by'])->first();
+
+			$contacts[$contactKey]['created_by'] = $createdBy->email;
 		}
-
-		return $contacts;
-	}
-
-	public function getAll($model)
-	{
-		$contacts = CrudHelper::index($model)->get();
 
 		return $contacts;
 	}
@@ -114,70 +106,33 @@ class ContactsController extends Controller
 		]);
 	}
 
-	public function showContact($model, $contactId, $relationships = [])
-	{
-		$contact = CrudHelper::show($model, 'id', $contactId, $relationships);
-
-		if ($contact == null) {
-			abort(404);
-		}
-
-		return $contact;
-	}
-
 	public function createCompany()
 	{
+		$availableUsers = $this->getAllUsers();
 		$companyCategories = $this->getCategories(new \App\CompanyCategory);
 
 		return view('contact.companies.create')->with([
-			'companyCategories' => $companyCategories
+			'companyCategories' => $companyCategories,
+			'availableUsers' => $availableUsers
 		]);
 	}
 
 	public function createPeople()
 	{
+		$availableUsers = $this->getAllUsers();
 		$peopleCategories = $this->getCategories(new \App\PeopleCategory);
 		$companiesSelect = $this->companiesSelect();
 
 		return view('contact.people.create')->with([
 			'companiesSelect' => $companiesSelect,
-			'peopleCategories' => $peopleCategories
+			'peopleCategories' => $peopleCategories,
+			'availableUsers' => $availableUsers
 		]);
 	}
 
-	public function companiesSelect()
-    	{
-    		$companies = CrudHelper::index(new \App\CompanyContact)->get();
-
-    		foreach ($companies as $companyKey => $companyValue) {
-    			$companiesSelect[$companyValue['id']] = $companyValue['name'];
-    		}
-
-    		$companiesSelect[0] = 'Select Company';
-
-    		return $companiesSelect;
-    	}
-
-    	public function getCategories($model)
-    	{
-    		$categories = CrudHelper::index($model)->get();
-
-    		return $categories;
-    	}
-
     	public function storeCompany(Request $request)
 	{
-		$contact = $this->createContact(new \App\CompanyContact, $request->all());
-
-		$data = $request->all();
-
-		if (! is_null($data['category'])) {
-			$categoryIds = $this->updateCategories(new \App\CompanyCategory, $data['category']);
-
-			$contact->category()->sync($categoryIds);
-		}
-
-		$this->createdBy($contact);
+		$contact = $this->storeContactComplete(new \App\CompanyContact, new \App\CompanyCategory, $request->all());
 
 		return redirect()->route('contact.company.show', $contact->id)->with([
 			'success_message' => 'Conact Successfully created...'
@@ -186,91 +141,94 @@ class ContactsController extends Controller
 
 	public function storePeople(Request $request)
 	{
-		$contact = $this->createContact(new \App\PeopleContact, $request->all());
-
-		$data = $request->all();
-
-		if (! is_null($data['category'])) {
-			$categoryIds = $this->updateCategories(new \App\PeopleCategory, $data['category']);
-
-			$contact->category()->sync($categoryIds);
-		}
-
-		if ($data['company'] !== '0') {
-			$contact = PeopleContact::find($contact['id']);
-
-			$contact->companies()->attach($data['company']);
-
-			$contact->save();
-		}
-
-		$this->createdBy($contact);
+		$contact = $this->storeContactComplete(new \App\PeopleContact, new \App\PeopleCategory, $request->all());
 
 		return redirect()->route('contact.people.show', $contact->id)->with([
 			'success_message' => 'Conact Successfully created...'
 		]);
 	}
 
-	public function createdBy($createdContact)
-	{
-		$createdContact->createdBy()->sync([(string) $this->role['userId']]);
-
-		return null;
-	}
-
-	public function createContact($model, $data)
-	{
-		if ($data['avatar']) {
-			$avatarUpload = $this->avatarUpload($data['avatar']);
-
-			$data['avatar'] = $avatarUpload;
-		}
-
-		$contact = CrudHelper::store($model, $data);
-
-		return $contact;
-	}
-
 	public function editCompany($id)
 	{
-		$contact = $this->showContact(new \App\CompanyContact, $id, ['category']);
-
-		if (! empty($contact['category'])) {
-			$selectedCategories = $contact['category'];
-		}
-
-		$companyCategories = $this->unsetSelectedCategory(new \App\CompanyCategory, $selectedCategories);
+		$editContact = $this->editContactComplete(new \App\CompanyContact, new \App\CompanyCategory, $id,  ['category']);
 
 		return view('contact.companies.edit')->with([
-			'contact' => $contact,
-			'companyCategories' => $companyCategories,
-			'selectedCategories' => $selectedCategories
+			'contact' => $editContact['contact'],
+			'companyCategories' => $editContact['categories'],
+			'selectedCategories' => $editContact['selectedCategories'],
+			'availableUsers' => $editContact['availableUsers'],
+			'canView' => $editContact['canView'],
 		]);
 	}
 
 	public function editPeople($id)
 	{
-		$contact = $this->showContact(new \App\PeopleContact, $id, ['category', 'companies']);
+		$editContact = $this->editContactComplete(new \App\PeopleContact, new \App\PeopleCategory, $id, ['category', 'companies', 'canView', 'notesHistory']);
+
+		$companiesSelect = $this->companiesSelect();
+
+		return view('contact.people.edit')->with([
+			'contact' => $editContact['contact'],
+			'companiesSelect' => $companiesSelect,
+			'contactCompanies' => $editContact['contactCompanies'],
+			'peopleCategories' => $editContact['categories'],
+			'selectedCategories' => $editContact['selectedCategories'],
+			'availableUsers' => $editContact['availableUsers'],
+			'canView' => $editContact['canView'],
+			'notesHistory' => $editContact['notesHistory'],
+		]);
+	}
+
+	public function editContactComplete($model, $catModel, $id, $with)
+	{
+		$availableUsers = $this->getAllUsers();
+
+		$contact = $this->showContact($model, $id, $with);
 
 		if (! empty($contact['category'])) {
 			$selectedCategories = $contact['category'];
 		}
 
-		$peopleCategories = $this->unsetSelectedCategory(new \App\PeopleCategory, $selectedCategories);
+		if (! empty($contact['canView'])); {
+			$canView = $contact['canView'];
+		}
+
+		if (! empty($contact['notesHistory'])); {
+			$notesHistory = $contact['notesHistory'];
+		}
 
 		if (isset($contact['companies']) && ! empty($contact['companies'])) {
 			$contactCompanies = $contact['companies'][0]['id'];
 		}
 
-		$companiesSelect = $this->companiesSelect();
+		$categories = $this->unsetSelectedCategory($catModel, $selectedCategories);
+		$availableUsers = $this->unsetCanView($canView);
 
-		return view('contact.people.edit')->with([
+		return [
 			'contact' => $contact,
-			'companiesSelect' => $companiesSelect,
-			'contactCompanies' => $contactCompanies,
-			'peopleCategories' => $peopleCategories,
-			'selectedCategories' => $selectedCategories
-		]);
+			'contactCompanies' => isset($contactCompanies) ? $contactCompanies : null,
+			'selectedCategories' => isset($selectedCategories) ? $selectedCategories : null,
+			'availableUsers' => isset($availableUsers) ? $availableUsers : null,
+			'canView' => isset($canView) ? $canView : null,
+			'categories' => isset($categories) ? $categories : null,
+			'notesHistory' => isset($notesHistory) ? $notesHistory : null,
+		];
+	}
+
+	public function unsetCanView($canViews)
+	{
+		$availableUsers = $this->getAllUsers();
+
+		foreach ($canViews as $canView) {
+			foreach ($availableUsers as $availableUsersKey => $user) {
+				if ($canView->id === $user->id) {
+					unset($availableUsers[$availableUsersKey]);
+				}
+
+			}
+		}
+
+		return $availableUsers;
 	}
 
 	public function unsetSelectedCategory($model, $selectedCategories)
@@ -323,10 +281,18 @@ class ContactsController extends Controller
 			$updateContact[$updateField] = $updateValue;
 		}
 
+		$contact->canView($updateContact['canView']);
+
 		if (! is_null($updateContact['category'])) {
 			$categoryIds = $this->updateCategories(new \App\CompanyCategory, $updateContact['category']);
 
 			$contact->category()->sync($categoryIds);
+		}
+
+		$contact->canView()->detach();
+
+		if (! is_null($updateContact['can_view'])) {
+			$contact->canView()->sync($updateContact['can_view']);
 		}
 
 		$contact->update($updateContact);
@@ -338,31 +304,54 @@ class ContactsController extends Controller
 
     	public function updatePeople(Request $request, $id)
     	{
+    		$contact = CrudHelper::show(new \App\PeopleContact, 'id', $id);
+
+    		if (! is_null($request->notes) && ! empty($request->notes)) {
+    			$contact->first()->notesHistory()->create([
+    				'note' => $request->notes
+    			]);
+    		}
+
+    		foreach ($request->all() as $updateField => $updateValue) {
+    			$updateContact[$updateField] = $updateValue;
+    		}
+
     		if ($request->hasFile('avatar')) {
 			$avatarUpload = $this->avatarUpload($request->file('avatar'));
 
 			$updateContact['avatar'] = $avatarUpload;
 		}
 
-    		$contact = CrudHelper::show(new \App\PeopleContact, 'id', $id);
+    		$contact->first()->canView()->detach();
 
-    		foreach ($request->all() as $updateField => $updateValue) {
-    			$updateContact[$updateField] = $updateValue;
-    		}
+		if (! is_null($updateContact['can_view'])) {
+			$contact->first()->canView()->sync($updateContact['can_view']);
+		}
 
     		if (! is_null($updateContact['category'])) {
 
-			$categoryIds = $this->updateCategories(new \App\PeopleCategory, $updateContact['category']);
+			foreach ($updateContact['category'] as $categoryKey => $categoryValue) {
+				$catUpdate[$categoryKey]['category'] = strtolower($categoryValue);
+			}
 
-			$contact->category()->sync($categoryIds);
+			$categoryIds = $this->updateCategories(new \App\PeopleCategory, $catUpdate);
+
+			$contact->first()->category()->sync($categoryIds);
 		}
 
-    		if ($updateContact['company'] !== '0') {
+    		if (isset($updateContact['company']) && $updateContact['company'] !== '0') {
 
-			$contactComapany = PeopleContact::find($contact['id']);
+			$contactComapany = PeopleContact::find($contact->first()->id);
 
 			$contactComapany->companies()->sync([$updateContact['company']]);
 		}
+
+		unset($updateContact['_method']);
+    		unset($updateContact['_token']);
+    		unset($updateContact['company']);
+    		unset($updateContact['can_view']);
+    		unset($updateContact['category']);
+    		unset($updateContact['notes']);
 
     		$contact->update($updateContact);
 
@@ -378,13 +367,78 @@ class ContactsController extends Controller
 		}
 
 		foreach ($categories as $category) {
-			$findCategory = CrudHelper::show($catModel, 'category', $category);
+			$findCategory = CrudHelper::show($catModel, 'category', $category)->first();
 
 			$categoryId[] = $findCategory['id'];
 		}
 
 		return $categoryId;
     	}
+
+    	public function companiesSelect()
+    	{
+    		$companies = CrudHelper::index(new \App\CompanyContact)->get();
+
+    		foreach ($companies as $companyKey => $companyValue) {
+    			$companiesSelect[$companyValue['id']] = $companyValue['name'];
+    		}
+
+    		$companiesSelect[0] = 'Select Company';
+
+    		return $companiesSelect;
+    	}
+
+    	public function getCategories($model)
+    	{
+    		$categories = CrudHelper::index($model)->get();
+
+    		return $categories;
+    	}
+
+    	public function storeContactComplete($model, $catModel, $data)
+    	{
+    		$contact = $this->createContact($model, $data);
+
+		if (isset($data['category']) && ! is_null($data['category'])) {
+			$categoryIds = $this->updateCategories($catModel, $data['category']);
+
+			$contact->category()->sync($categoryIds);
+		}
+
+		if (isset($data['company']) && $data['company'] !== '0') {
+			$contact = PeopleContact::find($contact['id']);
+
+			$contact->companies()->attach($data['company']);
+
+			$contact->save();
+		}
+
+		return $contact;
+    	}
+
+    	/**
+	 * Grab a logged in users role and who they are
+	 * @param  int          $userId     the id of the logged in user
+	 * @return   array                        return the role id, the actual ame of the role, and the users id
+	 */
+	public function getUsersRole($userId)
+	{
+		// Find a user by their ID
+		$user = CrudHelper::show(new \App\User, 'id', $userId, ['roles'])->first();
+
+		// Define the role from the users information
+		$role= $user['roles']->first();
+
+		// Build role array
+		$role = [
+			'id' => $role->id,
+			'role' => $role->role,
+			'userId' => $user->id
+		];
+
+		// Return the role data
+		return $role;
+	}
 
     	public function avatarUpload($upload)
     	{
@@ -398,5 +452,97 @@ class ContactsController extends Controller
 
     		return $avatar;
     	}
+
+    	/**
+	 * Grab all contacts for the supplied model
+	 * @uses  	 CrudHelper::index Grabs all items for a given model
+	 * @param  Eloquent     $model     The eloquent model to search contacts
+	 * @return   Collection                      The collection of all contacts
+	 */
+	public function getAll($model)
+	{
+		// Grab all contacts using the Sapioweb CrudHelper
+		$contacts = CrudHelper::index($model)->get();
+
+		return $contacts;
+	}
+
+    	public function getContactsByRole($model, $filter = null)
+	{
+		switch (true) {
+			case $this->role['role'] === 'admin':
+				$contacts = $this->getAll($model);
+				break;
+
+			default:
+				$contacts = $model->where('created_by', '=', $this->role['userId'])->with('canView')->get();
+
+				$sharedContacts = $model->whereHas('canView', function ($query) {
+					$query->where('user_id', '=', \Auth::user()->id);
+				})->get();
+				break;
+		}
+
+		return [
+			'private' => $contacts,
+			'shared' => isset($sharedContacts) ? $sharedContacts : null
+		];
+	}
+
+	public function showContact($model, $contactId, $relationships = [])
+	{
+		$contact = CrudHelper::show($model, 'id', $contactId, $relationships);
+
+		if ($contact == null) {
+			abort(404);
+		}
+
+		return $contact->first();
+	}
+
+	public function canView($createdContact, $canView)
+	{
+		$createdContact->canView()->sync($canView);
+
+		return null;
+	}
+
+	public function getAllUsers()
+	{
+		// Grab all available users in system
+		$users = CrudHelper::index(new \App\User)->get();
+
+		foreach ($users as $userKey => $userValue) {
+			if (\Auth::user()->email == $users[$userKey]['email']) {
+				unset($users[$userKey]);
+			}
+		}
+
+		return $users;
+	}
+
+	public function createContact($model, $data)
+	{
+		if (isset($data['avatar'])) {
+			$avatarUpload = $this->avatarUpload($data['avatar']);
+
+			$data['avatar'] = $avatarUpload;
+		}
+
+		unset($data['_token']);
+		unset($data['notes']);
+
+		$data['created_by'] = \Auth::user()->id;
+
+		$contact = CrudHelper::store($model, $data);
+
+		if (isset($data['can_view'])) {
+			$canView = $data['can_view'];
+
+			$this->canView($contact, $canView);
+		}
+
+		return $contact;
+	}
 }
 

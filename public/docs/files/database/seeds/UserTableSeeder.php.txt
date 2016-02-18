@@ -43,7 +43,7 @@ class UserTableSeeder extends Seeder
 				'password' => $user['password']
 			]);
 
-			$user = CrudHelper::show(new App\User, 'id', $user['id']);
+			$user = CrudHelper::show(new App\User, 'id', $user['id'])->first();
 
 			$user->roles()->sync([$role]);
 		}
