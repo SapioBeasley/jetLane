@@ -11,8 +11,12 @@
 - [ ] Filter contacts by types
 - [ ] find api for national average interest rates
 - [ ] Look into loan data api
+- [ ] Paginate contacts
+- [ ] Order contacts by columns
+- [ ] Keep phone numbers uniform, make it so area code prefix and last four need to be entered OR strip special characters and str_pos them when displayed
 - [ ] Add wheel menu
 - [ ] Add reffered by to people contact
+- [ ] Clean edit page and move css to external sheet
 - [ ] If secondary person is entered need to create both at same time. Secondary person will not have the same information
 - [ ] Companies are the relationship in loans
 - [ ] when you search company list the people associated
@@ -36,24 +40,24 @@
 - [x] add user persmissions
 - [x] Avatar on create works, update needs to be fixed
 - [x] Check image upload on user create
-- [ ] Need to create loans table with below columns
-- [ ] Create field in loans for loan_id
-- [ ] Create field in loans for lender (related to lender table)
-- [ ] Create field in loans for loan title
-- [ ] Create field in loans for loan subtitle
-- [ ] Create field in loans for fha (y/n)
-- [ ] Create field in loans for va (y/n)
-- [ ] Create field in loans for conventional (y/n)
-- [ ] Create field in loans for term
-- [ ] Create field in loans for rate
-- [ ] Create field in loans for min_down_payment
-- [ ] Bankrupcy burnoff (if user has bankrupcy how many years out do they ned to be)
-- [ ] Create field in loans for lender fees
-- [ ] Minimun fico number
-- [ ] Create field in loans for origination fee
-- [ ] Create field in loans for owner occupant only (y/n)
-- [ ] Create field in loans for second home(y/n)
-- [ ] Create field in loans for two loans (y/n)
+- [x] Need to create loans table with below columns
+- [x] Create field in loans for loan_id
+- [x] Create field in loans for lender (related to lender table)
+- [x] Create field in loans for loan title
+- [x] Create field in loans for loan subtitle
+- [x] Create field in loans for fha (y/n)
+- [x] Create field in loans for va (y/n)
+- [x] Create field in loans for conventional (y/n)
+- [x] Create field in loans for term
+- [x] Create field in loans for rate
+- [x] Create field in loans for min_down_payment
+- [x] Bankrupcy burnoff (if user has bankrupcy how many years out do they ned to be)
+- [x] Create field in loans for lender fees
+- [x] Minimun fico number
+- [x] Create field in loans for origination fee
+- [x] Create field in loans for owner occupant only (y/n)
+- [x] Create field in loans for second home(y/n)
+- [x] Create field in loans for two loans (y/n)
 
 ## Later
 We will need the ability to add type specific data
