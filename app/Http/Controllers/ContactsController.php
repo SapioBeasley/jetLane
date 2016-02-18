@@ -341,7 +341,7 @@ class ContactsController extends Controller
 
     		if (isset($updateContact['company']) && $updateContact['company'] !== '0') {
 
-			$contactComapany = PeopleContact::find($contact['id']);
+			$contactComapany = PeopleContact::find($contact->first()->id);
 
 			$contactComapany->companies()->sync([$updateContact['company']]);
 		}
