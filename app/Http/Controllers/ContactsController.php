@@ -58,7 +58,7 @@ class ContactsController extends Controller
 
 	public function indexPeople()
 	{
-		$contacts = $this->getContactsByRole(new \App\PeopleContact, $request->filter);
+		$contacts = $this->getContactsByRole(new \App\PeopleContact);
 
 		if (! is_null($contacts['shared'])) {
 			$contacts['shared'] = $this->createdByIdToEmail($contacts['shared']);
@@ -306,7 +306,7 @@ class ContactsController extends Controller
     	{
     		$contact = CrudHelper::show(new \App\PeopleContact, 'id', $id);
 
-    		if (! is_null($request->notes)) {
+    		if (! is_null($request->notes) && ! empty($request->notes)) {
     			$contact->first()->notesHistory()->create([
     				'note' => $request->notes
     			]);
@@ -330,11 +330,11 @@ class ContactsController extends Controller
 
     		if (! is_null($updateContact['category'])) {
 
-			foreach ($$updateContact['category'] as $categoryKey => $categoryValue) {
-				$updateContact[$categoryKey]['category'] = strtolower($categoryValue);
+			foreach ($updateContact['category'] as $categoryKey => $categoryValue) {
+				$catUpdate[$categoryKey]['category'] = strtolower($categoryValue);
 			}
 
-			$categoryIds = $this->updateCategories(new \App\PeopleCategory, $updateContact['category']);
+			$categoryIds = $this->updateCategories(new \App\PeopleCategory, $catUpdate);
 
 			$contact->first()->category()->sync($categoryIds);
 		}
@@ -399,7 +399,7 @@ class ContactsController extends Controller
     	{
     		$contact = $this->createContact($model, $data);
 
-		if (! is_null($data['category'])) {
+		if (isset($data['category']) && ! is_null($data['category'])) {
 			$categoryIds = $this->updateCategories($catModel, $data['category']);
 
 			$contact->category()->sync($categoryIds);
@@ -523,13 +523,14 @@ class ContactsController extends Controller
 
 	public function createContact($model, $data)
 	{
-		if ($data['avatar']) {
+		if (isset($data['avatar'])) {
 			$avatarUpload = $this->avatarUpload($data['avatar']);
 
 			$data['avatar'] = $avatarUpload;
 		}
 
 		unset($data['_token']);
+		unset($data['notes']);
 
 		$data['created_by'] = \Auth::user()->id;
 
