@@ -141,7 +141,6 @@ class ContactsController extends Controller
 
 	public function storePeople(Request $request)
 	{
-		dd($request->note);
 		$contact = $this->storeContactComplete(new \App\PeopleContact, new \App\PeopleCategory, $request->all());
 
 		return redirect()->route('contact.people.show', $contact->id)->with([
@@ -470,8 +469,6 @@ class ContactsController extends Controller
 
     	public function getContactsByRole($model, $filter = null)
 	{
-		// dd($filter);
-
 		switch (true) {
 			case $this->role['role'] === 'admin':
 				$contacts = $this->getAll($model);

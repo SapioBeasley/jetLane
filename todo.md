@@ -12,6 +12,7 @@
 - [ ] find api for national average interest rates
 - [ ] Look into loan data api
 - [ ] Add wheel menu
+- [ ] Add reffered by to people contact
 - [ ] If secondary person is entered need to create both at same time. Secondary person will not have the same information
 - [ ] Companies are the relationship in loans
 - [ ] when you search company list the people associated
