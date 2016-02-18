@@ -87,56 +87,107 @@ class ContactsControllerAsAdminTest extends TestCase
 
 	public function testStoreCompany()
 	{
-		// $request = new Illuminate\Http\Request;
+		$request = new Illuminate\Http\Request;
 
-		// $createData = [
-		// 	'name' => 'Test Company ' . str_random(10),
-		// 	'dba' => 'Some Test DBA' . str_random(10),
-		// 	'organization' => 'Some Test Org ' . str_random(10),
-		// 	// 'address_street',
-		// 	// 'address_city',
-		// 	// 'address_state',
-		// 	// 'address_zip',
-		// 	// 'country',
-		// 	// 'phone',
-		// 	// 'mobile_phone',
-		// 	// 'other_phone',
-		// 	// 'fax',
-		// 	// 'email_1',
-		// 	// 'email_2',
-		// 	// 'email_3',
-		// 	// 'website',
-		// 	// 'notes',
-		// 	'created_by' => $this->user['id'],
-		// ];
+		$createData = [
+			'name' => 'PHPUNIT Company ' . str_random(10),
+			'dba' => 'Some Test DBA' . str_random(10),
+			'organization' => 'Some Test Org ' . str_random(10),
+			// 'address_street',
+			// 'address_city',
+			// 'address_state',
+			// 'address_zip',
+			// 'country',
+			// 'phone',
+			// 'mobile_phone',
+			// 'other_phone',
+			// 'fax',
+			// 'email_1',
+			// 'email_2',
+			// 'email_3',
+			// 'website',
+			// 'notes',
+			'created_by' => $this->user['id'],
+		];
 
-		// foreach ($createData as $createKey => $createValue) {
-		// 	$request->$createKey = $createValue;
-		// }
+		foreach ($createData as $createKey => $createValue) {
+			$request[$createKey] = $createValue;
+		}
 
-		// $contact = $this->contactsController->storeCompany($request);
+		$createdCompany = $this->contactsController->storeCompany($request);
 
-		// $crawler = $contact->followRedirect();
+		$this->assertEquals($createdCompany->getStatusCode(), 302);
 
-		// dd($crawler);
-		// $this->assertRedirectedTo('/mymodule/mycontroller/myaction/');
+		$this->assertEquals($createdCompany->getSession()->get('success_message'), 'Conact Successfully created...');
 	}
 
 	public function testStorePeople()
 	{
-		// dd($contactsController->storePeople());
+		$request = new Illuminate\Http\Request;
+
+		$createData = [
+			'first_name' => 'PHPUNIT First ' . str_random(10),
+			'middle_name' => 'Middle ' . str_random(10),
+			'last_name' => 'Last ' . str_random(10),
+			// 'birthday_day',
+			// 'birthday_month',
+			// 'birthday_year',
+			// 'gender',
+			// 'address_street',
+			// 'address_city',
+			// 'address_state',
+			// 'address_zip',
+			// 'country',
+			// 'home_phone',
+			// 'business_phone',
+			// 'mobile_phone',
+			// 'other_phone',
+			// 'fax',
+			// 'email_1',
+			// 'email_2',
+			// 'email_3',
+			// 'avatar',
+			// 'tax_id',
+			'created_by' => $this->user['id'],
+		];
+
+		foreach ($createData as $createKey => $createValue) {
+			$request[$createKey] = $createValue;
+		}
+
+		$createdPerson = $this->contactsController->storePeople($request);
+
+		$this->assertEquals($createdPerson->getStatusCode(), 302);
+
+		$this->assertEquals($createdPerson->getSession()->get('success_message'), 'Conact Successfully created...');
 	}
 
 	public function testShowCompany()
 	{
-		// Feed company $id
-		// dd($contactsController->showCompany());
+		$contact = \App\CompanyContact::where('name', 'LIKE', 'PHPUNIT%')->take(1)->first();
+
+		$contact = $this->contactsController->showCompany($contact->id);
+
+		$contactData = $contact->getData()['contact']->toArray();
+
+		$this->assertTrue(isset($contactData['id']));
+		$this->assertTrue(isset($contactData['name']));
+		$this->assertTrue(isset($contactData['dba']));
+		$this->assertTrue(isset($contactData['website']));
 	}
 
 	public function testShowPeople()
 	{
-		// Feed people $id
-		// dd($contactsController->showPeople());
+		$contact = \App\PeopleContact::where('first_name', 'LIKE', 'PHPUNIT%')->take(1)->first();
+
+		$contact = $this->contactsController->showPeople($contact->id);
+
+		$contactData = $contact->getData()['contact']->toArray();
+
+		$this->assertTrue(isset($contactData['id']));
+		$this->assertTrue(isset($contactData['first_name']));
+		$this->assertTrue(isset($contactData['last_name']));
+		$this->assertTrue(isset($contactData['email_1']));
 	}
 
 	public function testCreateCompany()
