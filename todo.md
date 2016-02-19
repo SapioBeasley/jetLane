@@ -1,12 +1,10 @@
 ## ToDo
 - [ ] Table needed for contacts extra detail based on type
 - [ ] If person is client of prospect we need to be able to add more information to the user, same foro company
-- [ ] Create field in loans for loan limits
 - [ ] If user is client or prospect, add section on show to tell agent to gather additional information from client (prequal meeting time)
 - [ ] Filter contacts by types
 - [ ] find api for national average interest rates
 - [ ] Look into loan data api
-- [ ] Paginate contacts
 - [ ] Order contacts by columns
 - [ ] Keep phone numbers uniform, make it so area code prefix and last four need to be entered OR strip special characters and str_pos them when displayed
 - [ ] Add wheel menu
@@ -26,6 +24,8 @@
 
 **Done**
 - [x] Add 'canView' array to each contact
+- [x] Create field in loans for loan limits
+- [x] Paginate contacts
 - [x] move route '/'' into controller and add auth construct
 - [x] Add Group permissions for each contact. Users need permission roles so they do not see others contacts
 - [x] Change both models belongToMany into createdBy
