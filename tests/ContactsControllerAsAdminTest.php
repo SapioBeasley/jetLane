@@ -192,143 +192,170 @@ class ContactsControllerAsAdminTest extends TestCase
 
 	public function testCreateCompany()
 	{
-		// dd($contactsController->createCompany());
+		// $contact = $this->contactsController->createCompany();
+
+		// $data = $contact->getData();
+		// dd($data);
 	}
 
 	public function testCreatePeople()
 	{
-		// dd($contactsController->createPeople());
+		// dd($this->contactsController->createPeople());
 	}
-
-
 
 	public function testEditCompany()
 	{
 		// Provide $id
-		// dd($contactsController->editCompany());
+		// dd($this->contactsController->editCompany());
 	}
 
 	public function testEditPeople()
 	{
 		// Provide $id
-		// dd($contactsController->editPeople());
+		// dd($this->contactsController->editPeople());
 	}
 
 	public function testEditContactComplete()
 	{
 		// Provide $model, $catModel, $id, $with
-		// dd($contactsController->editContactComplete());
+		// dd($this->contactsController->editContactComplete());
 	}
 
 	public function testUnsetCanView()
 	{
 		// Provide $canViews
-		// dd($contactsController->unsetCanView());
+		// dd($this->contactsController->unsetCanView());
 	}
 
 	public function testUnsetSelectedCategory()
 	{
 		// Provide $model, $selectedCategories
-		// dd($contactsController->unsetSelectedCategory());
+		// dd($this->contactsController->unsetSelectedCategory());
 	}
 
 	public function testDeleteCompany()
 	{
 		// Provide $id
-		// dd($contactsController->deleteCompany());
+		// dd($this->contactsController->deleteCompany());
 	}
 
 	public function testDeletePeople()
 	{
 		// Provide $id
-		// dd($contactsController->deletePeople());
+		// dd($this->contactsController->deletePeople());
 	}
 
 	public function testDestroyContact()
 	{
 		// Provide $model, $id
-		// dd($contactsController->destroyContact());
+		// dd($this->contactsController->destroyContact());
 	}
 
 	public function testUpdateCompany()
 	{
 		// Provide $id
-		// dd($contactsController->updateCompany());
+		// dd($this->contactsController->updateCompany());
 	}
 
 	public function testUpdatePeople()
 	{
 		// Provide $id
-		// dd($contactsController->updatePeople());
+		// dd($this->contactsController->updatePeople());
 	}
 
 	public function testUpdateCategories()
 	{
 		// Provide $catModel, $data
-		// dd($contactsController->updateCategories());
+		// dd($this->contactsController->updateCategories());
 	}
 
 	public function testCompaniesSelect()
 	{
-		// dd($contactsController->companiesSelect());
+		$companiesSelect = $this->contactsController->companiesSelect();
+
+		$this->assertEquals($companiesSelect[0], 'Select Company');
 	}
 
-	public function testGetCategories()
+	public function testGetCompanyCategories()
 	{
-		// Provide $model
-		// dd($contactsController->getCategories());
+		$model = new \App\CompanyCategory;
+
+		$categories = $this->contactsController->getCategories($model);
+
+		$categories = $categories->toArray();
+
+		foreach ($categories as $category) {
+			$this->assertTrue(isset($category['id']));
+			$this->assertTrue(isset($category['category']));
+			$this->assertTrue(isset($category['description']));
+		}
+	}
+
+	public function testGetPeopleCategories()
+	{
+		$model = new \App\PeopleCategory;
+
+		$categories = $this->contactsController->getCategories($model);
+
+		$categories = $categories->toArray();
+
+		foreach ($categories as $category) {
+			$this->assertTrue(isset($category['id']));
+			$this->assertTrue(isset($category['category']));
+			$this->assertTrue(isset($category['description']));
+		}
 	}
 
 	public function testStoreContactComplete()
 	{
 		// Provide $model, $catModel, $data
-		// dd($contactsController->storeContactComplete());
+		// dd($this->contactsController->storeContactComplete());
 	}
 
 	public function testGetUsersRole()
 	{
 		// Provide $userId
-		// dd($contactsController->getUsersRole());
+		// dd($this->contactsController->getUsersRole());
 	}
 
 	public function testAvatarUpload()
 	{
 		//  Provide $upload
-		// dd($contactsController->avatarUpload());
+		// dd($this->contactsController->avatarUpload());
 	}
 
 	public function testGetAll()
 	{
 		// Provide $model
-		// dd($contactsController->getAll());
+		// dd($this->contactsController->getAll());
 	}
 
 	public function testGetContactsByRole()
 	{
 		// Provide $model
-		// dd($contactsController->getContactsByRole());
+		// dd($this->contactsController->getContactsByRole());
 	}
 
 	public function testShowContact()
 	{
 		// Provide $model, $contactId, $relationships = []
-		// dd($contactsController->showContact());
+		// dd($this->contactsController->showContact());
 	}
 
 	public function testCanView()
 	{
 		// Provide $createdContact, $canView
-		// dd($contactsController->canView());
+		// dd($this->contactsController->canView());
 	}
 
 	public function testGetAllUsers()
 	{
-		// dd($contactsController->getAllUsers());
+		// dd($this->contactsController->getAllUsers());
 	}
 
 	public function testCreateContact()
 	{
 		// Provide $model, $data
-		// dd($contactsController->createContact());
+		// dd($this->contactsController->createContact());
 	}
 }
