@@ -75,12 +75,9 @@ class ContactsController extends Controller
 
 	public function createdByIdToEmail($contacts)
 	{
-		$contacts = $contacts->toArray();
-
 		foreach ($contacts as $contactKey => $contactValue) {
-			unset($contacts[$contactKey]['created_by']);
-
 			$createdBy = CrudHelper::show(new \App\User, 'id', $contactValue['created_by'])->first();
+			unset($contacts[$contactKey]['created_by']);
 
 			$contacts[$contactKey]['created_by'] = $createdBy->email;
 		}
@@ -462,7 +459,7 @@ class ContactsController extends Controller
 	public function getAll($model)
 	{
 		// Grab all contacts using the Sapioweb CrudHelper
-		$contacts = CrudHelper::index($model)->get();
+		$contacts = CrudHelper::index($model)->paginate(15);
 
 		return $contacts;
 	}
@@ -472,20 +469,29 @@ class ContactsController extends Controller
 		switch (true) {
 			case $this->role['role'] === 'admin':
 				$contacts = $this->getAll($model);
+
+				$links = $contacts->links();
 				break;
 
 			default:
-				$contacts = $model->where('created_by', '=', $this->role['userId'])->with('canView')->get();
+				$contacts = $model->where('created_by', '=', $this->role['userId'])->with('canView')->paginate(15);
 
 				$sharedContacts = $model->whereHas('canView', function ($query) {
 					$query->where('user_id', '=', \Auth::user()->id);
-				})->get();
+				})->paginate(15);
+
+				if ($contacts->lastPage() > $sharedContacts->lastPage()) {
+					$links = $contacts->links();
+				} elseif ($sharedContacts->lastPage() > $contacts->lastPage()) {
+					$links = $sharedContacts->links();
+				}
 				break;
 		}
 
 		return [
 			'private' => $contacts,
-			'shared' => isset($sharedContacts) ? $sharedContacts : null
+			'shared' => isset($sharedContacts) ? $sharedContacts : null,
+			'links' => $links
 		];
 	}
 
