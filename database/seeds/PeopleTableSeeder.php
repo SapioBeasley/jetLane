@@ -12,13 +12,9 @@ class PeopleTableSeeder extends Seeder
 	*/
 	public function run()
 	{
-		$peopleMake = [
-			'5',
-			'4',
-			'3',
-			'2',
-			'1',
-		];
+		for ($i=0; $i < 50; $i++) {
+			$peopleMake[$i] = $i;
+		}
 
 		foreach ($peopleMake as $go) {
 			$people = CrudHelper::store(new \App\PeopleContact, [
