@@ -1,11 +1,6 @@
 ## ToDo
 - [ ] Table needed for contacts extra detail based on type
 - [ ] If person is client of prospect we need to be able to add more information to the user, same foro company
-- [ ] Create field in loans for front_end_limit
-- [ ] Create field in loans for back_end_limit
-- [ ] Create field in loans for conforming_load
-- [ ] Create field in loans for front end mortgate insurence
-- [ ] Seasoned burnoff (if user has forclosure how many years out do they ned to be)
 - [ ] Create field in loans for loan limits
 - [ ] If user is client or prospect, add section on show to tell agent to gather additional information from client (prequal meeting time)
 - [ ] Filter contacts by types
@@ -48,6 +43,11 @@
 - [x] Create field in loans for fha (y/n)
 - [x] Create field in loans for va (y/n)
 - [x] Create field in loans for conventional (y/n)
+- [x] Create field in loans for front_end_limit
+- [x] Create field in loans for back_end_limit
+- [x] Create field in loans for conforming_load
+- [x] Create field in loans for front end mortgate insurence
+- [x] Seasoned burnoff (if user has forclosure how many years out do they ned to be)
 - [x] Create field in loans for term
 - [x] Create field in loans for rate
 - [x] Create field in loans for min_down_payment
@@ -72,13 +72,13 @@ We will need the ability to add type specific data
 
 ## Questions
 **Need to ask**
+- [x] If user is a client what extra fields are required for the prequal meeting (ASK IN PERSON)
 
 **Asked**
 - [x] Can everyone see all companies or will they only be viewable by users who are 'canView'?
-- [x] If user is a client what extra fields are required for the prequal meeting
+
+**Answered**
 - [x] What type of values are expected for these? front_end_limit, back_end_limit, front_end_mortgate_insurence, loan_limit
 - [x] What other "burnoff" items will their be?
 - [x] Is "Seasoned burnoff" an actual field to be added of was it a general name?
 - [x] conforming_load with a value of either y/n is a correct field? I may have caught it wrong.
-
-**Answered**
