@@ -12,13 +12,9 @@ class CompaniesTableSeeder extends Seeder
 	*/
 	public function run()
 	{
-		$companyMake = [
-			'5',
-			'4',
-			'3',
-			'2',
-			'1',
-		];
+		for ($i=0; $i < 50; $i++) {
+			$companyMake[$i] = $i;
+		}
 
 		foreach ($companyMake as $go) {
 			$company = CrudHelper::store(new \App\CompanyContact, [
