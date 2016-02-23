@@ -95,8 +95,9 @@ class LoansController extends Controller
 
 	public function deleteLoans($id)
 	{
-		$loan = $this->getLoan($id)->first();
-		dd($loan);
+		$loan = CrudHelper::destroy(new \App\Loan, $id);
+
+		return redirect()->route('loans.index')->with('success_message', 'Loan deleted successfully...');
 	}
 
 	public function getLoan($id)

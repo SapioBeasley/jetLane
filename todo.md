@@ -26,6 +26,8 @@
 - [x] Add 'canView' array to each contact
 - [x] Create field in loans for loan limits
 - [x] Paginate contacts
+- [x] Loan resources to manage loans created
+- [x] Duplicate Loans
 - [x] move route '/'' into controller and add auth construct
 - [x] Add Group permissions for each contact. Users need permission roles so they do not see others contacts
 - [x] Change both models belongToMany into createdBy

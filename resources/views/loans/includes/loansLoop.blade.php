@@ -1,4 +1,4 @@
-@if($loans == null)
+@if(! isset($loans[0]))
 	No Loans found. <a href="{{route('loans.create')}}">Add a Loan</a>
 @else
 

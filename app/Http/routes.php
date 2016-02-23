@@ -124,7 +124,7 @@ Route::group(['middleware' => 'web'], function () {
         'uses' => 'LoansController@updateLoans'
     ]);
 
-    Route::get('/loans/{id}/delete', [
+    Route::delete('/loans/{id}/delete', [
         'as' => 'loans.delete',
         'uses' => 'LoansController@deleteLoans'
     ]);
