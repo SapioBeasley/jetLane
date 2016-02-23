@@ -37,9 +37,11 @@ class ContactsController extends Controller
 	 * Show all company contact
 	 * @return collection      A collection of all contacts that are companies
 	 */
-	public function indexCompany(Request $request)
+	public function indexCompany(Request $request = null)
 	{
-		if (! is_null($request->filter)) {
+		$filterBy = null;
+
+		if (isset($request->filter) && ! is_null($request->filter)) {
 			$filterBy = $request->filter;
 		}
 
@@ -63,9 +65,11 @@ class ContactsController extends Controller
 		]);
 	}
 
-	public function indexPeople(Request $request)
+	public function indexPeople(Request $request = null)
 	{
-		if (! is_null($request->filter)) {
+		$filterBy = null;
+
+		if (isset($request->filter) && ! is_null($request->filter)) {
 			$filterBy = $request->filter;
 		}
 

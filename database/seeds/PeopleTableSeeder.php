@@ -51,7 +51,7 @@ class PeopleTableSeeder extends Seeder
 			$people->canView()->sync($canView);
 
 			$category = [
-				rand(1,11),
+				rand(1,12),
 			];
 
 			$people->category()->sync($category);
