@@ -98,4 +98,44 @@ Route::group(['middleware' => 'web'], function () {
         'as' => 'contact.people.delete',
         'uses' => 'ContactsController@deletePeople'
     ]);
+
+    Route::get('/loans', [
+        'as' => 'loans.index',
+        'uses' => 'LoansController@indexLoans'
+    ]);
+
+    Route::get('/loans/{id}', [
+        'as' => 'loans.show',
+        'uses' => 'LoansController@showLoans'
+    ]);
+
+    Route::get('/loans/{id}/edit', [
+        'as' => 'loans.edit',
+        'uses' => 'LoansController@editLoans'
+    ]);
+
+    Route::get('/loans/create', [
+        'as' => 'loans.create',
+        'uses' => 'LoansController@createLoans'
+    ]);
+
+    Route::put('/loans/{id}/update', [
+        'as' => 'loans.update',
+        'uses' => 'LoansController@updateLoans'
+    ]);
+
+    Route::get('/loans/{id}/delete', [
+        'as' => 'loans.delete',
+        'uses' => 'LoansController@deleteLoans'
+    ]);
+
+    Route::get('/loans/{id}/duplicate', [
+        'as' => 'loans.duplicate',
+        'uses' => 'LoansController@duplicateLoans'
+    ]);
+
+    Route::post('/loans/store', [
+        'as' => 'loans.store',
+        'uses' => 'LoansController@storeLoans'
+    ]);
 });
