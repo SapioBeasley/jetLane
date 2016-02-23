@@ -157,6 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Spatie\Tail\TailServiceProvider::class,
+        Sapioweb\CrudHelper\CrudHelperServiceProvider::class,
 
     ],
 
@@ -205,6 +206,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'CrudHelper' => Sapioweb\CrudHelper\CrudyController::class,
 
     ],
 
