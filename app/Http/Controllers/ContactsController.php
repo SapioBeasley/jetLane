@@ -63,9 +63,15 @@ class ContactsController extends Controller
 		]);
 	}
 
-	public function indexPeople()
+	public function indexPeople(Request $request)
 	{
-		$contacts = $this->getContactsByRole(new \App\PeopleContact);
+		if (! is_null($request->filter)) {
+			$filterBy = $request->filter;
+		}
+
+		$contacts = $this->getContactsByRole(new \App\PeopleContact, $filterBy);
+
+		$peopleCategories = $this->getCategories(new \App\PeopleCategory);
 
 		if (! is_null($contacts['shared'])) {
 			$contacts['shared'] = $this->createdByIdToEmail($contacts['shared']);
@@ -76,7 +82,8 @@ class ContactsController extends Controller
 		}
 
 		return view('contact.people.index')->with([
-			'contacts' => $contacts
+			'contacts' => $contacts,
+			'peopleCategories' => $peopleCategories
 		]);
 	}
 
