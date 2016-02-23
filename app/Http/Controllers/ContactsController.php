@@ -37,10 +37,16 @@ class ContactsController extends Controller
 	 * Show all company contact
 	 * @return collection      A collection of all contacts that are companies
 	 */
-	public function indexCompany()
+	public function indexCompany(Request $request)
 	{
+		if (! is_null($request->filter)) {
+			$filterBy = $request->filter;
+		}
+
 		// Using the getContactByRole we pull specific contacts for the user if not admin
-		$contacts = $this->getContactsByRole(new \App\CompanyContact);
+		$contacts = $this->getContactsByRole(new \App\CompanyContact, $filterBy);
+
+		$companyCategories = $this->getCategories(new \App\CompanyCategory);
 
 		if (! is_null($contacts['shared'])) {
 			$contacts['shared'] = $this->createdByIdToEmail($contacts['shared']);
@@ -52,7 +58,8 @@ class ContactsController extends Controller
 
 		// Return the contacts
 		return view('contact.companies.index')->with([
-			'contacts' => $contacts
+			'contacts' => $contacts,
+			'companyCategories' => $companyCategories
 		]);
 	}
 
@@ -456,10 +463,21 @@ class ContactsController extends Controller
 	 * @param  Eloquent     $model     The eloquent model to search contacts
 	 * @return   Collection                      The collection of all contacts
 	 */
-	public function getAll($model)
+	public function getAll($model, $filter = null)
 	{
-		// Grab all contacts using the Sapioweb CrudHelper
-		$contacts = CrudHelper::index($model)->paginate(15);
+		switch (true) {
+			case isset($filter):
+				$contacts =$model->whereHas('category', function ($query) use ($filter) {
+					$query->where('category', '=', $filter);
+				})->paginate(15);
+				break;
+
+			default:
+
+				// Grab all contacts using the Sapioweb CrudHelper
+				$contacts = CrudHelper::index($model)->paginate(15);
+				break;
+		}
 
 		return $contacts;
 	}
@@ -468,9 +486,47 @@ class ContactsController extends Controller
 	{
 		switch (true) {
 			case $this->role['role'] === 'admin':
-				$contacts = $this->getAll($model);
+				$contacts = $this->getAll($model, $filter);
 
 				$links = $contacts->links();
+				break;
+
+			default:
+
+				$contactsData = $this->toFilterOrNotToFilter($model, $filter);
+
+				$contacts = $contactsData['contacts'];
+				$sharedContacts = $contactsData['sharedContacts'];
+
+				if ($contacts->lastPage() > $sharedContacts->lastPage()) {
+					$links = $contacts->links();
+				} elseif ($sharedContacts->lastPage() > $contacts->lastPage()) {
+					$links = $sharedContacts->links();
+				}
+
+				break;
+		}
+
+		return [
+			'private' => $contacts,
+			'shared' => isset($sharedContacts) ? $sharedContacts : null,
+			'links' => $links
+		];
+	}
+
+	public function toFilterOrNotToFilter($model, $filter = null)
+	{
+		switch (true) {
+			case ! is_null($filter):
+				$contacts = $model->whereHas('category', function ($query) use ($filter) {
+					$query->where('category', '=', $filter);
+				})->where('created_by', '=', $this->role['userId'])->with('canView')->paginate(15);
+
+				$sharedContacts = $model->whereHas('canView', function ($query) {
+					$query->where('user_id', '=', \Auth::user()->id);
+				})->whereHas('category', function ($query) use ($filter) {
+					$query->where('category', '=', $filter);
+				})->paginate(15);
 				break;
 
 			default:
@@ -479,19 +535,12 @@ class ContactsController extends Controller
 				$sharedContacts = $model->whereHas('canView', function ($query) {
 					$query->where('user_id', '=', \Auth::user()->id);
 				})->paginate(15);
-
-				if ($contacts->lastPage() > $sharedContacts->lastPage()) {
-					$links = $contacts->links();
-				} elseif ($sharedContacts->lastPage() > $contacts->lastPage()) {
-					$links = $sharedContacts->links();
-				}
 				break;
 		}
 
 		return [
-			'private' => $contacts,
-			'shared' => isset($sharedContacts) ? $sharedContacts : null,
-			'links' => $links
+			'contacts' => $contacts,
+			'sharedContacts' => $sharedContacts
 		];
 	}
 

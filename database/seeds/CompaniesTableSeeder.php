@@ -43,6 +43,12 @@ class CompaniesTableSeeder extends Seeder
 			];
 
 			$company->canView()->sync($canView);
+
+			$category = [
+				rand(1,11),
+			];
+
+			$company->category()->sync($category);
 		}
 	}
 }
