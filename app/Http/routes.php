@@ -104,11 +104,6 @@ Route::group(['middleware' => 'web'], function () {
         'uses' => 'LoansController@indexLoans'
     ]);
 
-    Route::get('/loans/{id}', [
-        'as' => 'loans.show',
-        'uses' => 'LoansController@showLoans'
-    ]);
-
     Route::get('/loans/{id}/edit', [
         'as' => 'loans.edit',
         'uses' => 'LoansController@editLoans'
@@ -137,5 +132,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/loans/store', [
         'as' => 'loans.store',
         'uses' => 'LoansController@storeLoans'
+    ]);
+
+    Route::get('/loans/{id}', [
+        'as' => 'loans.show',
+        'uses' => 'LoansController@showLoans'
     ]);
 });
