@@ -29,4 +29,12 @@
 	<h5>
 		<small><b>Transactions</b> (Coming Soon)</small>
 	</h5>
+
+	<h5>
+		<small><b>Loans</b></small>
+	</h5>
+	<ul class="nav nav-sidebar">
+		<li><a href="{{route('loans.index')}}">View Loans</a></li>
+		<li><a href="{{route('loans.create')}}">Add Loan</a></li>
+	</ul>
 </div>
