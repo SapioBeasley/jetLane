@@ -2,7 +2,6 @@
 - [ ] Table needed for contacts extra detail based on type
 - [ ] If person is client of prospect we need to be able to add more information to the user, same foro company
 - [ ] If user is client or prospect, add section on show to tell agent to gather additional information from client (prequal meeting time)
-- [ ] Filter contacts by types
 - [ ] find api for national average interest rates
 - [ ] Look into loan data api
 - [ ] Order contacts by columns
@@ -13,18 +12,17 @@
 - [ ] If secondary person is entered need to create both at same time. Secondary person will not have the same information
 - [ ] Companies are the relationship in loans
 - [ ] when you search company list the people associated
-- [ ] Able to create duplicate loan from already created
 - [ ] Only companies and people that are type lenders can be added to the loans pivot
 - [ ] Loans are listed under company
 - [ ] When creating a transaction is when the loan is either created or duplicated
 - [ ] If company has multiple locations, how can we select the correct address to associate that address to person
 - [ ] Build properties required array Fields from rets
-- [ ] Print fliers for properties
-- [ ] generate comps for properties
 
 **Done**
 - [x] Add 'canView' array to each contact
 - [x] Create field in loans for loan limits
+- [x] Filter contacts by types
+- [x] Able to create duplicate loan from already created
 - [x] Paginate contacts
 - [x] Loan resources to manage loans created
 - [x] Duplicate Loans
@@ -62,7 +60,9 @@
 - [x] Create field in loans for two loans (y/n)
 
 ## Later
-We will need the ability to add type specific data
+- [ ] We will need the ability to add type specific data
+- [ ] Print fliers for properties (need properties api)
+- [ ] generate comps for properties (need properties api)
 
 ## Whats needed 99% of time for realtors
 - [ ] Broker Analysis
