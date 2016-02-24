@@ -146,7 +146,7 @@ class ContactsControllerAsAdminTest extends TestCase
 			'email_1' => str_random(10) . '@sapioweb.com',
 			'email_2' => str_random(10) . '@sapioweb.com',
 			'email_3' => str_random(10) . '@sapioweb.com',
-			'avatar' => NULL,
+			// 'avatar' => 'https://source.unsplash.com/random',
 			'tax_id' => rand(0000000000,9999999999),
 			'created_by' => $this->user['id'],
 		];
