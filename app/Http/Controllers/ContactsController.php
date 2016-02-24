@@ -47,7 +47,6 @@ class ContactsController extends Controller
 
 		// Using the getContactByRole we pull specific contacts for the user if not admin
 		$contacts = $this->getContactsByRole(new \App\CompanyContact, $filterBy);
-
 		$companyCategories = $this->getCategories(new \App\CompanyCategory);
 
 		if (! is_null($contacts['shared'])) {
@@ -74,7 +73,6 @@ class ContactsController extends Controller
 		}
 
 		$contacts = $this->getContactsByRole(new \App\PeopleContact, $filterBy);
-
 		$peopleCategories = $this->getCategories(new \App\PeopleCategory);
 
 		if (! is_null($contacts['shared'])) {
@@ -179,7 +177,6 @@ class ContactsController extends Controller
 	public function editPeople($id)
 	{
 		$editContact = $this->editContactComplete(new \App\PeopleContact, new \App\PeopleCategory, $id, ['category', 'companies', 'canView', 'notesHistory']);
-
 		$companiesSelect = $this->companiesSelect();
 
 		return view('contact.people.edit')->with([
@@ -197,7 +194,6 @@ class ContactsController extends Controller
 	public function editContactComplete($model, $catModel, $id, $with)
 	{
 		$availableUsers = $this->getAllUsers();
-
 		$contact = $this->showContact($model, $id, $with);
 
 		if (! empty($contact['category'])) {
@@ -350,14 +346,12 @@ class ContactsController extends Controller
 			}
 
 			$categoryIds = $this->updateCategories(new \App\PeopleCategory, $catUpdate);
-
 			$contact->first()->category()->sync($categoryIds);
 		}
 
     		if (isset($updateContact['company']) && $updateContact['company'] !== '0') {
 
 			$contactComapany = PeopleContact::find($contact->first()->id);
-
 			$contactComapany->companies()->sync([$updateContact['company']]);
 		}
 
@@ -416,15 +410,12 @@ class ContactsController extends Controller
 
 		if (isset($data['category']) && ! is_null($data['category'])) {
 			$categoryIds = $this->updateCategories($catModel, $data['category']);
-
 			$contact->category()->sync($categoryIds);
 		}
 
 		if (isset($data['company']) && $data['company'] !== '0') {
 			$contact = PeopleContact::find($contact['id']);
-
 			$contact->companies()->attach($data['company']);
-
 			$contact->save();
 		}
 
@@ -458,11 +449,8 @@ class ContactsController extends Controller
     	public function avatarUpload($upload)
     	{
     		$destinationPath = 'images/avatars/';
-
     		$fileName = 'avatar_' . crc32($upload->getClientOriginalName()) . '.' . $upload->getClientOriginalExtension();
-
     		$upload->move($destinationPath, $fileName);
-
     		$avatar = url('/') . '/' . $destinationPath . $fileName;
 
     		return $avatar;
@@ -505,7 +493,6 @@ class ContactsController extends Controller
 			default:
 
 				$contactsData = $this->toFilterOrNotToFilter($model, $filter);
-
 				$contacts = $contactsData['contacts'];
 				$sharedContacts = $contactsData['sharedContacts'];
 
@@ -591,7 +578,6 @@ class ContactsController extends Controller
 	{
 		if (isset($data['avatar'])) {
 			$avatarUpload = $this->avatarUpload($data['avatar']);
-
 			$data['avatar'] = $avatarUpload;
 		}
 

@@ -11,8 +11,6 @@
 |
 */
 
-
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -27,7 +25,15 @@
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
     Route::get('/', 'HomeController@index');
-    Route::get('/admin', 'AdminController@dashboard');
+    Route::get('/admin', [
+        'as' => 'admin',
+        'uses' => 'AdminController@dashboard'
+    ]);
+
+    Route::put('/admin/update-roles', [
+        'as' => 'admin.update.roles',
+        'uses' => 'AdminController@updateRoles'
+    ]);
 
     Route::get('/contact/people', [
     	'as' => 'contact.people.index',

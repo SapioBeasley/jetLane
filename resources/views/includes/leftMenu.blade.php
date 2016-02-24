@@ -3,7 +3,7 @@
 		<small><b>Accounting</b> (Coming Soon)</small>
 	</h5>
 	<h5>
-		<small><b>Admin</b> (Coming Soon)</small>
+		<a href="{{route('admin')}}"><small><b>Admin</b></small></a>
 	</h5>
 	<h5>
 		<small><b>Calendar</b> (Coming Soon)</small>
