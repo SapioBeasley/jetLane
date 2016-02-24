@@ -70,6 +70,7 @@
 
 ## Concerns to fix
 - [ ] If a user knows a contacts ID they will be able to append to the url and view. Need to keep that from happening
+- [ ] All users are able to edit roles. Need to block all that are not admin
 
 ## Questions
 **Need to ask**

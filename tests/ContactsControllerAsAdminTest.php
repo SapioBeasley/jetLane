@@ -366,4 +366,9 @@ class ContactsControllerAsAdminTest extends TestCase
 	public function testCompanyIndexFilter()
 	{
 	}
+
+	public function testToFilterOrNotToFilter()
+	{
+		// send $model and $filter if not null
+	}
 }
