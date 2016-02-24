@@ -2,9 +2,17 @@
 	<h5>
 		<small><b>Accounting</b> (Coming Soon)</small>
 	</h5>
-	<h5>
-		<a href="{{route('admin')}}"><small><b>Admin</b></small></a>
-	</h5>
+
+	@if (! is_null(\Auth::user()) && \Auth::user()->roles()->first()->role == 'admin')
+		<h5>
+			<a href="{{route('admin')}}"><small><b>Admin</b></small></a>
+		</h5>
+	@else
+		<h5>
+			<small><b>Admin</b> (Coming Soon)</small>
+		</h5>
+	@endif
+
 	<h5>
 		<small><b>Calendar</b> (Coming Soon)</small>
 	</h5>
