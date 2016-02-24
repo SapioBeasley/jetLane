@@ -5,7 +5,6 @@
 - [ ] find api for national average interest rates
 - [ ] Look into loan data api
 - [ ] Order contacts by columns
-- [ ] Keep phone numbers uniform, make it so area code prefix and last four need to be entered OR strip special characters and str_pos them when displayed
 - [ ] Add wheel menu
 - [ ] Add reffered by to people contact
 - [ ] Clean edit page and move css to external sheet
