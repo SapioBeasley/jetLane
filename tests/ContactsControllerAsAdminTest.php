@@ -93,20 +93,20 @@ class ContactsControllerAsAdminTest extends TestCase
 			'name' => 'PHPUNIT Company ' . str_random(10),
 			'dba' => 'Some Test DBA' . str_random(10),
 			'organization' => 'Some Test Org ' . str_random(10),
-			// 'address_street',
-			// 'address_city',
-			// 'address_state',
-			// 'address_zip',
-			// 'country',
-			// 'phone',
-			// 'mobile_phone',
-			// 'other_phone',
-			// 'fax',
-			// 'email_1',
-			// 'email_2',
-			// 'email_3',
-			// 'website',
-			// 'notes',
+			'address_street' => rand(123, 9999) . ' Random St',
+			'address_city' => 'some city',
+			'address_state' => 'some state',
+			'address_zip' => rand(00000, 99999),
+			'country' => str_random(2),
+			'phone' => rand(3333333333, 9999999999),
+			'mobile_phone' => rand(3333333333, 9999999999),
+			'other_phone' => rand(3333333333, 9999999999),
+			'fax' => rand(3333333333, 9999999999),
+			'email_1' => str_random(10) . '@sapioweb.com',
+			'email_2' => str_random(10) . '@sapioweb.com',
+			'email_3' => str_random(10) . '@sapioweb.com',
+			'website' => str_random(10) . '.com',
+			'notes' => 'nothing speacial but I will say this...' . str_random(30) . ' lol',
 			'created_by' => $this->user['id'],
 		];
 
@@ -129,25 +129,25 @@ class ContactsControllerAsAdminTest extends TestCase
 			'first_name' => 'PHPUNIT First ' . str_random(10),
 			'middle_name' => 'Middle ' . str_random(10),
 			'last_name' => 'Last ' . str_random(10),
-			// 'birthday_day',
-			// 'birthday_month',
-			// 'birthday_year',
-			// 'gender',
-			// 'address_street',
-			// 'address_city',
-			// 'address_state',
-			// 'address_zip',
-			// 'country',
-			// 'home_phone',
-			// 'business_phone',
-			// 'mobile_phone',
-			// 'other_phone',
-			// 'fax',
-			// 'email_1',
-			// 'email_2',
-			// 'email_3',
-			// 'avatar',
-			// 'tax_id',
+			'birthday_day' => rand(1,30),
+			'birthday_month' => rand(1,12),
+			'birthday_year' => rand(1980, 2016),
+			'gender' => 'm',
+			'address_street' => rand(123, 9999) . ' Random St',
+			'address_city' => 'some city',
+			'address_state' => 'some state',
+			'address_zip' => rand(00000, 99999),
+			'country' => str_random(2),
+			'home_phone' => rand(3333333333, 9999999999),
+			'business_phone' => rand(3333333333, 9999999999),
+			'mobile_phone' => rand(3333333333, 9999999999),
+			'other_phone' => rand(3333333333, 9999999999),
+			'fax' => rand(3333333333, 9999999999),
+			'email_1' => str_random(10) . '@sapioweb.com',
+			'email_2' => str_random(10) . '@sapioweb.com',
+			'email_3' => str_random(10) . '@sapioweb.com',
+			'avatar' => NULL,
+			'tax_id' => rand(0000000000,9999999999),
 			'created_by' => $this->user['id'],
 		];
 
@@ -357,5 +357,13 @@ class ContactsControllerAsAdminTest extends TestCase
 	{
 		// Provide $model, $data
 		// dd($this->contactsController->createContact());
+	}
+
+	public function testPeopleIndexFilter()
+	{
+	}
+
+	public function testCompanyIndexFilter()
+	{
 	}
 }
