@@ -193,6 +193,11 @@ class ContactsController extends Controller
 
 	public function editContactComplete($model, $catModel, $id, $with)
 	{
+		$selectedCategories = [];
+		$canView = [];
+		$notesHistory = [];
+		$contactCompanies = [];
+
 		$availableUsers = $this->getAllUsers();
 		$contact = $this->showContact($model, $id, $with);
 
@@ -226,7 +231,7 @@ class ContactsController extends Controller
 		];
 	}
 
-	public function unsetCanView($canViews)
+	public function unsetCanView($canViews = [])
 	{
 		$availableUsers = $this->getAllUsers();
 
@@ -235,7 +240,6 @@ class ContactsController extends Controller
 				if ($canView->id === $user->id) {
 					unset($availableUsers[$availableUsersKey]);
 				}
-
 			}
 		}
 
