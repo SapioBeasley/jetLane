@@ -190,83 +190,56 @@ class ContactsControllerAsAdminTest extends TestCase
 		$this->assertTrue(isset($contactData['email_1']));
 	}
 
-	public function testCreateCompany()
-	{
-		// $contact = $this->contactsController->createCompany();
-
-		// $data = $contact->getData();
-		// dd($data);
-	}
-
-	public function testCreatePeople()
-	{
-		// dd($this->contactsController->createPeople());
-	}
-
-	public function testEditCompany()
-	{
-		// Provide $id
-		// dd($this->contactsController->editCompany());
-	}
-
-	public function testEditPeople()
-	{
-		// Provide $id
-		// dd($this->contactsController->editPeople());
-	}
-
 	public function testEditContactComplete()
 	{
+		$contactToEdit = \CrudHelper::index(new \App\CompanyContact, ['canView'])->first();
+
 		// Provide $model, $catModel, $id, $with
-		// dd($this->contactsController->editContactComplete());
+		$contactToEdit = $this->contactsController->editContactComplete(new \App\CompanyContact, new \App\CompanyCategory, $contactToEdit->id, ['category']);
+
+		$this->assertTrue(! is_null($contactToEdit['canView']));
+		$this->assertTrue(! is_null($contactToEdit['contact']));
+		$this->assertTrue(! is_null($contactToEdit['availableUsers']));
+		$this->assertTrue(! is_null($contactToEdit['categories']));
 	}
 
-	public function testUnsetCanView()
+	public function testGetAllUsers()
 	{
-		// Provide $canViews
-		// dd($this->contactsController->unsetCanView());
+		$users = $this->contactsController->getAllUsers();
+
+		$this->assertTrue(! is_null($users));
+
+		foreach ($users as $userKey => $userValue) {
+			$this->assertTrue(isset($userValue->id));
+			$this->assertTrue($userValue->id !== $this->user['id']);
+		}
+
+		return $users;
 	}
 
-	public function testUnsetSelectedCategory()
+	/**
+	 * Unset users already able to view the contact
+	 *
+	 * @depends testGetAllUsers
+	 * @return void
+	 */
+	public function testUnsetCanView($users)
 	{
-		// Provide $model, $selectedCategories
-		// dd($this->contactsController->unsetSelectedCategory());
-	}
+		$contact = CrudHelper::index(new App\CompanyContact, ['canView'])->first();
 
-	public function testDeleteCompany()
-	{
-		// Provide $id
-		// dd($this->contactsController->deleteCompany());
-	}
+		$canViews = $contact->canView;
 
-	public function testDeletePeople()
-	{
-		// Provide $id
-		// dd($this->contactsController->deletePeople());
-	}
+		$unsetCanViews = $this->contactsController->unsetCanView($canViews);
 
-	public function testDestroyContact()
-	{
-		// Provide $model, $id
-		// dd($this->contactsController->destroyContact());
-	}
-
-	public function testUpdateCompany()
-	{
-		// Provide $id
-		// dd($this->contactsController->updateCompany());
-	}
-
-	public function testUpdatePeople()
-	{
-		// Provide $id
-		// dd($this->contactsController->updatePeople());
-	}
-
-	public function testUpdateCategories()
-	{
-		// Provide $catModel, $data
-		// dd($this->contactsController->updateCategories());
+		foreach($users as $user) {
+			foreach ($canViews as $canView) {
+				if ($user->id === $canView->id) {
+					foreach ($unsetCanViews as $unsetCanView) {
+						$this->assertTrue($unsetCanView->id !== $canView->id);
+					};
+				}
+			}
+		}
 	}
 
 	public function testCompaniesSelect()
@@ -304,6 +277,73 @@ class ContactsControllerAsAdminTest extends TestCase
 			$this->assertTrue(isset($category['category']));
 			$this->assertTrue(isset($category['description']));
 		}
+
+		return $categories;
+	}
+
+	/**
+	 * Unset categories that have been previously selected
+	 *
+	 * @depends testGetPeopleCategories
+	 * @return void
+	 */
+	public function testUnsetSelectedCategory($allCategories)
+	{
+		$people = \CrudHelper::index(new \App\PeopleContact, ['category'])->first();
+
+		$selectedCategories = $people->category;
+
+		// Provide $model, $selectedCategories
+		$unsetSelectedCategories = $this->contactsController->unsetSelectedCategory(new \App\PeopleCategory, $selectedCategories);
+
+		foreach ($allCategories as $category) {
+			foreach ($selectedCategories as $selectedCategory) {
+				if ($category['id'] === $selectedCategory->id) {
+					foreach ($unsetSelectedCategories as $unsetSelectedCategory) {
+						$this->assertTrue($unsetSelectedCategory->id !== $selectedCategory->id);
+					}
+				}
+			}
+		}
+	}
+
+	public function testDeleteCompany()
+	{
+		// $id = rand(1,30);
+
+		// $contact = CrudHelper::show(new \App\CompanyContact, 'id', $id)->first();
+		// // dd($this->contactsController->deleteCompany());
+		// dd($id);
+	}
+
+	public function testDeletePeople()
+	{
+		// Provide $id
+		// dd($this->contactsController->deletePeople());
+	}
+
+	public function testDestroyContact()
+	{
+		// Provide $model, $id
+		// dd($this->contactsController->destroyContact());
+	}
+
+	public function testUpdateCompany()
+	{
+		// Provide $id
+		// dd($this->contactsController->updateCompany());
+	}
+
+	public function testUpdatePeople()
+	{
+		// Provide $id
+		// dd($this->contactsController->updatePeople());
+	}
+
+	public function testUpdateCategories()
+	{
+		// Provide $catModel, $data
+		// dd($this->contactsController->updateCategories());
 	}
 
 	public function testStoreContactComplete()
@@ -348,11 +388,6 @@ class ContactsControllerAsAdminTest extends TestCase
 		// dd($this->contactsController->canView());
 	}
 
-	public function testGetAllUsers()
-	{
-		// dd($this->contactsController->getAllUsers());
-	}
-
 	public function testCreateContact()
 	{
 		// Provide $model, $data
@@ -370,5 +405,37 @@ class ContactsControllerAsAdminTest extends TestCase
 	public function testToFilterOrNotToFilter()
 	{
 		// send $model and $filter if not null
+	}
+
+	public function testCreateCompany()
+	{
+		// Use laravel visit funciton
+		// $contact = $this->contactsController->createCompany();
+
+		// $data = $contact->getData();
+
+		// dd($data);
+	}
+
+	public function testCreatePeople()
+	{
+		// Use laravel visit funciton
+		// dd($this->contactsController->createPeople());
+	}
+
+	public function testEditCompany()
+	{
+		// Use laravel visit funciton
+		// Provide $id
+		// $editContact = $this->contactsController->editCompany(2);
+
+		// dd($editContact->getView());
+	}
+
+	public function testEditPeople()
+	{
+		// Use laravel visit funciton
+		// Provide $id
+		// dd($this->contactsController->editPeople());
 	}
 }
